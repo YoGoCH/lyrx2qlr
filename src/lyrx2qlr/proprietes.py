@@ -248,7 +248,8 @@ def _lab_vers_rgb(L: float, a: float, b: float) -> tuple[float, float, float]:
 
 def _sans_zero(p: dict, valeur: Any) -> Any:
     """Un zéro sans valeur par défaut au catalogue vaut « absent » (ex. décalage nul) : les deux formats l'écrivent ou non."""
-    if valeur in (0, 0.0) and not isinstance(valeur, bool) and p["type"] in ("longueur", "nombre") and             (p.get("defaut") is None or p.get("zero_est_absent")):
+    if (valeur in (0, 0.0) and not isinstance(valeur, bool) and p["type"] in ("longueur", "nombre")
+            and (p.get("defaut") is None or p.get("zero_est_absent"))):
         return None
     return valeur
 

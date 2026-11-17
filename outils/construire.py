@@ -4,6 +4,12 @@
     python outils/construire.py extension  → copie du cœur dans qgis_plugin/lyrx2qlr_qgis/coeur/
                                              + dist/lyrx2qlr_qgis-<version>.zip (à installer dans QGIS)
     python outils/construire.py tout       → les deux
+    python outils/construire.py envoi ADRESSE
+                                           → dist/lyrx2qlr_qgis-<version>-envoi.zip : le ZIP de l'extension
+                                             avec la vraie adresse e-mail dans metadata.txt, pour
+                                             plugins.qgis.org (qui y envoie un message de confirmation).
+                                             L'adresse n'est écrite que dans ce ZIP (dist/ est ignoré
+                                             par git) : le dépôt garde contact@example.invalid.
 
 Le cœur (src/lyrx2qlr) reste la seule source : ces copies sont produites, jamais modifiées à la main
 (elles sont ignorées par git).
@@ -99,8 +105,29 @@ def construire_extension() -> Path:
     return cible
 
 
+def construire_envoi(adresse: str) -> Path:
+    """Copie du ZIP de l'extension avec la vraie adresse e-mail, pour l'envoi sur plugins.qgis.org."""
+    if not re.fullmatch(r"[^@\s]+@[^@\s]+\.[A-Za-z]{2,}", adresse):
+        sys.exit(f"Adresse e-mail invalide : {adresse}")
+    source = construire_extension()
+    cible = source.with_name(source.stem + "-envoi.zip")
+    nom_meta = f"{EXTENSION.name}/metadata.txt"
+    with zipfile.ZipFile(source) as z_in, zipfile.ZipFile(cible, "w", zipfile.ZIP_DEFLATED) as z_out:
+        for info in z_in.infolist():
+            donnees = z_in.read(info)
+            if info.filename == nom_meta:
+                texte = donnees.decode("utf-8")
+                donnees = re.sub(r"(?m)^email=.*$", f"email={adresse}", texte).encode("utf-8")
+            z_out.writestr(info, donnees)
+    print(f"ZIP d'envoi pour plugins.qgis.org : {cible.relative_to(RACINE)} (adresse e-mail réelle, à ne pas commiter)")
+    return cible
+
+
 def main(args: list[str]) -> int:
     quoi = args[0] if args else "tout"
+    if quoi == "envoi" and len(args) == 2:
+        construire_envoi(args[1])
+        return 0
     if quoi not in ("web", "extension", "tout"):
         print(__doc__)
         return 2

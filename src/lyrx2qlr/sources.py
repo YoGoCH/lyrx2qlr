@@ -15,6 +15,7 @@ from .catalogue import Catalogue
 from .modele import Couche, Source
 from .rapport import Rapport
 
+
 # == outils =====================================================================
 def lire_chaine_arcgis(texte: str) -> dict[str, str]:
     """« CLE=valeur;CLE2=valeur2 » → dictionnaire (clés en majuscules)."""
@@ -137,7 +138,7 @@ def lire_lyrx(cat: Catalogue, rapport: Rapport, dc: dict, ou: str) -> Source:
     chaine = _completer_ancienne_chaine(cat, lire_chaine_arcgis(dc.get("workspaceConnectionString") or ""))
     candidates = [s for s in cat.sources["sources"] if s["lyrx"].get("workspaceFactory") == fabrique]
     entree = next((s for s in candidates if all(chaine.get(k, "").lower() == v.lower()
-                                                 for k, v in (s.get("base") or {}).get("si", {}).items())), None)
+                                                for k, v in (s.get("base") or {}).get("si", {}).items())), None)
     if entree is None:
         rapport.perte(ou + " > source", f"Type de source ArcGIS « {fabrique} » inconnu : source à reconnecter.",
                       "Ajouter la source dans catalogues/sources.json.")

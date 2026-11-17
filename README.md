@@ -3,7 +3,7 @@
 > **English:** lyrx2qlr converts ArcGIS Pro layer symbology (.lyrx) to QGIS layer definitions
 > (.qlr), and back (.qlr or .qml to .lyrx). Use it in your browser at
 > https://lyrx2qlr.papetche.ch/?lang=en (nothing is uploaded: Python runs in the page), as a
-> QGIS plugin, or from the command line. Every conversion comes with a report of what could not
+> QGIS plugin (https://plugins.qgis.org/plugins/lyrx2qlr_qgis/), or from the command line. Every conversion comes with a report of what could not
 > be converted. Licensed under GPL-3.0.
 
 Convertit les symbologies **ArcGIS Pro (.lyrx)** en couches **QGIS (.qlr)**, et inversement
@@ -64,11 +64,17 @@ hébergement de pages statiques. L'image de partage `web/apercu.png` se refait a
 
 ## Installer l'extension QGIS (QGIS 3.40 ou plus récent)
 
+L'extension est publiée sur https://plugins.qgis.org/plugins/lyrx2qlr_qgis/ (marquée « expérimentale »). Dans QGIS :
+« Extensions › Installer/Gérer les extensions », cocher « Afficher les extensions expérimentales »
+dans « Paramètres », puis chercher « lyrx2qlr ».
+
+Pour installer la version du dépôt :
+
 ```bash
 python outils/construire.py extension
 ```
 
-Cela produit `dist/lyrx2qlr_qgis-1.0.0.zip`. Dans QGIS : menu « Extensions › Installer/Gérer les
+Cela produit `dist/lyrx2qlr_qgis-<version>.zip`. Dans QGIS : menu « Extensions › Installer/Gérer les
 extensions », onglet « Installer depuis un ZIP », choisir ce fichier. Le menu
 « Extensions › lyrx2qlr » propose ensuite :
 

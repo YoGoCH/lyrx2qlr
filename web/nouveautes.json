@@ -2,6 +2,17 @@
   "_doc": "Nouveautés affichées sur la page. Textes écrits à la main (la plus récente en tête) ; « ajouts » est calculé par outils/nouveautes.py.",
   "versions": [
     {
+      "version": "1.8.2",
+      "date": "2026-11-17",
+      "fr": "L'extension QGIS lyrx2qlr est publiée sur plugins.qgis.org : importer un .lyrx ou exporter une couche sans quitter QGIS.",
+      "en": "The lyrx2qlr QGIS plugin is published on plugins.qgis.org: import a .lyrx or export a layer without leaving QGIS.",
+      "ajouts": {
+        "modele": 0,
+        "catalogues": 0,
+        "regles": 0
+      }
+    },
+    {
       "version": "1.8.1",
       "date": "2026-11-17",
       "fr": "Sécurité : un fichier .qlr ou .qml piégé (entités XML) est refusé. L'extension QGIS est prête pour Qt6 et passe le contrôle de plugins.qgis.org.",

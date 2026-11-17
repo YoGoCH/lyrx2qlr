@@ -8,7 +8,7 @@ dans [positionnement.md](positionnement.md). L'outil collaboratif
 | # | Étape | État | Dépend de |
 |---|---|---|---|
 | 1 | Valider les .lyrx dans ArcGIS Pro (lot 2) | **fait** (v1.3.0) : voir [lot2.md](lot2.md) | rien |
-| 2 | Publier l'extension sur plugins.qgis.org | ZIP prêt (v1.7.0 : anglais, icône, licence) ; reste l'envoi par Yoann (compte OSGeo, vraie adresse e-mail) | rien |
+| 2 | Publier l'extension sur plugins.qgis.org | **envoyée** (17 novembre 2026, v1.8.1, https://plugins.qgis.org/plugins/lyrx2qlr_qgis/) : contrôles Bandit, detect-secrets, flake8 et Qt6 passés ; reste la validation par l'équipe QGIS, après confirmation de l'adresse e-mail | rien |
 | 3 | Proposer la page en anglais | **fait** (v1.2.2), sauf les messages du rapport | rien |
 | 4 | Rendre le code public | **fait** (17 novembre 2026) : dépôt de travail public, https://github.com/YoGoCH/lyrx2qlr | rien |
 
@@ -78,6 +78,12 @@ L'extension est marquée `experimental=True` : à garder tant que l'étape 1 n'e
 passage en version stable sera la vraie annonce.
 
 Terminé quand : l'extension s'installe depuis le gestionnaire d'extensions de QGIS.
+
+**État au 17 novembre 2026.** Envoyée sur https://plugins.qgis.org/plugins/lyrx2qlr_qgis/. Le site contrôle chaque ZIP
+(Bandit, detect-secrets, flake8, compatibilité Qt6) : tout est passé avec la v1.8.1/1.8.2. Les
+envois se font avec `python outils/construire.py envoi ADRESSE`, qui produit
+`dist/lyrx2qlr_qgis-<version>-envoi.zip` avec la vraie adresse (le site y envoie un message de
+confirmation) ; le dépôt garde `contact@example.invalid`.
 
 ## 3. Proposer la page en anglais
 

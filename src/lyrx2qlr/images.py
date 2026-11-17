@@ -57,7 +57,7 @@ def _bmp_vers_png(d: bytes, substitutions: list) -> "bytes | bool | None":
     hauteur = abs(hauteur)
     pas = ((bits * largeur + 31) // 32) * 4
     lignes = [d[debut_pixels + i * pas: debut_pixels + (i + 1) * pas] for i in range(hauteur)]
-    if any(len(l) < pas for l in lignes):
+    if any(len(ligne) < pas for ligne in lignes):
         return None
     if bas_en_haut:
         lignes.reverse()
@@ -69,7 +69,7 @@ def _bmp_vers_png(d: bytes, substitutions: list) -> "bytes | bool | None":
         if all(n == c + (255,) for n, c in zip(nouvelle, palette)):
             return False
         utiles = (bits * largeur + 7) // 8
-        brut = b"".join(b"\0" + l[:utiles] for l in lignes)
+        brut = b"".join(b"\0" + ligne[:utiles] for ligne in lignes)
         morceaux = [_morceau(b"IHDR", struct.pack(">IIBBBBB", largeur, hauteur, bits, 3, 0, 0, 0)),
                     _morceau(b"PLTE", bytes(v for c in nouvelle for v in c[:3]))]
         if any(c[3] < 255 for c in nouvelle):
@@ -78,10 +78,10 @@ def _bmp_vers_png(d: bytes, substitutions: list) -> "bytes | bool | None":
         octets = bits // 8
         change = False
         sortie = bytearray()
-        for l in lignes:
+        for ligne in lignes:
             sortie.append(0)
             for x in range(largeur):
-                b, v, r = l[x * octets: x * octets + 3]
+                b, v, r = ligne[x * octets: x * octets + 3]
                 n = _remplacer((r, v, b), substitutions)
                 change = change or n != (r, v, b, 255)
                 sortie.extend(n)

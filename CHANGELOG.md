@@ -1,5 +1,16 @@
 # Journal des versions
 
+## v1.8.2 — 17 novembre 2026
+
+La conversion ne change pas.
+
+- L'extension QGIS est publiée sur https://plugins.qgis.org/plugins/lyrx2qlr_qgis/ : la page web l'annonce (à la place
+  de « Bientôt »), avec la marche à suivre dans QGIS ; README et feuille de route à jour.
+- `outils/construire.py envoi ADRESSE` : ZIP d'envoi pour plugins.qgis.org avec la vraie adresse
+  e-mail, écrite seulement dans `dist/` (ignoré par git).
+- Contrôle flake8 de plugins.qgis.org : noms de variable ambigus (`l`) renommés dans `images.py`,
+  trois corrections de mise en forme.
+
 ## v1.8.1 — 17 novembre 2026
 
 Corrections demandées par le contrôle automatique de plugins.qgis.org. La conversion ne change pas.

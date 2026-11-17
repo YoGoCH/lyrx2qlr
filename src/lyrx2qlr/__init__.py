@@ -12,7 +12,7 @@ from .api import Resultat, convertir, convertir_fichier, convertir_lot, ecrire, 
 from .catalogue import Catalogue, ErreurCatalogue, catalogue_defaut
 from .rapport import Rapport
 
-__version__ = "1.8.1"
+__version__ = "1.8.2"
 
 __all__ = ["Catalogue", "ErreurCatalogue", "Rapport", "Resultat", "catalogue_defaut", "convertir",
            "convertir_fichier", "convertir_lot", "ecrire", "lire", "lister_fichiers", "__version__"]
