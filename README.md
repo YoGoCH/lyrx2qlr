@@ -13,7 +13,7 @@ Il existe trois façons de s'en servir, et toutes utilisent le même code de con
 
 | Outil | Pour qui | Où |
 |---|---|---|
-| **Application web** | n'importe qui, sans rien installer | **https://lyrx2qlr.papetche.ch** (page statique `web/` ; Python tourne dans le navigateur) |
+| **Application web** | n'importe qui, sans rien installer | **https://lyrx2qlr.papetche.ch** (page statique `web/` ; Python tourne dans le navigateur ; bouton « Utiliser hors ligne » pour convertir sans internet ou l'installer comme une application) |
 | **Extension QGIS** | utilisateurs de QGIS | menu « Extensions › lyrx2qlr » |
 | **Ligne de commande** | traitements par lots, scripts | `lyrx2qlr dossier/ -o sorties/` |
 
@@ -60,7 +60,7 @@ puis ouvrir http://localhost:8765, déposer un ou plusieurs fichiers, et cliquer
 Elle est en ligne sur https://lyrx2qlr.papetche.ch. Pour la mettre ailleurs, il suffit de copier
 le contenu du dossier `web/` (après la commande de construction, sans `_essai/`) sur n'importe quel
 hébergement de pages statiques. L'image de partage `web/apercu.png` se refait avec
-`outils/image_partage.py`.
+`outils/image_partage.py`. L'usage hors ligne (`web/sw.js`) demande une adresse en HTTPS (ou `localhost`).
 
 ## Installer l'extension QGIS (QGIS 3.40 ou plus récent)
 

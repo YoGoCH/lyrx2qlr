@@ -12,6 +12,7 @@
 <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
 <link rel="icon" href="/icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="papetche.ch">
 <meta property="og:title" content="lyrx2qlr — ArcGIS Pro ⇄ QGIS">
@@ -25,7 +26,7 @@
 <meta property="og:locale:alternate" content="en_GB">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#fff6ec">
-<link rel="stylesheet" href="style.css?v=3a71298b">
+<link rel="stylesheet" href="style.css?v=1dfa5502">
 <!-- Style (papetche ou sobre) et mode (clair ou sombre) choisis la dernière fois, appliqués avant l'affichage pour éviter un clignotement -->
 <script>try { if (localStorage.getItem("lyrx2qlr-style") === "sobre") document.documentElement.dataset.style = "sobre"; var t = localStorage.getItem("lyrx2qlr-theme"); if (t === "dark" || t === "light") document.documentElement.dataset.theme = t; } catch (e) {}</script>
 </head>
@@ -33,10 +34,12 @@
 <main>
   <nav class="retour"><a href="https://papetche.ch/">← papetche.ch</a>
     <span class="reglages">
+      <button type="button" id="hors-ligne" class="secondaire" aria-pressed="false" hidden>Utiliser hors ligne</button>
       <button type="button" id="theme" class="secondaire" aria-pressed="false">☾ Sombre</button>
       <button type="button" id="style" class="secondaire" aria-pressed="false">Style : papetche</button>
       <button type="button" id="langue" class="secondaire" lang="en" data-i18n="bouton-langue" data-i18n-attr="title:bouton-langue-titre">English</button>
     </span></nav>
+  <p id="info-hors-ligne" class="invitation" role="status" hidden></p>
   <p id="invitation-langue" class="invitation" lang="en" hidden><a href="?lang=en">This page is also available in English →</a></p>
 
   <header class="entete">
@@ -276,6 +279,7 @@
 <script src="apparence.js?v=cb74db19"></script>
 <script src="schema.js?v=ff42c8fd"></script>
 <script src="nouveautes.js?v=bdd30557"></script>
+<script src="hors_ligne.js?v=81f4b954"></script>
 <script src="contribuer.js?v=975d58e4"></script>
 <script src="app.js?v=0ddd84d4"></script>
 </body>

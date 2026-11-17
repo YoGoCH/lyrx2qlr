@@ -4,7 +4,7 @@ qgisMinimumVersion=3.40
 qgisMaximumVersion=3.99
 description=Converts ArcGIS Pro layer symbology (.lyrx) to QGIS layers, and QGIS layers back to .lyrx.
 about=Imports an ArcGIS Pro layer file (.lyrx) into the project with its symbology and labels, exports the active layer to .lyrx, or converts a whole folder in both directions. Every conversion comes with a report that says clearly what could not be converted. The mappings between ArcGIS and QGIS are written in readable JSON catalogues. No external dependency. The same conversion core runs in the browser at https://lyrx2qlr.papetche.ch (files stay on your computer). Menus are in French for now.
-version=1.7.2
+version=1.8.0
 author=Yoann (papetche.ch)
 email=contact@example.invalid
 tracker=https://github.com/YoGoCH/lyrx2qlr/issues
@@ -26,3 +26,4 @@ changelog=1.0.0: first version (import .lyrx, export .lyrx, folder conversion, r
     1.7.0: the core can clean a file before it is shared (passwords, user names, servers, e-mail addresses, personal folders); plugin icon.
     1.7.1: the source code is public on GitHub (YoGoCH/lyrx2qlr).
     1.7.2: repository renamed YoGoCH/lyrx2qlr; the 75 anonymised real-world test symbologies are public.
+    1.8.0: no change to the plugin itself; the web page can now be used offline and installed as an app.

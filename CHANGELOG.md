@@ -1,5 +1,19 @@
 # Journal des versions
 
+## v1.8.0 — 17 novembre 2026
+
+La conversion ne change pas.
+
+- Page web : bouton « Utiliser hors ligne ». Il garde dans le navigateur la page, le cœur Python et
+  Pyodide (environ 15 Mo, `web/sw.js`), puis la conversion marche sans internet. Il propose ensuite
+  d'installer lyrx2qlr comme une application (`web/manifest.webmanifest`, icônes 192 et 512 px
+  faites par `outils/icones_web.py`). Rien n'est gardé sans le clic ; un lien « Retirer la copie hors
+  ligne » efface tout. Les fichiers de la page viennent du réseau d'abord : une nouvelle version
+  arrive dès qu'on est en ligne.
+- Onglet « Contribuer » plus grand et plus lisible.
+- Tests GitHub dans QGIS : une seule application QGIS pour toute la session. La fixture de
+  `test_qgis` la lâchait en fin de fichier, et `test_extension` plantait ensuite (erreur 139).
+
 ## v1.7.2 — 17 novembre 2026
 
 La conversion ne change pas.

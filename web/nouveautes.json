@@ -2,6 +2,17 @@
   "_doc": "Nouveautés affichées sur la page. Textes écrits à la main (la plus récente en tête) ; « ajouts » est calculé par outils/nouveautes.py.",
   "versions": [
     {
+      "version": "1.8.0",
+      "date": "2026-11-17",
+      "fr": "Bouton « Utiliser hors ligne » : la page se garde dans le navigateur et convertit sans internet ; elle peut aussi s'installer comme une application. Onglet « Contribuer » plus grand.",
+      "en": "“Use offline” button: the page is kept in your browser and converts without internet; it can also be installed as an app. Bigger “Contribute” tab.",
+      "ajouts": {
+        "modele": 0,
+        "catalogues": 0,
+        "regles": 0
+      }
+    },
+    {
       "version": "1.7.2",
       "date": "2026-11-17",
       "fr": "Le dépôt s'appelle maintenant lyrx2qlr sur GitHub, et les 75 symbologies réelles (anonymisées) qui servent aux tests y sont publiées.",

@@ -40,7 +40,18 @@ def construire_web() -> Path:
             z.write(f, Path("lyrx2qlr") / f.relative_to(COEUR))
     print(f"Application web : {cible.relative_to(RACINE)} ({cible.stat().st_size // 1024} Ko, version {version()})")
     estampiller_page()
+    estampiller_hors_ligne()
     return cible
+
+
+def estampiller_hors_ligne() -> None:
+    """Version dans web/sw.js : une nouvelle version remplace la copie hors ligne gardée par les navigateurs."""
+    sw = RACINE / "web" / "sw.js"
+    texte = sw.read_text(encoding="utf-8")
+    nouveau = re.sub(r'const VERSION = "[^"]*";', f'const VERSION = "{version()}";', texte, count=1)
+    if nouveau != texte:
+        sw.write_text(nouveau, encoding="utf-8", newline="\n")
+        print(f"Usage hors ligne : web/sw.js passe en version {version()}")
 
 
 def estampiller_page() -> None:
