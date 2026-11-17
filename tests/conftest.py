@@ -87,3 +87,21 @@ def _preparer(doc) -> dict:
 
 def comparer_documents(doc_a, doc_b) -> list[str]:
     return differences(_preparer(doc_a), _preparer(doc_b))
+
+
+_RESULTAT = {}
+
+
+def pytest_sessionfinish(session, exitstatus):
+    _RESULTAT["code"] = int(exitstatus)
+
+
+def pytest_unconfigure(config):
+    """Sur GitHub (variable CI), QGIS plante souvent quand Python s'arrête dans un conteneur (code 139),
+    après des tests réussis. Une fois QGIS chargé, on sort donc directement avec le vrai résultat des
+    tests, après le résumé de pytest."""
+    import os
+    if os.environ.get("CI") and "qgis.core" in sys.modules and "code" in _RESULTAT:
+        sys.stdout.flush()
+        sys.stderr.flush()
+        os._exit(_RESULTAT["code"])
