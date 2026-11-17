@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr">
+<html lang="fr" data-style="sobre">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,14 +25,14 @@
 <meta property="og:locale" content="fr_CH">
 <meta property="og:locale:alternate" content="en_GB">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#fff6ec">
-<link rel="stylesheet" href="style.css?v=1dfa5502">
+<meta name="theme-color" content="#f3f4f6">
+<link rel="stylesheet" href="style.css?v=1ce2120b">
 <!-- Style (papetche ou sobre) et mode (clair ou sombre) choisis la dernière fois, appliqués avant l'affichage pour éviter un clignotement -->
-<script>try { if (localStorage.getItem("lyrx2qlr-style") === "sobre") document.documentElement.dataset.style = "sobre"; var t = localStorage.getItem("lyrx2qlr-theme"); if (t === "dark" || t === "light") document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<script>try { if (localStorage.getItem("lyrx2qlr-style") === "papetche") delete document.documentElement.dataset.style; var t = localStorage.getItem("lyrx2qlr-theme"); if (t === "dark" || t === "light") document.documentElement.dataset.theme = t; } catch (e) {}</script>
 </head>
 <body>
 <main>
-  <nav class="retour"><a href="https://papetche.ch/">← papetche.ch</a>
+  <nav class="retour">
     <span class="reglages">
       <button type="button" id="hors-ligne" class="secondaire" aria-pressed="false" hidden>Utiliser hors ligne</button>
       <button type="button" id="theme" class="secondaire" aria-pressed="false">☾ Sombre</button>
@@ -82,7 +82,7 @@
 
   <div class="avis">
     <p data-i18n-html="avis-limite"><b>Pas toujours parfait.</b> Selon la complexité de la symbologie, le résultat peut demander une retouche. Le rapport dit ce qui n'a pas été converti, et l'outil s'améliore à chaque version (voir les <a href="#nouveautes">nouveautés</a>).</p>
-    <p data-i18n-html="avis-qgis"><b>Nouveau :</b> l'extension QGIS lyrx2qlr est publiée sur <a href="https://plugins.qgis.org/plugins/lyrx2qlr_qgis/">plugins.qgis.org</a>, pour importer un .lyrx ou exporter une couche sans quitter QGIS. Dans QGIS : « Extensions › Installer/Gérer les extensions », cochez « Afficher les extensions expérimentales » dans « Paramètres », puis cherchez « lyrx2qlr » (visible dès sa validation par l'équipe de QGIS).</p>
+    <p data-i18n-html="avis-qgis"><b>Nouveau :</b> l'extension QGIS, pour convertir sans quitter QGIS, est publiée sur <a href="https://plugins.qgis.org/plugins/lyrx2qlr_qgis/">plugins.qgis.org</a> (extensions expérimentales, visible dès sa validation par l'équipe de QGIS).</p>
   </div>
 
   <p id="etat" class="etat" role="status">Chargement de Python dans le navigateur…</p>
@@ -95,8 +95,17 @@
     <ul id="liste" class="liste"></ul>
   </section>
 
+  <section class="appel" aria-labelledby="titre-appel">
+    <div>
+      <h2 id="titre-appel" data-i18n="appel-titre">Un outil collaboratif</h2>
+      <p data-i18n="appel-texte">Chaque exemple réel améliore les règles de conversion. Un fichier mal converti, ou bien converti ? Envoyez-le : il est nettoyé dans votre navigateur, et rien ne part sans votre accord.</p>
+    </div>
+    <a class="bouton" href="#contribuer" data-i18n="appel-bouton">Contribuer un exemple</a>
+  </section>
+
   <section class="bloc" aria-labelledby="titre-logique">
     <h2 id="titre-logique" data-i18n="logique-titre">Comment ça marche</h2>
+    <div class="repli replie" id="logique-contenu">
     <p class="intro" data-i18n="logique-intro">Une logique simple, pensée pour durer et pour être relue par des géomaticiens.</p>
 
     <ul class="principes">
@@ -142,28 +151,29 @@
         <p id="explication-texte"></p>
       </div>
     </div>
-  </section>
-
-  <section class="bloc" aria-labelledby="titre-chiffres">
-    <h2 id="titre-chiffres" data-i18n="chiffres-titre">Construit et testé sur du concret</h2>
-    <div class="chiffres">
-      <div class="chiffre"><span class="nombre" data-chiffre="tests">339</span><span data-i18n="chiffre-tests">tests automatiques</span></div>
-      <div class="chiffre"><span class="nombre" data-chiffre="lyrx">263</span><span data-i18n-html="chiffre-lyrx">fichiers <b>.lyrx</b> réels</span></div>
-      <div class="chiffre"><span class="nombre" data-chiffre="qgis">249</span><span data-i18n-html="chiffre-qgis">fichiers <b>.qlr / .qml</b> réels</span></div>
-      <div class="chiffre"><span class="nombre" data-chiffre="regles">568</span><span data-i18n="chiffre-regles">règles dans les catalogues</span></div>
-      <div class="chiffre"><span class="nombre" data-chiffre="arcgis">1009</span><span data-i18n-html="chiffre-arcgis">fichiers produits <b>relus par ArcGIS Pro</b></span></div>
     </div>
-    <p class="petit"><span data-i18n="chiffres-texte">Chaque fichier fait l'aller-retour (ArcGIS → QGIS → ArcGIS, et l'inverse) et doit revenir
-      identique, sauf écart connu et annoncé. Fichiers venant d'Ordnance Survey, des portails de
-      données ouvertes du Royaume-Uni et du Québec, de projets publics et de couches de travail,
-      plus des centaines de symbologies inventées pour chercher les cas limites. Les .lyrx produits
-      sont ouverts, réenregistrés et dessinés par ArcGIS Pro 3.7, à côté de l'original.</span>
-      <span id="chiffres-date"></span></p>
+    <button type="button" class="secondaire bouton-repli" id="logique-bouton" aria-controls="logique-contenu" aria-expanded="false"
+            data-i18n="logique-suite">Lire la suite</button>
   </section>
 
-  <section class="bloc" id="nouveautes" aria-labelledby="titre-nouveautes">
+  <section class="bande-chiffres" aria-labelledby="titre-chiffres">
+    <h2 id="titre-chiffres" data-i18n="chiffres-titre">Construit et testé sur du concret</h2>
+    <ul class="chiffres">
+      <li><b data-chiffre="tests">339</b> <span data-i18n="chiffre-tests">tests automatiques</span></li>
+      <li><b data-chiffre="lyrx">263</b> <span data-i18n-html="chiffre-lyrx">fichiers <b>.lyrx</b> réels</span></li>
+      <li><b data-chiffre="qgis">249</b> <span data-i18n-html="chiffre-qgis">fichiers <b>.qlr / .qml</b> réels</span></li>
+      <li><b data-chiffre="regles">568</b> <span data-i18n="chiffre-regles">règles dans les catalogues</span></li>
+      <li><b data-chiffre="arcgis">1009</b> <span data-i18n-html="chiffre-arcgis">fichiers produits <b>relus par ArcGIS Pro</b></span></li>
+    </ul>
+    <details class="petit">
+      <summary data-i18n="chiffres-comment">Comment c'est vérifié</summary>
+      <p><span data-i18n="chiffres-texte">Chaque fichier fait l'aller-retour (ArcGIS → QGIS → ArcGIS, et l'inverse) et doit revenir identique, sauf écart connu et annoncé.</span>
+        <span id="chiffres-date"></span></p>
+    </details>
+  </section>
+
+  <section class="nouveautes" id="nouveautes" aria-labelledby="titre-nouveautes">
     <h2 id="titre-nouveautes" data-i18n="nouveautes-titre">Nouveautés</h2>
-    <p class="intro" data-i18n="nouveautes-intro">Ce qui change à chaque version, et ce qui a été ajouté au modèle neutre et aux catalogues de correspondances.</p>
     <ul class="versions">
       <li class="version a-venir">
         <div class="version-tete"><b data-i18n="a-venir">À venir</b></div>
@@ -275,10 +285,11 @@
 </aside>
 
 <script src="https://cdn.jsdelivr.net/npm/pyodide@0.29.4/pyodide.js"></script>
-<script src="langue.js?v=4c0e4b91"></script>
+<script src="langue.js?v=6f2e2cac"></script>
 <script src="apparence.js?v=cb74db19"></script>
 <script src="schema.js?v=ff42c8fd"></script>
-<script src="nouveautes.js?v=bdd30557"></script>
+<script src="nouveautes.js?v=ded720ff"></script>
+<script src="repli.js?v=366fb0bb"></script>
 <script src="hors_ligne.js?v=81f4b954"></script>
 <script src="contribuer.js?v=975d58e4"></script>
 <script src="app.js?v=0ddd84d4"></script>

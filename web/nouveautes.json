@@ -2,6 +2,17 @@
   "_doc": "Nouveautés affichées sur la page. Textes écrits à la main (la plus récente en tête) ; « ajouts » est calculé par outils/nouveautes.py.",
   "versions": [
     {
+      "version": "1.8.3",
+      "date": "2026-11-17",
+      "fr": "Page allégée : style sobre par défaut, « Comment ça marche » repliable, chiffres et nouveautés plus discrets, appel à contribuer plus visible.",
+      "en": "Lighter page: plain style by default, collapsible “How it works”, quieter figures and changes, clearer call to contribute.",
+      "ajouts": {
+        "modele": 0,
+        "catalogues": 0,
+        "regles": 0
+      }
+    },
+    {
       "version": "1.8.2",
       "date": "2026-11-17",
       "fr": "L'extension QGIS lyrx2qlr est publiée sur plugins.qgis.org : importer un .lyrx ou exporter une couche sans quitter QGIS.",

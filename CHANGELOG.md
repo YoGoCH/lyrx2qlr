@@ -1,5 +1,20 @@
 # Journal des versions
 
+## v1.8.3 — 17 novembre 2026
+
+Page web allégée. La conversion ne change pas.
+
+- Style sobre par défaut à la première visite ; le style papetche reste au choix (bouton « Style »)
+  et n'est retenu qu'après un clic.
+- Plus de rappel « ← papetche.ch » en haut : le pied de page dit « Un outil de papetche.ch ».
+- « Comment ça marche » est repliée au départ : ses premières lignes s'estompent, « Lire la suite »
+  la déplie (`web/repli.js`).
+- Nouvel encadré « Un outil collaboratif », juste au-dessus, avec le bouton « Contribuer un
+  exemple » ; l'onglet du bord droit reste.
+- « Construit et testé sur du concret » tient en une bande de chiffres ; l'explication passe sous
+  « Comment c'est vérifié ».
+- « Nouveautés » plus discrètes : sans cadres ni pastilles, deux versions visibles.
+
 ## v1.8.2 — 17 novembre 2026
 
 La conversion ne change pas.

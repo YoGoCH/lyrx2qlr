@@ -6,12 +6,12 @@
 // VERSION est mise à jour par outils/construire.py ; changer de version efface les anciennes copies.
 "use strict";
 
-const VERSION = "1.8.2";
+const VERSION = "1.8.3";
 const CACHE = `lyrx2qlr-${VERSION}`;
 const PYODIDE = "https://cdn.jsdelivr.net/npm/pyodide@0.29.4/";
 const PAGE = [
   "./", "index.html", "style.css", "langue.js", "apparence.js", "schema.js", "nouveautes.js",
-  "contribuer.js", "hors_ligne.js", "app.js", "passerelle.py", "lyrx2qlr.zip", "chiffres.json",
+  "contribuer.js", "hors_ligne.js", "repli.js", "app.js", "passerelle.py", "lyrx2qlr.zip", "chiffres.json",
   "nouveautes.json", "manifest.webmanifest", "icon.svg", "favicon.ico", "apple-touch-icon.png",
   "icone-192.png", "icone-512.png",
 ];

@@ -4,7 +4,7 @@
 
 (() => {
   const I = window.I18N;
-  const VISIBLES = 3;  // versions montrées d'emblée ; les autres sous « Versions précédentes »
+  const VISIBLES = 2;  // versions montrées d'emblée ; les autres sous « Versions précédentes »
   let versions = null;
 
   const nombre = n => Number(n).toLocaleString(I.locale);
@@ -30,8 +30,8 @@
     if (a.modele) pastilles.append(element("span", "ajout modele", I.t("ajout-modele", { n: nombre(a.modele) })));
     if (a.catalogues) pastilles.append(element("span", "ajout catalogues", I.t("ajout-catalogues", { n: nombre(a.catalogues) })));
     if (a.regles > 0) pastilles.append(element("span", "ajout regles", I.t("ajout-regles", { n: nombre(a.regles) })));
-    if (!pastilles.childElementCount) pastilles.append(element("span", "ajout aucun", I.t("ajout-aucun")));
-    li.append(pastilles);
+    // Sans ajout, rien : la liste reste discrète
+    if (pastilles.childElementCount) li.append(pastilles);
     return li;
   }
 
