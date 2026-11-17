@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>lyrx2qlr</title>
+<meta name="description" content="Conversion de symbologies ArcGIS Pro (.lyrx) ↔ QGIS (.qlr), dans le navigateur. Un seul code, des règles lisibles, et vos fichiers restent chez vous.">
+<link rel="canonical" href="https://lyrx2qlr.papetche.ch/">
+<link rel="alternate" hreflang="fr" href="https://lyrx2qlr.papetche.ch/">
+<link rel="alternate" hreflang="en" href="https://lyrx2qlr.papetche.ch/?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://lyrx2qlr.papetche.ch/">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="papetche.ch">
+<meta property="og:title" content="lyrx2qlr — ArcGIS Pro ⇄ QGIS">
+<meta property="og:description" content="Convertit les symbologies ArcGIS Pro (.lyrx) en couches QGIS (.qlr), et inversement. Gratuit, dans le navigateur, avec un rapport de ce qui n'a pas été converti.">
+<meta property="og:url" content="https://lyrx2qlr.papetche.ch/">
+<meta property="og:image" content="https://lyrx2qlr.papetche.ch/apercu.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="lyrx2qlr : symbologies ArcGIS Pro .lyrx ⇄ QGIS .qlr">
+<meta property="og:locale" content="fr_CH">
+<meta property="og:locale:alternate" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#fff6ec">
+<link rel="stylesheet" href="style.css?v=3a71298b">
+<!-- Style (papetche ou sobre) et mode (clair ou sombre) choisis la dernière fois, appliqués avant l'affichage pour éviter un clignotement -->
+<script>try { if (localStorage.getItem("lyrx2qlr-style") === "sobre") document.documentElement.dataset.style = "sobre"; var t = localStorage.getItem("lyrx2qlr-theme"); if (t === "dark" || t === "light") document.documentElement.dataset.theme = t; } catch (e) {}</script>
+</head>
+<body>
+<main>
+  <nav class="retour"><a href="https://papetche.ch/">← papetche.ch</a>
+    <span class="reglages">
+      <button type="button" id="theme" class="secondaire" aria-pressed="false">☾ Sombre</button>
+      <button type="button" id="style" class="secondaire" aria-pressed="false">Style : papetche</button>
+      <button type="button" id="langue" class="secondaire" lang="en" data-i18n="bouton-langue" data-i18n-attr="title:bouton-langue-titre">English</button>
+    </span></nav>
+  <p id="invitation-langue" class="invitation" lang="en" hidden><a href="?lang=en">This page is also available in English →</a></p>
+
+  <header class="entete">
+    <svg class="logo" viewBox="0 0 200 100" role="img" aria-labelledby="logo-titre">
+      <title id="logo-titre" data-i18n="logo-titre">Logo : deux flèches en cercle, de lyrx vers qlr et de qlr vers lyrx</title>
+      <defs>
+        <marker id="pointe-rose" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="3.2" markerHeight="3.2" orient="auto"><path d="M0 0 10 5 0 10z" class="rose"/></marker>
+        <marker id="pointe-cyan" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="3.2" markerHeight="3.2" orient="auto"><path d="M0 0 10 5 0 10z" class="cyan"/></marker>
+      </defs>
+      <path d="M72.43 45.14A28 28 0 0 1 125.38 38.17" class="arc arc-rose" marker-end="url(#pointe-rose)"/>
+      <path d="M127.57 54.86A28 28 0 0 1 74.62 61.83" class="arc arc-cyan" marker-end="url(#pointe-cyan)"/>
+      <text x="62" y="57" text-anchor="end" class="logo-mot">lyrx</text>
+      <text x="138" y="57" class="logo-mot">qlr</text>
+    </svg>
+    <div>
+      <h1>lyrx2qlr</h1>
+      <p class="sous-titre" data-i18n-html="sous-titre">Symbologies ArcGIS Pro <b>.lyrx</b> ⇄ QGIS <b>.qlr</b>, dans les deux sens.</p>
+    </div>
+  </header>
+
+  <aside class="preface">
+    <p data-i18n-html="preface-1">Dans nos métiers, l'<strong>interopérabilité</strong> ne devrait pas être un argument de vente,
+      encore moins une arme pour garder ses clients. Ingénieurs, géomaticiens, spécialistes de
+      l'environnement : nous devons communiquer et partager notre travail. Passer une carte d'un
+      logiciel à l'autre sans en perdre le sens, c'est ce qui rend cette collaboration possible.</p>
+    <p data-i18n="preface-2">lyrx2qlr est gratuit, et il dit honnêtement ce qu'il n'a pas su convertir.</p>
+  </aside>
+
+  <section id="depot" class="depot" tabindex="0" aria-label="Déposer des fichiers" data-i18n-attr="aria-label:depot-zone">
+    <p class="grand" data-i18n="depot-grand">Déposez vos fichiers ici</p>
+    <p><span data-i18n="depot-ou">ou </span><label class="lien"><span data-i18n="depot-choisir">choisissez-les</span><input id="choix" type="file" multiple accept=".lyrx,.qlr,.qml" hidden></label></p>
+    <p class="petit" data-i18n-html="depot-formats">.lyrx → .qlr &nbsp;·&nbsp; .qlr ou .qml → .lyrx &nbsp;·&nbsp; plusieurs fichiers à la fois</p>
+  </section>
+
+  <label class="coche">
+    <input id="garder-source" type="checkbox" checked>
+    <span><strong data-i18n="source-titre">Garder la source de données</strong>
+    <span class="petit" data-i18n="source-aide">Le fichier produit pointe sur les mêmes données (fichier, GeoPackage ou base Oracle, PostgreSQL, SQL Server), sans mot de passe : le logiciel le demandera. Décochée, seul le nom du jeu de données reste, à reconnecter.</span></span>
+  </label>
+
+  <div class="avis">
+    <p data-i18n-html="avis-limite"><b>Pas toujours parfait.</b> Selon la complexité de la symbologie, le résultat peut demander une retouche. Le rapport dit ce qui n'a pas été converti, et l'outil s'améliore à chaque version (voir les <a href="#nouveautes">nouveautés</a>).</p>
+    <p data-i18n-html="avis-qgis"><b>Bientôt :</b> l'extension QGIS dans le gestionnaire d'extensions de QGIS, pour importer un .lyrx ou exporter une couche sans quitter QGIS.</p>
+  </div>
+
+  <p id="etat" class="etat" role="status">Chargement de Python dans le navigateur…</p>
+
+  <section id="resultats" hidden>
+    <div class="barre">
+      <h2 data-i18n="resultats">Résultats</h2>
+      <button id="tout" type="button" data-i18n="tout">Tout télécharger (.zip)</button>
+    </div>
+    <ul id="liste" class="liste"></ul>
+  </section>
+
+  <section class="bloc" aria-labelledby="titre-logique">
+    <h2 id="titre-logique" data-i18n="logique-titre">Comment ça marche</h2>
+    <p class="intro" data-i18n="logique-intro">Une logique simple, pensée pour durer et pour être relue par des géomaticiens.</p>
+
+    <ul class="principes">
+      <li class="principe"><span class="pastille rose">1</span><span data-i18n-html="principe-1"><b>Un seul code.</b> Cette page, la ligne de commande et l'extension QGIS utilisent le même cœur : mêmes règles, mêmes résultats.</span></li>
+      <li class="principe"><span class="pastille cyan">2</span><span data-i18n-html="principe-2"><b>Des règles, pas du code.</b> Les correspondances entre ArcGIS et QGIS sont écrites dans des catalogues lisibles. Améliorer la conversion, c'est ajouter une ligne.</span></li>
+      <li class="principe"><span class="pastille rouille">3</span><span data-i18n-html="principe-3"><b>Chez vous.</b> Python tourne dans votre navigateur. Vos fichiers ne sont envoyés nulle part, sauf si vous choisissez de contribuer.</span></li>
+    </ul>
+
+    <div class="schema" id="schema">
+      <div class="schema-barre">
+        <span class="ordi" data-i18n="ordi">💻 Votre ordinateur — rien ne sort d'ici</span>
+        <span class="commandes">
+          <button type="button" id="sens" class="secondaire" aria-pressed="false" data-i18n="inverser">⇄ Inverser le sens</button>
+          <button type="button" id="lecture" class="secondaire" aria-pressed="true">⏸ Pause</button>
+        </span>
+      </div>
+
+      <div class="flux">
+        <button type="button" class="etape fichier" data-etape="source"><span class="ext" data-sens-texte="source">.lyrx</span><span class="sous" data-sens-texte="source-app">ArcGIS Pro</span></button>
+        <span class="fleche" aria-hidden="true">→</span>
+        <button type="button" class="etape" data-etape="lire"><span class="nom">Reader</span><span class="sous" data-sens-texte="lecteur">JSON « CIM »</span></button>
+        <span class="fleche" aria-hidden="true">→</span>
+        <button type="button" class="etape neutre" data-etape="modele"><span class="nom" data-i18n="modele-nom">Modèle neutre</span><span class="sous" data-i18n="modele-sous">ni ArcGIS, ni QGIS</span></button>
+        <span class="fleche" aria-hidden="true">→</span>
+        <button type="button" class="etape" data-etape="ecrire"><span class="nom">Writer</span><span class="sous" data-sens-texte="ecrivain">XML QGIS</span></button>
+        <span class="fleche" aria-hidden="true">→</span>
+        <button type="button" class="etape fichier" data-etape="cible"><span class="ext" data-sens-texte="cible">.qlr</span><span class="sous" data-sens-texte="cible-app">QGIS</span></button>
+
+        <span class="lien-v lien-lire" aria-hidden="true" data-i18n="consulte">↑ consulte</span>
+        <span class="lien-v lien-ecrire" aria-hidden="true" data-i18n="consulte">↑ consulte</span>
+        <span class="lien-v lien-rapport" aria-hidden="true">+</span>
+
+        <button type="button" class="etape catalogues" data-etape="catalogues">
+          <span class="nom" data-i18n="catalogues-nom">Catalogues de règles</span>
+          <span class="regle" id="regle" aria-live="off"><code>Round</code> ⇄ <code>round</code></span>
+          <span class="sous"><span data-chiffre="regles">568</span> <span data-i18n="regles-dans">règles dans</span> <span data-chiffre="catalogues">13</span> <span data-i18n="fichiers-json">fichiers JSON</span></span>
+        </button>
+        <button type="button" class="etape rapport" data-etape="rapport"><span class="nom">Rapport</span><span class="sous" data-i18n="rapport-sous">ce qui n'est pas converti</span></button>
+      </div>
+
+      <div class="explication" id="explication" aria-live="polite">
+        <b id="explication-titre"></b>
+        <p id="explication-texte"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloc" aria-labelledby="titre-chiffres">
+    <h2 id="titre-chiffres" data-i18n="chiffres-titre">Construit et testé sur du concret</h2>
+    <div class="chiffres">
+      <div class="chiffre"><span class="nombre" data-chiffre="tests">276</span><span data-i18n="chiffre-tests">tests automatiques</span></div>
+      <div class="chiffre"><span class="nombre" data-chiffre="lyrx">263</span><span data-i18n-html="chiffre-lyrx">fichiers <b>.lyrx</b> réels</span></div>
+      <div class="chiffre"><span class="nombre" data-chiffre="qgis">249</span><span data-i18n-html="chiffre-qgis">fichiers <b>.qlr / .qml</b> réels</span></div>
+      <div class="chiffre"><span class="nombre" data-chiffre="regles">568</span><span data-i18n="chiffre-regles">règles dans les catalogues</span></div>
+      <div class="chiffre"><span class="nombre" data-chiffre="arcgis">1009</span><span data-i18n-html="chiffre-arcgis">fichiers produits <b>relus par ArcGIS Pro</b></span></div>
+    </div>
+    <p class="petit"><span data-i18n="chiffres-texte">Chaque fichier fait l'aller-retour (ArcGIS → QGIS → ArcGIS, et l'inverse) et doit revenir
+      identique, sauf écart connu et annoncé. Fichiers venant d'Ordnance Survey, des portails de
+      données ouvertes du Royaume-Uni et du Québec, de projets publics et de couches de travail,
+      plus des centaines de symbologies inventées pour chercher les cas limites. Les .lyrx produits
+      sont ouverts, réenregistrés et dessinés par ArcGIS Pro 3.7, à côté de l'original.</span>
+      <span id="chiffres-date"></span></p>
+  </section>
+
+  <section class="bloc" id="nouveautes" aria-labelledby="titre-nouveautes">
+    <h2 id="titre-nouveautes" data-i18n="nouveautes-titre">Nouveautés</h2>
+    <p class="intro" data-i18n="nouveautes-intro">Ce qui change à chaque version, et ce qui a été ajouté au modèle neutre et aux catalogues de correspondances.</p>
+    <ul class="versions">
+      <li class="version a-venir">
+        <div class="version-tete"><b data-i18n="a-venir">À venir</b></div>
+        <p data-i18n="a-venir-texte">L'extension QGIS publiée dans le gestionnaire d'extensions de QGIS, et de nouvelles correspondances à chaque version.</p>
+      </li>
+    </ul>
+    <ul id="versions" class="versions"></ul>
+    <details id="versions-anciennes" class="versions-anciennes" hidden>
+      <summary data-i18n="versions-anciennes">Versions précédentes</summary>
+      <ul class="versions"></ul>
+    </details>
+  </section>
+
+  <footer>
+    <p data-i18n="pied-1">Vos fichiers ne quittent pas votre ordinateur : la conversion se fait dans cet onglet. Seul le bouton « Envoyer » de l'outil « Contribuer » transmet des fichiers, nettoyés et après un aperçu.
+      Les connexions aux bases de données d'entreprise ne sont jamais recopiées.</p>
+    <p id="version" class="petit"></p>
+    <p class="petit" data-i18n-html="pied-auteur">Yoann · géomaticien · <a href="https://papetche.ch/">papetche.ch</a> · code sous licence GPL-3.0</p>
+  </footer>
+</main>
+
+<!-- Outil « Contribuer » : panneau latéral, ouvert par l'onglet du bord droit, par #contribuer ou
+     par le bouton « Contribuer » d'un résultat. Rien ne part sans le bouton « Envoyer ». -->
+<button type="button" id="onglet-contribuer" class="onglet-contribuer" aria-controls="panneau-contribuer" aria-expanded="false"
+        data-i18n-attr="title:contrib-onglet-titre"><span data-i18n="contrib-onglet">Contribuer</span></button>
+<div id="voile-contribuer" class="voile" hidden></div>
+<aside id="panneau-contribuer" class="panneau" role="dialog" aria-modal="true" aria-labelledby="contrib-titre" hidden>
+  <div class="panneau-tete">
+    <h2 id="contrib-titre" data-i18n="contrib-titre">Contribuer</h2>
+    <button type="button" id="fermer-contribuer" class="secondaire" data-i18n-attr="aria-label:contrib-fermer;title:contrib-fermer">✕</button>
+  </div>
+  <p class="petit" data-i18n="contrib-intro">Aidez à entraîner lyrx2qlr : un exemple réel, qu'il soit bien ou mal converti, devient un cas de test et améliore les catalogues de correspondances.</p>
+
+  <form id="form-contribuer" novalidate>
+    <fieldset class="types">
+      <legend data-i18n="contrib-type">1. Ce que vous envoyez</legend>
+      <label class="type"><input type="radio" name="type" value="a_corriger"><span><b data-i18n="type-a_corriger">Conversion à corriger</b><span class="petit" data-i18n="type-a_corriger-aide">Le résultat est faux ou incomplet : il servira d'entraînement correctif.</span></span></label>
+      <label class="type"><input type="radio" name="type" value="bon"><span><b data-i18n="type-bon">Bonne conversion</b><span class="petit" data-i18n="type-bon-aide">Le résultat est juste : il sera gardé comme exemple de référence.</span></span></label>
+      <label class="type"><input type="radio" name="type" value="paire"><span><b data-i18n="type-paire">Paire de référence</b><span class="petit" data-i18n="type-paire-aide">Le même rendu fait à la main dans ArcGIS Pro (.lyrx) et dans QGIS (.qlr) : le modèle à atteindre.</span></span></label>
+      <label class="type"><input type="radio" name="type" value="remarque"><span><b data-i18n="type-remarque">Idée ou remarque</b><span class="petit" data-i18n="type-remarque-aide">Une correspondance manquante, un cas à prendre en charge, un avis.</span></span></label>
+    </fieldset>
+
+    <fieldset>
+      <legend data-i18n="contrib-fichiers">2. Vos fichiers</legend>
+      <div class="fichiers-contrib">
+        <label class="fichier-contrib"><span class="ext">.lyrx</span><span class="nom-fichier" id="nom-lyrx" data-i18n="aucun-fichier-choisi">aucun fichier</span>
+          <input id="contrib-lyrx" type="file" accept=".lyrx" class="cache"></label>
+        <label class="fichier-contrib"><span class="ext">.qlr / .qml</span><span class="nom-fichier" id="nom-qgis" data-i18n="aucun-fichier-choisi">aucun fichier</span>
+          <input id="contrib-qgis" type="file" accept=".qlr,.qml" class="cache"></label>
+      </div>
+      <div id="choix-depart" class="depart" hidden>
+        <span data-i18n="contrib-depart">Fichier de départ :</span>
+        <label><input type="radio" name="depart" value="lyrx" checked> .lyrx <span class="petit" data-i18n="vers-qgis">(vers QGIS)</span></label>
+        <label><input type="radio" name="depart" value="qgis"> .qlr <span class="petit" data-i18n="vers-arcgis">(vers ArcGIS)</span></label>
+      </div>
+      <p class="petit" data-i18n="contrib-fichiers-aide">Un seul fichier suffit. Avec les deux, l'autre est le résultat attendu.</p>
+    </fieldset>
+
+    <fieldset id="bloc-problemes" hidden>
+      <legend data-i18n="contrib-problemes">3. Ce qui ne va pas</legend>
+      <div class="puces">
+        <label><input type="checkbox" name="probleme" value="couleurs"><span data-i18n="pb-couleurs">Couleurs</span></label>
+        <label><input type="checkbox" name="probleme" value="epaisseurs"><span data-i18n="pb-epaisseurs">Épaisseurs, tailles</span></label>
+        <label><input type="checkbox" name="probleme" value="symboles"><span data-i18n="pb-symboles">Symboles, marqueurs</span></label>
+        <label><input type="checkbox" name="probleme" value="remplissages"><span data-i18n="pb-remplissages">Remplissages, hachures</span></label>
+        <label><input type="checkbox" name="probleme" value="etiquettes"><span data-i18n="pb-etiquettes">Étiquettes</span></label>
+        <label><input type="checkbox" name="probleme" value="echelles"><span data-i18n="pb-echelles">Échelles de visibilité</span></label>
+        <label><input type="checkbox" name="probleme" value="classes"><span data-i18n="pb-classes">Classes, catégories</span></label>
+        <label><input type="checkbox" name="probleme" value="expressions"><span data-i18n="pb-expressions">Expressions, filtres</span></label>
+        <label><input type="checkbox" name="probleme" value="source"><span data-i18n="pb-source">Source de données</span></label>
+        <label><input type="checkbox" name="probleme" value="ouverture"><span data-i18n="pb-ouverture">Ne s'ouvre pas</span></label>
+        <label><input type="checkbox" name="probleme" value="autre"><span data-i18n="pb-autre">Autre</span></label>
+      </div>
+    </fieldset>
+
+    <label class="champ"><span data-i18n="contrib-commentaire">Commentaire</span>
+      <textarea id="contrib-commentaire" rows="4" maxlength="4000" data-i18n-attr="placeholder:contrib-commentaire-exemple" placeholder="Par exemple : les étiquettes sont décalées vers le haut, les hachures sont trop serrées…"></textarea></label>
+
+    <div class="champs-ligne">
+      <label class="champ"><span data-i18n="contrib-arcgis">Version d'ArcGIS Pro</span><input id="contrib-arcgis" maxlength="40" placeholder="3.4" autocomplete="off"></label>
+      <label class="champ"><span data-i18n="contrib-qgisv">Version de QGIS</span><input id="contrib-qgisv" maxlength="40" placeholder="3.40" autocomplete="off"></label>
+    </div>
+
+    <fieldset>
+      <legend data-i18n="contrib-licence">Utilisation</legend>
+      <label class="coche-petite"><input type="radio" name="licence" value="tests" checked><span data-i18n="licence-tests">Pour les tests de lyrx2qlr seulement, jamais publié</span></label>
+      <label class="coche-petite"><input type="radio" name="licence" value="corpus"><span data-i18n="licence-corpus">Peut rejoindre le corpus public d'exemples (licence CC-BY 4.0)</span></label>
+    </fieldset>
+
+    <label class="champ"><span data-i18n="contrib-contact">E-mail, facultatif (pour vous recontacter)</span>
+      <input id="contrib-contact" type="email" maxlength="200" autocomplete="email" inputmode="email"></label>
+    <label class="piege" aria-hidden="true">Site web<input id="contrib-site" tabindex="-1" autocomplete="off"></label>
+
+    <button type="submit" id="preparer-contribution" data-i18n="contrib-preparer">Préparer l'aperçu</button>
+  </form>
+
+  <div id="apercu-contribution" class="apercu" hidden>
+    <h3 data-i18n="apercu-titre">Ce qui partira</h3>
+    <ul id="apercu-liste" class="apercu-liste"></ul>
+    <p id="apercu-conversion" class="petit"></p>
+    <label class="coche-petite"><input type="checkbox" id="contrib-accord"><span data-i18n="contrib-accord">J'accepte d'envoyer ces fichiers nettoyés à lyrx2qlr, pour l'usage choisi ci-dessus. Je peux en demander la suppression.</span></label>
+    <div class="boutons">
+      <button type="button" id="envoyer-contribution" disabled data-i18n="contrib-envoyer">Envoyer</button>
+      <button type="button" id="telecharger-contribution" class="secondaire" data-i18n="contrib-telecharger">Télécharger le colis</button>
+    </div>
+  </div>
+  <p id="etat-contribution" class="etat-contrib" role="status" aria-live="polite"></p>
+  <p class="petit" data-i18n="contrib-confidentialite">Avant l'aperçu, votre navigateur retire des fichiers et du commentaire les mots de passe, jetons, noms d'utilisateur, de serveurs et de bases, adresses e-mail et dossiers personnels. Les colis sont gardés hors du site, au plus 12 mois s'ils ne sont pas retenus.</p>
+</aside>
+
+<script src="https://cdn.jsdelivr.net/npm/pyodide@0.29.4/pyodide.js"></script>
+<script src="langue.js?v=88248e4e"></script>
+<script src="apparence.js?v=cb74db19"></script>
+<script src="schema.js?v=ff42c8fd"></script>
+<script src="nouveautes.js?v=bdd30557"></script>
+<script src="contribuer.js?v=975d58e4"></script>
+<script src="app.js?v=0ddd84d4"></script>
+</body>
+</html>

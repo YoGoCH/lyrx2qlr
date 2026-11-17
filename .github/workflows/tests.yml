@@ -1,0 +1,44 @@
+name: Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  python:
+    name: Cœur en Python pur (${{ matrix.python }})
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: pip install -e ".[dev]"
+      - run: lyrx2qlr --verifier-catalogues
+      - run: pytest -q
+      - name: Préparer l'application web et l'extension
+        run: python outils/construire.py tout
+      - uses: actions/upload-artifact@v4
+        if: matrix.python == '3.12'
+        with:
+          name: lyrx2qlr-construit
+          path: |
+            web/
+            dist/*.zip
+
+  qgis:
+    name: Vérification dans QGIS
+    runs-on: ubuntu-latest
+    container: qgis/qgis:release-3_40
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m pip install --break-system-packages pytest || python3 -m pip install pytest
+      - name: Tests dans QGIS (chargement, réexport, extension)
+        env:
+          QT_QPA_PLATFORM: offscreen
+          PYTHONPATH: src
+        run: python3 -m pytest -q tests/test_qgis.py tests/test_extension.py

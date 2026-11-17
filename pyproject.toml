@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lyrx2qlr"
+dynamic = ["version"]
+description = "Conversion de symbologies entre ArcGIS Pro (.lyrx) et QGIS (.qlr), dans les deux sens, pilotée par des catalogues JSON."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "GPL-3.0-or-later"
+license-files = ["LICENSE"]
+authors = [{ name = "Yoann (papetche.ch)" }]
+dependencies = []  # le cœur n'utilise que la bibliothèque standard
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+lyrx2qlr = "lyrx2qlr.__main__:principal"
+
+[tool.setuptools.dynamic]
+version = { attr = "lyrx2qlr.__version__" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+lyrx2qlr = ["catalogues/*.json", "modeles/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = ["ignore:QgsField constructor is deprecated:DeprecationWarning"]

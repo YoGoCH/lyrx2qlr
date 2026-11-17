@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lyrx2qlr.papetche.ch/sitemap.xml

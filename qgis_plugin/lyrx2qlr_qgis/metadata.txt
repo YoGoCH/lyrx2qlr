@@ -1,0 +1,26 @@
+[general]
+name=lyrx2qlr
+qgisMinimumVersion=3.40
+qgisMaximumVersion=3.99
+description=Converts ArcGIS Pro layer symbology (.lyrx) to QGIS layers, and QGIS layers back to .lyrx.
+about=Imports an ArcGIS Pro layer file (.lyrx) into the project with its symbology and labels, exports the active layer to .lyrx, or converts a whole folder in both directions. Every conversion comes with a report that says clearly what could not be converted. The mappings between ArcGIS and QGIS are written in readable JSON catalogues. No external dependency. The same conversion core runs in the browser at https://lyrx2qlr.papetche.ch (files stay on your computer). Menus are in French for now.
+version=1.7.0
+author=Yoann (papetche.ch)
+email=contact@example.invalid
+tracker=https://github.com/YoGoCH/lyrx2qlr_code_public/issues
+repository=https://github.com/YoGoCH/lyrx2qlr_code_public
+homepage=https://lyrx2qlr.papetche.ch/?lang=en
+icon=icon.png
+category=Layers
+tags=lyrx,qlr,qml,arcgis,arcgis pro,esri,symbology,style,labels,conversion,interoperability
+experimental=True
+deprecated=False
+hasProcessingProvider=no
+changelog=1.0.0: first version (import .lyrx, export .lyrx, folder conversion, report).
+    1.2.0: real-world symbology converted better (simple rules, label positions, marker placements, embedded images).
+    1.3.0: conversions checked in ArcGIS Pro 3.7 (over 1,000 files re-read, drawings compared); ESRI fonts replaced by measured shapes; fixes for polygon labels and marker outlines.
+    1.4.0: the whole real-world corpus drawn by ArcGIS Pro and QGIS on generated data; fixes for sizes in map units, outline and hatch offsets, NULL category and recoloured images.
+    1.5.0: "Keep the data source" option (plugin menu, on by default): GeoPackage and Oracle, PostgreSQL, SQL Server databases reopen directly after conversion, without password; saved QGIS authentication reused.
+    1.5.1: old .lyrx files without DBCLIENT recognised (engine read from INSTANCE); on import, the report explains a missing Oracle provider ("Invalid data provider") or an invalid layer.
+    1.6.0: on import, the ST_GEOMETRY option is no longer offered when the database provider is missing.
+    1.7.0: the core can clean a file before it is shared (passwords, user names, servers, e-mail addresses, personal folders); plugin icon.

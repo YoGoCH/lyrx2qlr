@@ -1,0 +1,186 @@
+{
+  "_doc": [
+    "Correspondances entre les couches de symboles ArcGIS Pro (CIM, dans le .lyrx) et QGIS (dans le .qlr).",
+    "Chaque entrée de « couches » décrit UN type de couche de symbole, avec un nom neutre (« pivot »).",
+    "  lyrx.type      : le type CIM (ex. CIMSolidFill) ; lyrx.si : conditions facultatives sur l'objet CIM.",
+    "  lyrx.modele    : objet CIM de départ utilisé à l'écriture du .lyrx (complété par les propriétés).",
+    "  qgis.classe    : la classe de couche de symbole QGIS (ex. SimpleFill) ; qgis.si : conditions sur ses propriétés.",
+    "  qgis.fixe      : propriétés QGIS toujours écrites telles quelles.",
+    "  sous_symbole   : le symbole contenu (ex. la ligne d'une hachure) : chemin CIM et genre QGIS.",
+    "  famille        : remplissage, trait ou marqueur (où QGIS accepte la couche : un marqueur doit être placé dans une ligne ou une surface).",
+    "  sens           : « lecture_qgis » ou « lecture_lyrx » = entrée utilisée seulement en lecture de ce format.",
+    "  avertissement  : message ajouté au rapport chaque fois que l'entrée est utilisée.",
+    "Chaque propriété : nom (neutre), type (voir docs/catalogues.md), lyrx (chemin dans l'objet CIM), qgis (clé QGIS),",
+    "  qgis_unite (clé de l'unité QGIS), defaut (valeur neutre si absente), qgis_si / lyrx_si (conditions de lecture),",
+    "  qgis_si_present / qgis_si_absent (propriétés QGIS ajoutées à l'écriture), lecture_seule (« qgis » ou « lyrx »).",
+    "Unités neutres : longueurs en points typographiques (pt), couleurs [R,V,B,A] de 0 à 255, angles en degrés antihoraires."
+  ],
+  "genres": [
+    {"pivot": "surface", "lyrx": "CIMPolygonSymbol", "qgis": "fill", "qgis_vide": {"classe": "SimpleFill", "props": {"style": "no", "outline_style": "no"}}},
+    {"pivot": "ligne", "lyrx": "CIMLineSymbol", "qgis": "line", "qgis_vide": {"classe": "SimpleLine", "props": {"line_style": "no"}}},
+    {"pivot": "point", "lyrx": "CIMPointSymbol", "qgis": "marker", "qgis_vide": {"classe": "SimpleMarker", "props": {"color": "0,0,0,0", "outline_style": "no"}}}
+  ],
+  "couches": [
+    {
+      "pivot": "remplissage_uni", "famille": "remplissage",
+      "lyrx": {"type": "CIMSolidFill", "modele": {"type": "CIMSolidFill", "enable": true}},
+      "qgis": {"classe": "SimpleFill", "si": {"style": "solid"}, "fixe": {"style": "solid", "outline_style": "no", "outline_width": "0", "outline_color": "0,0,0,0"}},
+      "proprietes": [
+        {"nom": "couleur", "type": "couleur", "lyrx": "color", "qgis": "color", "defaut": [130, 130, 130, 255]},
+        {"nom": "decalage_x", "type": "longueur", "lyrx": "effects[type=CIMGeometricEffectMove].offsetX", "qgis": "offset", "qgis_composante": 0, "qgis_unite": "offset_unit"},
+        {"nom": "decalage_y", "type": "longueur", "lyrx": "effects[type=CIMGeometricEffectMove].offsetY", "qgis": "offset", "qgis_composante": 1, "qgis_facteur": -1, "qgis_unite": "offset_unit"}
+      ]
+    },
+    {
+      "pivot": "remplissage_uni", "famille": "remplissage",
+      "sens": "lecture_qgis",
+      "qgis": {"classe": "SimpleFill", "si": {"style": ["horizontal", "vertical", "cross", "b_diagonal", "f_diagonal", "diagonal_x", "dense1", "dense2", "dense3", "dense4", "dense5", "dense6", "dense7"]}},
+      "avertissement": "Motif de brosse QGIS « {style} » remplacé par un aplat de couleur (préférer « Remplissage par motif de lignes » dans QGIS).",
+      "proprietes": [
+        {"nom": "couleur", "type": "couleur", "qgis": "color", "defaut": [130, 130, 130, 255]}
+      ]
+    },
+    {
+      "pivot": null,
+      "sens": "lecture_qgis",
+      "qgis": {"classe": "SimpleFill", "si": {"style": "no"}},
+      "proprietes": []
+    },
+    {
+      "pivot": "trait_uni", "famille": "trait",
+      "lyrx": {"type": "CIMSolidStroke", "modele": {"type": "CIMSolidStroke", "enable": true, "capStyle": "Round", "joinStyle": "Round", "lineStyle3D": "Strip", "miterLimit": 10}},
+      "qgis": {"classe": "SimpleLine", "fixe": {"line_style": "solid"}},
+      "proprietes": [
+        {"nom": "couleur", "type": "couleur", "lyrx": "color", "qgis": "line_color", "defaut": [0, 0, 0, 255]},
+        {"nom": "largeur", "type": "longueur", "lyrx": "width", "qgis": "line_width", "qgis_unite": "line_width_unit", "defaut": 1},
+        {"nom": "extremite", "type": "liste", "liste": "extremites_ligne", "lyrx": "capStyle", "qgis": "capstyle", "defaut": "rond"},
+        {"nom": "jointure", "type": "liste", "liste": "jointures_ligne", "lyrx": "joinStyle", "qgis": "joinstyle", "defaut": "rond"},
+        {"nom": "coupe_debut", "type": "longueur", "lyrx": "effects[type=CIMGeometricEffectCut].beginCut", "qgis": "trim_distance_start", "qgis_unite": "trim_distance_start_unit"},
+        {"nom": "coupe_fin", "type": "longueur", "lyrx": "effects[type=CIMGeometricEffectCut].endCut", "qgis": "trim_distance_end", "qgis_unite": "trim_distance_end_unit"},
+        {"nom": "tirets", "type": "longueurs", "lyrx": "effects[type=CIMGeometricEffectDashes].dashTemplate", "qgis": "customdash", "qgis_unite": "customdash_unit", "qgis_si": {"use_custom_dash": "1"}, "qgis_si_present": {"use_custom_dash": "1"}},
+        {"nom": "tirets", "type": "tirets_qt", "liste": "styles_trait_qt", "qgis": "line_style", "lecture_seule": "qgis", "qgis_si": {"use_custom_dash": "!1"}},
+        {"nom": "decalage_tirets", "type": "longueur", "lyrx": "effects[type=CIMGeometricEffectDashes].offsetAlongLine", "lyrx_si": {"effects[type=CIMGeometricEffectDashes].lineDashEnding": ["NoConstraint", "Custom", null]}, "qgis": "dash_pattern_offset", "qgis_unite": "dash_pattern_offset_unit"},
+        {"nom": "decalage", "type": "longueur", "lyrx": "effects[type=CIMGeometricEffectOffset].offset", "qgis": "offset", "qgis_unite": "offset_unit", "zero_est_absent": true,
+         "qgis_facteur_selon_genre": {"surface": -1}, "_doc": "Contour d'une surface : décalage négatif vers l'intérieur dans ArcGIS, vers l'extérieur dans QGIS (quel que soit le sens du polygone ; lot 2.1)."},
+        {"nom": "deplacement_x", "type": "longueur", "sens": "vers_lyrx", "avertissement_qgis": "Trait déplacé (effet « Déplacer » d’ArcGIS) : QGIS ne sait pas déplacer un trait seul, il est dessiné à sa place d’origine.", "lyrx": "effects[type=CIMGeometricEffectMove].offsetX", "qgis": "_deplacement", "qgis_composante": 0, "qgis_unite": "_deplacement_unit"},
+        {"nom": "deplacement_y", "type": "longueur", "sens": "vers_lyrx", "lyrx": "effects[type=CIMGeometricEffectMove].offsetY", "qgis": "_deplacement", "qgis_composante": 1, "qgis_facteur": -1, "qgis_unite": "_deplacement_unit"}
+      ]
+    },
+    {
+      "pivot": "hachures", "famille": "remplissage",
+      "lyrx": {"type": "CIMHatchFill", "modele": {"type": "CIMHatchFill", "enable": true}},
+      "qgis": {"classe": "LinePatternFill", "fixe": {"coordinate_reference": "feature"}},
+      "sous_symbole": {"lyrx": "lineSymbol", "genre": "ligne", "qgis_decalage_dans": "separation"},
+      "proprietes": [
+        {"nom": "angle", "type": "angle", "lyrx": "rotation", "qgis": "angle", "defaut": 0},
+        {"nom": "separation", "type": "longueur", "lyrx": "separation", "qgis": "distance", "qgis_unite": "distance_unit", "defaut": 5},
+        {"nom": "decalage", "type": "longueur", "lyrx": "offsetY", "qgis": "offset", "qgis_unite": "offset_unit",
+         "lyrx_perpendiculaire": {"x": "offsetX", "angle": "rotation", "angle_pivot": "angle"},
+         "qgis_signe_selon_angle": {"angle": "angle", "axes": {"0": 1, "90": 1, "180": -1, "270": -1}, "quadrants": [-1, 1, -1, 1]},
+         "_doc": "Décalage perpendiculaire aux traits, en points, le long de la normale (sin a, cos a) à l'écran. ArcGIS : offsetX · sin a − offsetY · cos a (repère de la carte). QGIS : « offset », dont le sens dépend du quadrant de l'angle. Mesuré dans ArcGIS Pro 3.7 et QGIS 3.44 (lot 2.1)."}
+      ]
+    },
+    {
+      "pivot": "marqueur_simple", "famille": "marqueur",
+      "lyrx": {"type": "CIMVectorMarker", "modele": {
+        "type": "CIMVectorMarker", "enable": true, "anchorPointUnits": "Relative", "dominantSizeAxis3D": "Z",
+        "billboardMode3D": "FaceNearPlane", "frame": {"xmin": -2, "ymin": -2, "xmax": 2, "ymax": 2},
+        "markerGraphics": [{"type": "CIMMarkerGraphic", "geometry": {}, "symbol": {"type": "CIMPolygonSymbol", "symbolLayers": [
+          {"type": "CIMSolidStroke", "enable": true, "capStyle": "Round", "joinStyle": "Round", "lineStyle3D": "Strip", "miterLimit": 10, "width": 0, "_facultatif": true},
+          {"type": "CIMSolidFill", "enable": true, "_facultatif": true}
+        ]}}],
+        "respectFrame": true}},
+      "qgis": {"classe": "SimpleMarker", "fixe": {"scale_method": "diameter", "horizontal_anchor_point": "1", "vertical_anchor_point": "1"}},
+      "proprietes": [
+        {"nom": "forme", "type": "forme", "lyrx": "markerGraphics[0]", "qgis": "name", "defaut": "circle"},
+        {"nom": "taille", "type": "longueur", "lyrx": "size", "qgis": "size", "qgis_unite": "size_unit", "defaut": 6},
+        {"nom": "couleur", "type": "couleur", "lyrx": "markerGraphics[0].symbol.symbolLayers[type=CIMSolidFill].color", "qgis": "color", "defaut": [0, 0, 0, 0]},
+        {"nom": "couleur_contour", "type": "couleur", "lyrx": "markerGraphics[0].symbol.symbolLayers[type=CIMSolidStroke].color", "qgis": "outline_color", "defaut_qgis": [35, 35, 35, 255], "qgis_si": {"outline_style": "!no"}, "qgis_si_present": {"outline_style": "solid"}, "qgis_si_absent": {"outline_style": "no"}},
+        {"nom": "largeur_contour", "type": "longueur", "lyrx": "markerGraphics[0].symbol.symbolLayers[type=CIMSolidStroke].width", "lyrx_proportionnel": true, "qgis": "outline_width", "qgis_unite": "outline_width_unit", "qgis_si": {"outline_style": "!no"}},
+        {"nom": "angle", "type": "angle", "lyrx": "rotation", "qgis": "angle", "qgis_sens": "horaire", "defaut": 0},
+        {"nom": "decalage_x", "type": "longueur", "lyrx": "offsetX", "qgis": "offset", "qgis_composante": 0, "qgis_unite": "offset_unit"},
+        {"nom": "decalage_y", "type": "longueur", "lyrx": "offsetY", "qgis": "offset", "qgis_composante": 1, "qgis_facteur": -1, "qgis_unite": "offset_unit"}
+      ]
+    },
+    {
+      "pivot": "marqueur_police", "famille": "marqueur",
+      "lyrx": {"type": "CIMCharacterMarker", "modele": {
+        "type": "CIMCharacterMarker", "enable": true, "anchorPointUnits": "Relative", "dominantSizeAxis3D": "Y",
+        "billboardMode3D": "FaceNearPlane", "fontType": "Unspecified", "scaleX": 1, "respectFrame": true,
+        "symbol": {"type": "CIMPolygonSymbol", "symbolLayers": [
+          {"type": "CIMSolidStroke", "enable": true, "capStyle": "Round", "joinStyle": "Round", "lineStyle3D": "Strip", "miterLimit": 10, "width": 0, "_facultatif": true},
+          {"type": "CIMSolidFill", "enable": true}]},
+        "scaleSymbolsProportionally": true}},
+      "qgis": {"classe": "FontMarker", "fixe": {"horizontal_anchor_point": "1", "vertical_anchor_point": "1"}},
+      "proprietes": [
+        {"nom": "police", "type": "texte", "lyrx": "fontFamilyName", "qgis": "font", "defaut": "Arial"},
+        {"nom": "style_police", "type": "liste", "liste": "styles_police_marqueur", "lyrx": "fontStyleName", "qgis": "font_style", "defaut": "normal"},
+        {"nom": "caractere", "type": "caractere", "lyrx": "characterIndex", "qgis": "chr", "defaut": 65},
+        {"nom": "taille", "type": "longueur", "lyrx": "size", "qgis": "size", "qgis_unite": "size_unit", "defaut": 10},
+        {"nom": "couleur", "type": "couleur", "lyrx": "symbol.symbolLayers[type=CIMSolidFill].color", "qgis": "color", "defaut": [0, 0, 0, 255]},
+        {"nom": "largeur_contour", "type": "longueur", "lyrx": "symbol.symbolLayers[type=CIMSolidStroke].width", "qgis": "outline_width", "qgis_unite": "outline_width_unit"},
+        {"nom": "couleur_contour", "type": "couleur", "lyrx": "symbol.symbolLayers[type=CIMSolidStroke].color", "lyrx_si": {"symbol.symbolLayers[type=CIMSolidStroke].width": ">0"}, "qgis": "outline_color", "qgis_si": {"outline_width": ">0"}},
+        {"nom": "angle", "type": "angle", "lyrx": "rotation", "qgis": "angle", "qgis_sens": "horaire", "defaut": 0},
+        {"nom": "decalage_x", "type": "longueur", "lyrx": "offsetX", "qgis": "offset", "qgis_composante": 0, "qgis_unite": "offset_unit"},
+        {"nom": "decalage_y", "type": "longueur", "lyrx": "offsetY", "qgis": "offset", "qgis_composante": 1, "qgis_facteur": -1, "qgis_unite": "offset_unit"}
+      ]
+    },
+    {
+      "pivot": "marqueur_image", "famille": "marqueur",
+      "lyrx": {"type": "CIMPictureMarker", "modele": {"type": "CIMPictureMarker", "enable": true, "anchorPointUnits": "Relative", "dominantSizeAxis3D": "Y", "billboardMode3D": "FaceNearPlane", "scaleX": 1, "textureFilter": "Draft"}},
+      "qgis": {"classe": "RasterMarker"},
+      "proprietes": [
+        {"nom": "image", "type": "image", "lyrx": "url", "qgis": "imageFile", "lyrx_substitutions": "colorSubstitutions"},
+        {"nom": "taille", "type": "longueur", "lyrx": "size", "qgis": "size", "qgis_unite": "size_unit", "defaut": 10},
+        {"nom": "angle", "type": "angle", "lyrx": "rotation", "qgis": "angle", "qgis_sens": "horaire", "defaut": 0}
+      ]
+    },
+    {
+      "pivot": "remplissage_image", "famille": "remplissage",
+      "lyrx": {"type": "CIMPictureFill", "modele": {"type": "CIMPictureFill", "enable": true, "scaleX": 1, "textureFilter": "Draft"}},
+      "qgis": {"classe": "RasterFill", "fixe": {"coordinate_mode": "feature"}},
+      "proprietes": [
+        {"nom": "image", "type": "image", "lyrx": "url", "qgis": "imageFile", "lyrx_substitutions": "colorSubstitutions"},
+        {"nom": "hauteur", "type": "longueur", "lyrx": "height", "qgis": "width", "qgis_unite": "width_unit"},
+        {"nom": "angle", "type": "angle", "lyrx": "rotation", "qgis": "angle", "defaut": 0}
+      ]
+    }
+  ],
+  "anciens_noms_qgis": {
+    "_doc": [
+      "Options QGIS lues sous un ancien nom quand le nom actuel manque (QGIS les accepte encore).",
+      "Classe QGIS → { nom actuel : [anciens noms, par ordre de priorité] }. Ordre repris de QGIS 3.44 (fonctions « create »).",
+      "Trouvé au lot 2 : un .qlr ancien écrit le trait avec « outline_color » et « outline_width »."
+    ],
+    "SimpleLine": {
+      "line_color": ["outline_color", "color"],
+      "line_width": ["outline_width", "width"],
+      "line_width_unit": ["outline_width_unit", "width_unit"],
+      "line_style": ["outline_style", "penstyle"]
+    },
+    "SimpleFill": {
+      "outline_color": ["line_color"],
+      "outline_width": ["line_width"],
+      "outline_width_unit": ["line_width_unit"],
+      "outline_style": ["line_style"]
+    },
+    "SimpleMarker": {
+      "outline_color": ["line_color"],
+      "outline_width": ["line_width"],
+      "outline_width_unit": ["line_width_unit"],
+      "outline_style": ["line_style"]
+    }
+  },
+  "decompositions_qgis": {
+    "_doc": "Une couche QGIS qui correspond à PLUSIEURS couches CIM : on en extrait une couche virtuelle supplémentaire, traitée ensuite comme une couche QGIS ordinaire.",
+    "liste": [
+      {
+        "classe": "SimpleFill",
+        "si": {"outline_style": "!no"},
+        "classe_cible": "SimpleLine",
+        "position": "dessus",
+        "renommer": {"outline_color": "line_color", "outline_width": "line_width", "outline_width_unit": "line_width_unit", "outline_style": "line_style", "joinstyle": "joinstyle", "offset": "_deplacement", "offset_unit": "_deplacement_unit"}
+      }
+    ]
+  }
+}

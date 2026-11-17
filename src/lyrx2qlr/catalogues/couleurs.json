@@ -1,0 +1,17 @@
+{
+  "_doc": [
+    "Modèles de couleur ArcGIS Pro (CIM) et la formule utilisée pour les convertir en RVB (rouge, vert, bleu).",
+    "Formules disponibles dans le code : rgb, hsv, hsl, cmyk, gris, lab. La dernière valeur ArcGIS est l'opacité de 0 à 100.",
+    "« ecriture_lyrx » : le type de couleur écrit dans les .lyrx produits."
+  ],
+  "modeles": [
+    {"lyrx": "CIMRGBColor", "formule": "rgb"},
+    {"lyrx": "CIMHSVColor", "formule": "hsv"},
+    {"lyrx": "CIMHSLColor", "formule": "hsl"},
+    {"lyrx": "CIMCMYKColor", "formule": "cmyk"},
+    {"lyrx": "CIMGrayColor", "formule": "gris"},
+    {"lyrx": "CIMLABColor", "formule": "lab"}
+  ],
+  "alpha_lyrx_max": 100,
+  "ecriture_lyrx": "CIMRGBColor"
+}

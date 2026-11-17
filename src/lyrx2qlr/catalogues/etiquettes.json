@@ -1,0 +1,100 @@
+{
+  "_doc": [
+    "Étiquettes : une classe d'étiquettes ArcGIS (CIMLabelClass) ↔ un réglage d'étiquettes QGIS (<settings>).",
+    "Chemins lyrx : relatifs à la CIMLabelClass. Chemins qgis : relatifs à <settings>, sous la forme « élément/sous-élément@attribut ».",
+    "Une propriété avec « geometrie » ne s'applique qu'aux couches de ce type (point, ligne, surface).",
+    "Les longueurs neutres sont en points (pt), comme la taille de police ArcGIS."
+  ],
+  "lyrx_modele": {
+    "type": "CIMLabelClass",
+    "expressionEngine": "Arcade",
+    "featuresToLabel": "AllVisibleFeatures",
+    "maplexLabelPlacementProperties": {
+      "type": "CIMMaplexLabelPlacementProperties",
+      "featureType": "Polygon",
+      "avoidPolygonHoles": true,
+      "canOverrunFeature": true,
+      "canRemoveOverlappingLabel": true,
+      "canStackLabel": true,
+      "enableConnection": true,
+      "labelBuffer": 15,
+      "multiPartOption": "OneLabelPerPart",
+      "polygonPlacementMethod": "HorizontalInPolygon",
+      "linePlacementMethod": "OffsetCurvedFromLine",
+      "pointPlacementMethod": "AroundPoint",
+      "primaryOffset": 0,
+      "primaryOffsetUnit": "Point"
+    },
+    "name": "Classe 1",
+    "priority": -1,
+    "standardLabelPlacementProperties": {
+      "type": "CIMStandardLabelPlacementProperties",
+      "featureType": "Line",
+      "featureWeight": "None",
+      "labelWeight": "High",
+      "numLabelsOption": "OneLabelPerName",
+      "lineLabelPosition": {"type": "CIMStandardLineLabelPosition", "above": true, "inLine": true, "parallel": true},
+      "lineLabelPriorities": {"type": "CIMStandardLineLabelPriorities", "aboveStart": 3, "aboveAlong": 3, "aboveEnd": 3, "centerStart": 3, "centerAlong": 3, "centerEnd": 3, "belowStart": 3, "belowAlong": 3, "belowEnd": 3},
+      "pointPlacementMethod": "AroundPoint",
+      "pointPlacementPriorities": {"type": "CIMStandardPointPlacementPriorities", "aboveLeft": 2, "aboveCenter": 2, "aboveRight": 1, "centerLeft": 3, "centerRight": 2, "belowLeft": 3, "belowCenter": 3, "belowRight": 2},
+      "rotationType": "Arithmetic",
+      "polygonPlacementMethod": "AlwaysHorizontal"
+    },
+    "textSymbol": {
+      "type": "CIMSymbolReference",
+      "symbol": {
+        "type": "CIMTextSymbol",
+        "blockProgression": "TTB",
+        "depth3D": 1,
+        "extrapolateBaselines": true,
+        "fontEffects": "Normal",
+        "fontEncoding": "Unicode",
+        "fontFamilyName": "Arial",
+        "fontStyleName": "Regular",
+        "fontType": "Unspecified",
+        "haloSize": 1,
+        "height": 10,
+        "hinting": "Default",
+        "horizontalAlignment": "Left",
+        "kerning": true,
+        "letterWidth": 100,
+        "ligatures": true,
+        "lineGapType": "ExtraLeading",
+        "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [{"type": "CIMSolidFill", "enable": true, "color": {"type": "CIMRGBColor", "values": [0, 0, 0, 100]}}]
+        },
+        "haloSymbol": {
+          "type": "CIMPolygonSymbol",
+          "_facultatif": true,
+          "symbolLayers": [{"type": "CIMSolidFill", "enable": true}]
+        },
+        "textCase": "Normal",
+        "textDirection": "LTR",
+        "verticalAlignment": "Bottom",
+        "verticalGlyphOrientation": "Right",
+        "wordSpacing": 100,
+        "billboardMode3D": "FaceNearPlane"
+      }
+    },
+    "useCodedValue": true,
+    "visibility": true
+  },
+  "proprietes": [
+    {"nom": "expression", "type": "expression", "lyrx": "expression", "lyrx_moteur": "expressionEngine", "qgis": "text-style@fieldName", "qgis_drapeau": "text-style@isExpression"},
+    {"nom": "visible", "type": "booleen", "lyrx": "visibility", "qgis": "rendering@drawLabels", "defaut": true},
+    {"nom": "police", "type": "texte", "lyrx": "textSymbol.symbol.fontFamilyName", "qgis": "text-style@fontFamily", "defaut": "Arial"},
+    {"nom": "style_police", "type": "liste", "liste": "styles_police", "lyrx": "textSymbol.symbol.fontStyleName", "qgis": "text-style@namedStyle", "defaut": "normal"},
+    {"nom": "taille", "type": "nombre", "lyrx": "textSymbol.symbol.height", "qgis": "text-style@fontSize", "defaut": 10, "qgis_si_present": {"text-style@fontSizeUnit": "Point"}},
+    {"nom": "couleur", "type": "couleur", "lyrx": "textSymbol.symbol.symbol.symbolLayers[type=CIMSolidFill].color", "qgis": "text-style@textColor", "defaut": [0, 0, 0, 255]},
+    {"nom": "casse", "type": "liste", "liste": "casse_texte", "lyrx": "textSymbol.symbol.textCase", "qgis": "text-style@capitalization", "defaut": "normale"},
+    {"nom": "halo_taille", "type": "longueur", "lyrx": "textSymbol.symbol.haloSize", "lyrx_si": {"textSymbol.symbol.haloSymbol": "!null"}, "qgis": "text-style/text-buffer@bufferSize", "qgis_unite": "text-style/text-buffer@bufferSizeUnits", "qgis_si": {"text-style/text-buffer@bufferDraw": "1"}, "qgis_si_present": {"text-style/text-buffer@bufferDraw": "1"}},
+    {"nom": "halo_couleur", "type": "couleur", "lyrx": "textSymbol.symbol.haloSymbol.symbolLayers[type=CIMSolidFill].color", "qgis": "text-style/text-buffer@bufferColor", "qgis_si": {"text-style/text-buffer@bufferDraw": "1"}},
+    {"nom": "echelle_min", "type": "nombre", "lyrx": "minimumScale", "qgis": "rendering@scaleMax", "qgis_si": {"rendering@scaleVisibility": "1"}, "qgis_si_present": {"rendering@scaleVisibility": "1"}, "zero_est_absent": true},
+    {"nom": "echelle_max", "type": "nombre", "lyrx": "maximumScale", "qgis": "rendering@scaleMin", "qgis_si": {"rendering@scaleVisibility": "1"}, "qgis_si_present": {"rendering@scaleVisibility": "1"}, "zero_est_absent": true},
+    {"nom": "placement", "geometrie": "surface", "type": "liste", "liste": "placement_etiquette_surface", "lyrx": "maplexLabelPlacementProperties.polygonPlacementMethod", "qgis": "placement@placement", "defaut": "horizontal"},
+    {"nom": "placement", "geometrie": "ligne", "type": "liste", "liste": "placement_etiquette_ligne", "lyrx": "maplexLabelPlacementProperties.linePlacementMethod", "qgis": "placement@placement", "defaut": "parallele"},
+    {"nom": "placement", "geometrie": "point", "type": "liste", "liste": "placement_etiquette_point", "lyrx": "maplexLabelPlacementProperties.pointPlacementMethod", "qgis": "placement@placement", "defaut": "autour"},
+    {"nom": "decalage", "type": "longueur", "lyrx": "maplexLabelPlacementProperties.primaryOffset", "qgis": "placement@dist", "qgis_unite": "placement@distUnits"}
+  ]
+}

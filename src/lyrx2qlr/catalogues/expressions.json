@@ -1,0 +1,88 @@
+{
+  "_doc": [
+    "Traduction des expressions (étiquettes, filtres) entre les langages ArcGIS (VBScript, Python, Arcade, SQL) et le langage d'expressions QGIS.",
+    "Chaque règle est une expression régulière Python (« motif ») remplacée par « remplace ». Les règles s'appliquent dans l'ordre.",
+    "Les textes entre guillemets sont protégés : les règles ne touchent pas l'intérieur des chaînes déjà converties.",
+    "« simple_champ » : motif qui reconnaît une expression qui n'est qu'un nom de champ (groupe 1 = le champ).",
+    "« a_verifier » : motifs qui, s'ils restent après traduction, rendent l'expression douteuse (signalée dans le rapport)."
+  ],
+  "vers_qgis": {
+    "VBScript": {
+      "chaines": "\"",
+      "simple_champ": "^\\s*\\[([^\\]]+)\\]\\s*$",
+      "regles": [
+        {"motif": "\\[([^\\]]+)\\]", "remplace": "\"\\1\""},
+        {"motif": "\\s*&\\s*", "remplace": " || "},
+        {"motif": "\\bvbNewLine\\b|\\bvbCrLf\\b|\\bvbLf\\b", "remplace": "'\\n'"},
+        {"motif": "\\bUCase\\s*\\(", "remplace": "upper("},
+        {"motif": "\\bLCase\\s*\\(", "remplace": "lower("},
+        {"motif": "\\bTrim\\s*\\(", "remplace": "trim("},
+        {"motif": "\\bLeft\\s*\\(", "remplace": "left("},
+        {"motif": "\\bRight\\s*\\(", "remplace": "right("},
+        {"motif": "\\bRound\\s*\\(", "remplace": "round("},
+        {"motif": "\\bFormatNumber\\s*\\(", "remplace": "format_number("}
+      ],
+      "a_verifier": ["\\bFunction\\b", "\\bIf\\b", "\\bThen\\b", "\\bMid\\s*\\(", "\\bCStr\\s*\\(", "\\bInStr\\s*\\("]
+    },
+    "Python": {
+      "chaines": "\"'",
+      "simple_champ": "^\\s*\\[([^\\]]+)\\]\\s*$",
+      "regles": [
+        {"motif": "\\[([^\\]]+)\\]", "remplace": "\"\\1\""},
+        {"motif": "\\s*\\+\\s*", "remplace": " || "},
+        {"motif": "\\bstr\\s*\\(", "remplace": "to_string("}
+      ],
+      "a_verifier": ["\\bdef\\b", "\\breturn\\b", "\\bif\\b"]
+    },
+    "Arcade": {
+      "chaines": "\"'",
+      "simple_champ": "^\\s*\\$feature(?:\\.([A-Za-z_][A-Za-z0-9_]*)|\\[\"([^\"]+)\"\\]|\\['([^']+)'\\])\\s*$",
+      "regles": [
+        {"motif": "\\$feature\\.([A-Za-z_][A-Za-z0-9_]*)", "remplace": "\"\\1\""},
+        {"motif": "\\$feature\\[\"([^\"]+)\"\\]", "remplace": "\"\\1\""},
+        {"motif": "\\s*\\+\\s*", "remplace": " || "},
+        {"motif": "\\bTextFormatting\\.NewLine\\b", "remplace": "'\\n'"},
+        {"motif": "\\bUpper\\s*\\(", "remplace": "upper("},
+        {"motif": "\\bLower\\s*\\(", "remplace": "lower("},
+        {"motif": "\\bTrim\\s*\\(", "remplace": "trim("},
+        {"motif": "\\bRound\\s*\\(", "remplace": "round("},
+        {"motif": "\\bConcatenate\\s*\\(", "remplace": "concat("}
+      ],
+      "a_verifier": ["\\bvar\\b", "\\bif\\b", "\\breturn\\b", "\\bWhen\\s*\\(", "\\bIIf\\s*\\(", "\\bDecode\\s*\\(", "\\bText\\s*\\("]
+    },
+    "SQL": {
+      "chaines": "'",
+      "simple_champ": null,
+      "regles": [],
+      "a_verifier": ["\\bLIKE\\b.*\\[", "\\bTO_DATE\\b", "\\bdate\\s+'"]
+    }
+  },
+  "depuis_qgis": {
+    "_doc": "Les étiquettes sont écrites en Arcade, les filtres en SQL.",
+    "Arcade": {
+      "chaines_qgis": "'",
+      "regles": [
+        {"motif": "\"([A-Za-z_][A-Za-z0-9_]*)\"", "remplace": "$feature.\\1"},
+        {"motif": "\"([^\"]+)\"", "remplace": "$feature[\"\\1\"]"},
+        {"motif": "\\s*\\|\\|\\s*", "remplace": " + "},
+        {"motif": "\\bupper\\s*\\(", "remplace": "Upper("},
+        {"motif": "\\blower\\s*\\(", "remplace": "Lower("},
+        {"motif": "\\btrim\\s*\\(", "remplace": "Trim("},
+        {"motif": "\\bround\\s*\\(", "remplace": "Round("},
+        {"motif": "\\bconcat\\s*\\(", "remplace": "Concatenate("}
+      ],
+      "chaine_sortie": "\"",
+      "champ_simple": "$feature.{champ}",
+      "champ_simple_special": "$feature[\"{champ}\"]",
+      "a_verifier": ["\\bCASE\\b", "\\bcoalesce\\s*\\(", "\\bformat_number\\s*\\(", "\\bto_string\\s*\\(", "@[a-z_]+", "\\$[a-z_]+\\b(?<!\\$feature)"]
+    },
+    "SQL": {
+      "chaines_qgis": "'",
+      "regles": [
+        {"motif": "\"([A-Za-z_][A-Za-z0-9_]*)\"", "remplace": "\\1"}
+      ],
+      "chaine_sortie": "'",
+      "a_verifier": ["\\|\\|", "\\bregexp_", "@[a-z_]+", "\\$[a-z_]+"]
+    }
+  }
+}

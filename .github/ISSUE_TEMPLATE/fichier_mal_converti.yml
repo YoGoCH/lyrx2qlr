@@ -1,0 +1,43 @@
+name: Fichier mal converti / Badly converted file
+description: Une symbologie qui ne passe pas bien d'ArcGIS Pro à QGIS, ou l'inverse. / A symbology that does not convert well.
+labels: ["conversion"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Aucun secret** : retirez mots de passe, utilisateurs, serveurs et adresses e-mail du fichier avant de le joindre.
+        Le plus simple : l'onglet « Contribuer » de https://lyrx2qlr.papetche.ch nettoie le fichier pour vous.
+        **No secrets**: remove passwords, user names, servers and e-mail addresses before attaching the file.
+  - type: dropdown
+    id: sens
+    attributes:
+      label: Sens / Direction
+      options:
+        - .lyrx → .qlr (ArcGIS Pro → QGIS)
+        - .qlr / .qml → .lyrx (QGIS → ArcGIS Pro)
+    validations:
+      required: true
+  - type: textarea
+    id: probleme
+    attributes:
+      label: Ce qui ne va pas / What is wrong
+      description: Couleurs, épaisseurs, étiquettes, échelles… Une capture « attendu / obtenu » aide beaucoup. / Colours, widths, labels, scales… A screenshot helps a lot.
+    validations:
+      required: true
+  - type: textarea
+    id: fichier
+    attributes:
+      label: Fichier (nettoyé) / File (cleaned)
+      description: Glissez le fichier ici (zippez-le si GitHub le refuse). / Drop the file here (zip it if GitHub refuses it).
+  - type: input
+    id: versions
+    attributes:
+      label: Versions
+      placeholder: lyrx2qlr 1.7.0, ArcGIS Pro 3.4, QGIS 3.40
+  - type: checkboxes
+    id: secret
+    attributes:
+      label: Confidentialité / Privacy
+      options:
+        - label: Le fichier ne contient ni mot de passe, ni utilisateur, ni serveur interne, ni adresse e-mail. / The file contains no password, user, internal server or e-mail address.
+          required: true

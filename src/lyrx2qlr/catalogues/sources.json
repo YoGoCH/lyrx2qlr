@@ -1,0 +1,58 @@
+{
+  "_doc": [
+    "Sources de données : comment ArcGIS (dataConnection du .lyrx) et QGIS (fournisseur + datasource du .qlr) désignent les mêmes données.",
+    "Fichiers (« motif_qgis ») : {dossier} = dossier ArcGIS (DATABASE=…), {jeu} = nom du jeu de données. Dans le motif, {dossier} ne prend jamais de barre oblique inverse : elles sont remplacées par « / ».",
+    "« prefixe_jeu_lyrx » : préfixe qu'ArcGIS ajoute parfois au nom du jeu (GeoPackage : « main. ») ; retiré à la lecture.",
+    "Bases de données (« base ») : la chaîne de connexion ArcGIS (clé=valeur;…) et l'adresse QGIS (clé='valeur' … table=\"schéma\".\"table\" (géométrie)) passent par des clés neutres : hote, port, base, utilisateur, authentification, version, schema, table, colonne_geometrie, cle, srid.",
+    "  « si » : valeurs de la chaîne ArcGIS qui désignent ce moteur (DBCLIENT). « serveur » : forme de DB_CONNECTION_PROPERTIES ; « oracle » = alias TNS ou hote[:port]/service, « virgule » = hote[,port].",
+    "  « cles_lyrx » : clé ArcGIS → clé neutre. « jeu_lyrx » : forme du nom du jeu ArcGIS. « fixe_lyrx » : clés ajoutées à l'écriture ({…} = clés neutres).",
+    "  « cles_qgis » : clé de l'adresse QGIS → clé neutre. « fixe_qgis » : clés ajoutées à l'écriture.",
+    "  « defauts » : valeurs neutres quand le fichier ne les donne pas (colonne géométrique et identifiant d'une géodatabase ArcGIS).",
+    "Le mot de passe n'est JAMAIS recopié (ENCRYPTED_PASSWORD d'ArcGIS est chiffré pour un seul poste ; password de QGIS est en clair) : l'utilisateur le saisit à l'ouverture.",
+    "« secrete » : moteur inconnu ; la couche est à reconnecter."
+  ],
+  "sources": [
+    {"pivot": "shapefile", "lyrx": {"workspaceFactory": "Shapefile"}, "qgis": {"fournisseur": "ogr", "motif": "{dossier}/{jeu}.shp"}, "extension_jeu": ".shp"},
+    {"pivot": "filegdb", "lyrx": {"workspaceFactory": "FileGDB"}, "qgis": {"fournisseur": "ogr", "motif": "{dossier}|layername={jeu}"}, "si_dossier": ".gdb"},
+    {"pivot": "geopackage", "lyrx": {"workspaceFactory": "Sql"}, "qgis": {"fournisseur": "ogr", "motif": "{dossier}|layername={jeu}"}, "si_dossier": ".gpkg", "prefixe_jeu_lyrx": "main."},
+    {"pivot": "oracle", "lyrx": {"workspaceFactory": "SDE"}, "qgis": {"fournisseur": "oracle"},
+     "base": {
+       "si": {"DBCLIENT": "oracle"},
+       "serveur": "oracle",
+       "cles_lyrx": {"USER": "utilisateur", "AUTHENTICATION_MODE": "authentification", "VERSION": "version"},
+       "jeu_lyrx": "{schema}.{table}",
+       "fixe_lyrx": {"DBCLIENT": "oracle", "INSTANCE": "sde:oracle${serveur}", "SERVER": "{serveur}"},
+       "cles_qgis": {"dbname": "base", "host": "hote", "port": "port", "user": "utilisateur", "key": "cle", "srid": "srid"},
+       "fixe_qgis": {"estimatedmetadata": "true"},
+       "defauts": {"colonne_geometrie": "SHAPE", "cle": "OBJECTID"},
+       "remarque_qgis": "QGIS ne lit que la géométrie Oracle Spatial (SDO_GEOMETRY), pas le type Esri ST_GEOMETRY."
+     }},
+    {"pivot": "postgresql", "lyrx": {"workspaceFactory": "SDE"}, "qgis": {"fournisseur": "postgres"},
+     "base": {
+       "si": {"DBCLIENT": "postgresql"},
+       "serveur": "virgule",
+       "cles_lyrx": {"DATABASE": "base", "USER": "utilisateur", "AUTHENTICATION_MODE": "authentification", "VERSION": "version"},
+       "jeu_lyrx": "{base}.{schema}.{table}",
+       "fixe_lyrx": {"DBCLIENT": "postgresql", "INSTANCE": "sde:postgresql:{serveur}"},
+       "cles_qgis": {"dbname": "base", "host": "hote", "port": "port", "user": "utilisateur", "key": "cle", "srid": "srid"},
+       "fixe_qgis": {"estimatedmetadata": "true"},
+       "defauts": {"colonne_geometrie": "shape", "cle": "objectid"}
+     }},
+    {"pivot": "sqlserver", "lyrx": {"workspaceFactory": "SDE"}, "qgis": {"fournisseur": "mssql"},
+     "base": {
+       "si": {"DBCLIENT": "sqlserver"},
+       "serveur": "virgule",
+       "cles_lyrx": {"DATABASE": "base", "USER": "utilisateur", "AUTHENTICATION_MODE": "authentification", "VERSION": "version"},
+       "jeu_lyrx": "{base}.{schema}.{table}",
+       "fixe_lyrx": {"DBCLIENT": "sqlserver", "INSTANCE": "sde:sqlserver:{serveur}"},
+       "cles_qgis": {"dbname": "base", "host": "hote", "port": "port", "user": "utilisateur", "key": "cle", "srid": "srid"},
+       "fixe_qgis": {"estimatedmetadata": "true"},
+       "defauts": {"colonne_geometrie": "Shape", "cle": "OBJECTID"}
+     }},
+    {"pivot": "sde", "lyrx": {"workspaceFactory": "SDE"}, "qgis": null, "secrete": true}
+  ],
+  "authentification": {"_doc": "AUTHENTICATION_MODE d'ArcGIS → valeur neutre.", "DBMS": "base", "OSA": "systeme"},
+  "moteurs_instance": {"_doc": "Anciens .lyrx sans DBCLIENT : début de INSTANCE (en minuscules) → DBCLIENT. Le serveur est alors la suite de INSTANCE (« sde:sqlserver:serveur », « sde:oracle11g:alias », « sde:oracle$alias »), sinon SERVER.",
+                       "sde:oracle": "oracle", "sde:postgresql": "postgresql", "sde:sqlserver": "sqlserver"},
+  "dossier_defaut": "."
+}

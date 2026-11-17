@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="64 14 72 72">
+  <defs>
+    <marker id="pr" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="3.2" markerHeight="3.2" orient="auto"><path d="M0 0 10 5 0 10z" fill="#ff5fa2"/></marker>
+    <marker id="cy" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="3.2" markerHeight="3.2" orient="auto"><path d="M0 0 10 5 0 10z" fill="#27c4d9"/></marker>
+  </defs>
+  <path d="M72.43 45.14A28 28 0 0 1 125.38 38.17" fill="none" stroke="#ff5fa2" stroke-width="8" stroke-linecap="round" marker-end="url(#pr)"/>
+  <path d="M127.57 54.86A28 28 0 0 1 74.62 61.83" fill="none" stroke="#27c4d9" stroke-width="8" stroke-linecap="round" marker-end="url(#cy)"/>
+</svg>

@@ -1,0 +1,26 @@
+{
+  "_doc": [
+    "Unités de longueur. Les longueurs neutres sont en points typographiques (pt), l'unité native d'ArcGIS Pro.",
+    "« vers_points » : combien de points vaut 1 unité QGIS. null = unités de carte : converties à l'échelle de référence de la couche (« metre_carte_vers_points » ÷ dénominateur), ou gardées telles quelles sans plage de visibilité.",
+    "« metre_carte_vers_points » : points que fait 1 m sur le terrain à l'échelle 1:1 (1 000 mm × 2,8346 pt/mm).",
+    "« qgis_sortie » : unité écrite dans les .qlr (MM = millimètres, Point = points). « decimales » : arrondi des valeurs écrites."
+  ],
+  "metre_carte_vers_points": 2834.645669291339,
+  "vers_points": {
+    "Point": 1,
+    "MM": 2.834645669291339,
+    "Inch": 72,
+    "Pixel": 0.75,
+    "RenderPoints": 1,
+    "RenderMillimeters": 2.834645669291339,
+    "RenderInches": 72,
+    "RenderPixels": 0.75,
+    "MapUnit": null,
+    "RenderMapUnits": null,
+    "MetersInMapUnits": null,
+    "RenderMetersInMapUnits": null
+  },
+  "qgis_sortie": "MM",
+  "qgis_defaut_si_absente": "MM",
+  "decimales": 4
+}

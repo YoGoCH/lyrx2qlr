@@ -1,0 +1,11 @@
+{
+  "_doc": "Chiffres du lot 2 (ArcGIS Pro 3.7), lus par outils/chiffres.py pour la page web. À mettre à jour à la main après un nouveau passage (voir docs/lot2.md).",
+  "date": "2026-11-16",
+  "relus_arcgis": 1009,
+  "detail_relus": {
+    "fichiers_reels": 484,
+    "cas_de_la_boucle": 425,
+    "symbologies_fabriquees_par_arcpy": 100
+  },
+  "originaux_lyrx_ouverts": 238
+}

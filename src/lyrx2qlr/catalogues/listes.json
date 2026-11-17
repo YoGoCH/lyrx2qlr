@@ -1,0 +1,166 @@
+{
+  "_doc": [
+    "Tables de valeurs : pour une même notion, la valeur neutre (« pivot »), la valeur ArcGIS Pro (« lyrx ») et la valeur QGIS (« qgis »).",
+    "En lecture, la PREMIÈRE ligne qui correspond gagne ; en écriture aussi. Une valeur à null signifie « absente ».",
+    "« inconnu » dit quoi faire d'une valeur absente de la table : « garder » (la recopier telle quelle) ou « signaler » (rapport + valeur par défaut).",
+    "« qgis_extra » : propriétés QGIS supplémentaires écrites avec cette valeur."
+  ],
+  "extremites_ligne": {
+    "inconnu": "signaler",
+    "valeurs": [
+      {"pivot": "rond", "lyrx": "Round", "qgis": "round"},
+      {"pivot": "plat", "lyrx": "Butt", "qgis": "flat"},
+      {"pivot": "carre", "lyrx": "Square", "qgis": "square"}
+    ]
+  },
+  "jointures_ligne": {
+    "inconnu": "signaler",
+    "valeurs": [
+      {"pivot": "rond", "lyrx": "Round", "qgis": "round"},
+      {"pivot": "angle", "lyrx": "Miter", "qgis": "miter"},
+      {"pivot": "biseau", "lyrx": "Bevel", "qgis": "bevel"}
+    ]
+  },
+  "styles_trait_qt": {
+    "_doc": "Styles de trait prédéfinis de QGIS (Qt) convertis en tirets ArcGIS ; les longueurs sont des multiples de l'épaisseur du trait.",
+    "inconnu": "signaler",
+    "valeurs": [
+      {"pivot": null, "qgis": "solid"},
+      {"pivot": [4, 2], "qgis": "dash"},
+      {"pivot": [1, 2], "qgis": "dot"},
+      {"pivot": [4, 2, 1, 2], "qgis": "dash dot"},
+      {"pivot": [4, 2, 1, 2, 1, 2], "qgis": "dash dot dot"},
+      {"pivot": null, "qgis": "no"}
+    ]
+  },
+  "decoupage_grille": {
+    "inconnu": "signaler",
+    "valeurs": [
+      {"pivot": "decouper", "lyrx": "ClipAtBoundary", "qgis": "shape"},
+      {"pivot": "entiers_dedans", "lyrx": "DoNotTouchBoundary", "qgis": "completely_within"},
+      {"pivot": "aucun", "lyrx": "DoNotClip", "qgis": "no"},
+      {"pivot": "centre_dedans", "lyrx": "RemoveIfCenterOutsideBoundary", "qgis": "centroid_within"}
+    ]
+  },
+  "centre_surface": {
+    "inconnu": "signaler",
+    "valeurs": [
+      {"pivot": "centre_dans", "lyrx": "OnPolygon", "qgis": "1"},
+      {"pivot": "centre_geometrique", "lyrx": "CenterOfMass", "qgis": "0"},
+      {"pivot": "centre_geometrique", "lyrx": "BoundingBoxCenter", "qgis": "0"}
+    ]
+  },
+  "extremites_marqueurs": {
+    "inconnu": "signaler",
+    "valeurs": [
+      {"pivot": "les_deux", "lyrx": "Both", "qgis": "FirstVertex|LastVertex"},
+      {"pivot": "les_deux", "lyrx": null, "qgis": "LastVertex|FirstVertex"},
+      {"pivot": "debut", "lyrx": "JustBegin", "qgis": "FirstVertex"},
+      {"pivot": "fin", "lyrx": "JustEnd", "qgis": "LastVertex"}
+    ]
+  },
+  "positions_relatives": {
+    "_doc": "Marqueurs ArcGIS « aux positions relatives » (0 = début, 1 = fin) lus comme marqueurs aux extrémités.",
+    "inconnu": "signaler",
+    "valeurs": [
+      {"pivot": "les_deux", "lyrx": [0, 1], "qgis": "FirstVertex|LastVertex"},
+      {"pivot": "les_deux", "lyrx": [1, 0]},
+      {"pivot": "debut", "lyrx": [0], "qgis": "FirstVertex"},
+      {"pivot": "fin", "lyrx": [1], "qgis": "LastVertex"}
+    ]
+  },
+  "styles_police_marqueur": {
+    "inconnu": "garder",
+    "valeurs": [
+      {"pivot": "normal", "lyrx": "Regular", "qgis": ""},
+      {"pivot": "normal", "lyrx": "Regular", "qgis": null},
+      {"pivot": "gras", "lyrx": "Bold", "qgis": "Bold"},
+      {"pivot": "italique", "lyrx": "Italic", "qgis": "Italic"},
+      {"pivot": "gras_italique", "lyrx": "Bold Italic", "qgis": "Bold Italic"}
+    ]
+  },
+  "styles_police": {
+    "inconnu": "garder",
+    "valeurs": [
+      {"pivot": "normal", "lyrx": "Regular", "qgis": "", "qgis_extra": {"text-style@fontWeight": "50", "text-style@fontItalic": "0"}},
+      {"pivot": "normal", "lyrx": "Regular", "qgis": null},
+      {"pivot": "normal", "lyrx": "Regular", "qgis": "Regular"},
+      {"pivot": "gras", "lyrx": "Bold", "qgis": "Bold", "qgis_extra": {"text-style@fontWeight": "75", "text-style@fontItalic": "0"}},
+      {"pivot": "italique", "lyrx": "Italic", "qgis": "Italic", "qgis_extra": {"text-style@fontWeight": "50", "text-style@fontItalic": "1"}},
+      {"pivot": "gras_italique", "lyrx": "Bold Italic", "qgis": "Bold Italic", "qgis_extra": {"text-style@fontWeight": "75", "text-style@fontItalic": "1"}}
+    ]
+  },
+  "casse_texte": {
+    "inconnu": "signaler",
+    "valeurs": [
+      {"pivot": "normale", "lyrx": "Normal", "qgis": "0"},
+      {"pivot": "majuscules", "lyrx": "Allcaps", "qgis": "1"},
+      {"pivot": "minuscules", "lyrx": "Lowercase", "qgis": "2"},
+      {"pivot": "petites_capitales", "lyrx": "SmallCaps", "qgis": "5"},
+      {"pivot": "majuscule_initiale", "lyrx": null, "qgis": "4", "avertissement_lyrx": "Casse « Première lettre en majuscule » de QGIS : pas d'équivalent ArcGIS, texte laissé tel quel."},
+      {"pivot": "casse_titre", "lyrx": null, "qgis": "1004", "avertissement_lyrx": "Casse « Titre » de QGIS (majuscule à chaque mot) : pas d'équivalent ArcGIS, texte laissé tel quel."}
+    ]
+  },
+  "placement_etiquette_surface": {
+    "_doc": "Méthode de placement Maplex des étiquettes de surfaces ↔ code de placement QGIS (0 autour, 1 décalé du centroïde, 4 horizontal, 5 libre, 7 périmètre courbe, 8 à l'extérieur).",
+    "inconnu": "signaler",
+    "valeurs": [
+      {"pivot": "horizontal", "lyrx": "HorizontalInPolygon", "qgis": "4"},
+      {"pivot": "toujours_horizontal", "lyrx": "HorizontalInPolygon", "qgis": "1", "avertissement_lyrx": "Placement d'étiquettes QGIS « Décalé du centroïde » : pas d'équivalent ArcGIS, étiquettes horizontales dans la surface."},
+      {"pivot": "libre", "lyrx": "StraightInPolygon", "qgis": "5"},
+      {"pivot": "courbe", "lyrx": "CurvedInPolygon", "qgis": "5", "avertissement_qgis": "Placement d'étiquettes « courbe » (dans la surface) : QGIS n'a pas d'équivalent, étiquettes droites orientées librement."},
+      {"pivot": "horizontal_hors", "lyrx": "HorizontalAroundPolygon", "qgis": "8"},
+      {"pivot": "courbe_perimetre", "lyrx": "CurvedAroundPolygon", "qgis": "7"},
+      {"pivot": "autour", "lyrx": "HorizontalInPolygon", "qgis": "0", "avertissement_lyrx": "Placement d'étiquettes QGIS « Autour du centroïde » : pas d'équivalent ArcGIS, étiquettes horizontales dans la surface."},
+      {"pivot": "perimetre", "lyrx": "RepeatAlongBoundary", "qgis": "2", "avertissement_lyrx": "Placement d'étiquettes QGIS « Périmètre » : rendu par « Le long de la limite » d'ArcGIS, à vérifier."}
+    ]
+  },
+  "placement_etiquette_ligne": {
+    "_doc": "Méthode de placement Maplex des étiquettes de lignes ↔ code QGIS (2 parallèle, 3 courbe, 4 horizontal). placementFlags : 9 = sur la ligne, 10 = au-dessus (+ orientation de la carte).",
+    "inconnu": "signaler",
+    "valeurs": [
+      {"pivot": "courbe", "lyrx": "OffsetCurvedFromLine", "qgis": "3", "qgis_extra": {"placement@placementFlags": "10"}},
+      {"pivot": "courbe_centre", "lyrx": "CenteredCurvedOnLine", "qgis": "3", "qgis_extra": {"placement@placementFlags": "9"}},
+      {"pivot": "parallele", "lyrx": "OffsetStraightFromLine", "qgis": "2", "qgis_extra": {"placement@placementFlags": "10"}},
+      {"pivot": "parallele_centre", "lyrx": "CenteredStraightOnLine", "qgis": "2", "qgis_extra": {"placement@placementFlags": "9"}},
+      {"pivot": "horizontal", "lyrx": "OffsetHorizontalFromLine", "qgis": "4", "qgis_extra": {"placement@placementFlags": "10"}},
+      {"pivot": "horizontal_centre", "lyrx": "CenteredHorizontalOnLine", "qgis": "4", "qgis_extra": {"placement@placementFlags": "9"}}
+    ]
+  },
+  "placement_etiquette_point": {
+    "_doc": "Méthode de placement Maplex des étiquettes de points ↔ code QGIS (6 cartographique, 0 autour du point, 1 décalé du point ; quadOffset : 0 haut-gauche … 4 centre … 8 bas-droite).",
+    "inconnu": "signaler",
+    "valeurs": [
+      {"pivot": "autour", "lyrx": "AroundPoint", "qgis": "6"},
+      {"pivot": "autour", "lyrx": "AroundPoint", "qgis": "0"},
+      {"pivot": "centre", "lyrx": "CenteredOnPoint", "qgis": "1", "qgis_extra": {"placement@quadOffset": "4"}},
+      {"pivot": "nord", "lyrx": "NorthOfPoint", "qgis": "1", "qgis_extra": {"placement@quadOffset": "1"}},
+      {"pivot": "nord_est", "lyrx": "NorthEastOfPoint", "qgis": "1", "qgis_extra": {"placement@quadOffset": "2"}},
+      {"pivot": "est", "lyrx": "EastOfPoint", "qgis": "1", "qgis_extra": {"placement@quadOffset": "5"}},
+      {"pivot": "sud_est", "lyrx": "SouthEastOfPoint", "qgis": "1", "qgis_extra": {"placement@quadOffset": "8"}},
+      {"pivot": "sud", "lyrx": "SouthOfPoint", "qgis": "1", "qgis_extra": {"placement@quadOffset": "7"}},
+      {"pivot": "sud_ouest", "lyrx": "SouthWestOfPoint", "qgis": "1", "qgis_extra": {"placement@quadOffset": "6"}},
+      {"pivot": "ouest", "lyrx": "WestOfPoint", "qgis": "1", "qgis_extra": {"placement@quadOffset": "3"}},
+      {"pivot": "nord_ouest", "lyrx": "NorthWestOfPoint", "qgis": "1", "qgis_extra": {"placement@quadOffset": "0"}}
+    ]
+  },
+  "methodes_classification": {
+    "inconnu": "signaler",
+    "valeurs": [
+      {"pivot": "manuelle", "lyrx": "Manual", "qgis": "Custom"},
+      {"pivot": "seuils_naturels", "lyrx": "NaturalBreaks", "qgis": "Jenks"},
+      {"pivot": "intervalles_egaux", "lyrx": "EqualInterval", "qgis": "EqualInterval"},
+      {"pivot": "quantiles", "lyrx": "Quantile", "qgis": "Quantile"},
+      {"pivot": "ecart_type", "lyrx": "StandardDeviation", "qgis": "StdDev"},
+      {"pivot": "intervalle_defini", "lyrx": "DefinedInterval", "qgis": "Fixed"},
+      {"pivot": "jolies_bornes", "lyrx": "GeometricalInterval", "qgis": "Pretty"}
+    ]
+  },
+  "valeurs_speciales": {
+    "_doc": "Valeurs particulières des catégories. ArcGIS écrit <Null> pour une valeur vide ; QGIS écrit NULL.",
+    "inconnu": "garder",
+    "valeurs": [
+      {"pivot": null, "lyrx": "<Null>", "qgis": "NULL"}
+    ]
+  }
+}

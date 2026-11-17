@@ -1,0 +1,102 @@
+{
+  "_doc": [
+    "Placement des marqueurs (où dessiner un symbole ponctuel dans une ligne ou une surface).",
+    "Dans ArcGIS Pro, le placement est une propriété du marqueur (markerPlacement).",
+    "Dans QGIS, c'est une couche « enveloppe » (ex. PointPatternFill) qui contient un sous-symbole ponctuel.",
+    "Propriétés : même syntaxe que symboles.json, les chemins lyrx sont relatifs à l'objet markerPlacement."
+  ],
+  "placements": [
+    {
+      "pivot": "grille_surface",
+      "lyrx": {"type": "CIMMarkerPlacementInsidePolygon", "si": {"gridType": ["Fixed", null]}, "modele": {"type": "CIMMarkerPlacementInsidePolygon", "gridType": "Fixed", "randomness": 100, "seed": 0}},
+      "qgis": {"classe": "PointPatternFill", "si": {"random_deviation_x": ["0", null]}, "fixe": {"coordinate_reference": "feature"}},
+      "proprietes": [
+        {"nom": "pas_x", "type": "longueur", "lyrx": "stepX", "qgis": "distance_x", "qgis_unite": "distance_x_unit", "defaut": 16},
+        {"nom": "pas_y", "type": "longueur", "lyrx": "stepY", "qgis": "distance_y", "qgis_unite": "distance_y_unit", "defaut": 16},
+        {"nom": "decalage_x", "type": "longueur", "lyrx": "offsetX", "qgis": "offset_x", "qgis_unite": "offset_x_unit"},
+        {"nom": "decalage_y", "type": "longueur", "lyrx": "offsetY", "qgis": "offset_y", "qgis_unite": "offset_y_unit", "qgis_facteur": -1},
+        {"nom": "angle", "type": "angle", "lyrx": "gridAngle", "qgis": "angle", "defaut": 0},
+        {"nom": "decoupage", "type": "liste", "liste": "decoupage_grille", "lyrx": "clipping", "qgis": "clip_mode", "defaut": "decouper"},
+        {"nom": "decaler_lignes_impaires", "type": "decalage_impair", "lyrx": "shiftOddRows", "qgis": "displacement_x", "qgis_unite": "displacement_x_unit"}
+      ]
+    },
+    {
+      "pivot": "grille_aleatoire",
+      "lyrx": {"type": "CIMMarkerPlacementInsidePolygon", "si": {"gridType": "Random"}, "modele": {"type": "CIMMarkerPlacementInsidePolygon", "gridType": "Random", "randomness": 100}},
+      "qgis": {"classe": "PointPatternFill", "fixe": {"coordinate_reference": "feature"}},
+      "avertissement": "Semis aléatoire de marqueurs approximé par une grille régulière avec écart aléatoire.",
+      "proprietes": [
+        {"nom": "pas_x", "type": "longueur", "lyrx": "stepX", "qgis": "distance_x", "qgis_unite": "distance_x_unit", "defaut": 16},
+        {"nom": "pas_y", "type": "longueur", "lyrx": "stepY", "qgis": "distance_y", "qgis_unite": "distance_y_unit", "defaut": 16},
+        {"nom": "ecart_x", "type": "longueur", "lyrx": "stepX", "qgis": "random_deviation_x", "qgis_unite": "random_deviation_x_unit"},
+        {"nom": "ecart_y", "type": "longueur", "lyrx": "stepY", "qgis": "random_deviation_y", "qgis_unite": "random_deviation_y_unit"},
+        {"nom": "graine", "type": "entier", "lyrx": "seed", "qgis": "seed", "defaut": 0},
+        {"nom": "decoupage", "type": "liste", "liste": "decoupage_grille", "lyrx": "clipping", "qgis": "clip_mode", "defaut": "decouper"}
+      ]
+    },
+    {
+      "pivot": "centre_surface",
+      "lyrx": {"type": "CIMMarkerPlacementPolygonCenter", "modele": {"type": "CIMMarkerPlacementPolygonCenter", "method": "OnPolygon"}},
+      "qgis": {"classe": "CentroidFill", "fixe": {"point_on_all_parts": "1"}},
+      "proprietes": [
+        {"nom": "dans_la_surface", "type": "liste", "liste": "centre_surface", "lyrx": "method", "qgis": "point_on_surface", "defaut": "centre_dans"}
+      ]
+    },
+    {
+      "pivot": "le_long_ligne",
+      "lyrx": {"type": "CIMMarkerPlacementAlongLineSameSize", "modele": {"type": "CIMMarkerPlacementAlongLineSameSize", "angleToLine": true, "controlPointPlacement": "NoConstraint", "endings": "NoConstraint"}},
+      "lyrx_fins": {
+        "_doc": "Extrémités (endings) : QGIS pose le premier marqueur au début de la ligne, décalé de « decalage_le_long ». Facteur × intervalle = décalage équivalent ; null = pas d'équivalent (avertissement).",
+        "cle": "endings", "propriete": "decalage_le_long", "base": "intervalle",
+        "facteurs": {"NoConstraint": 0, "Custom": 0, "WithHalfGap": 0.5, "WithFullGap": 1, "WithMarkers": null},
+        "avertissement": "Placement des marqueurs aux extrémités « {valeur} » : QGIS n'a pas d'équivalent exact, l'intervalle reste celui d'ArcGIS."
+      },
+      "qgis": {"classe": "MarkerLine", "si_ou": [{"placements": "Interval"}, {"placements": null, "placement": "interval"}], "fixe": {"placement": "interval", "placements": "Interval"}},
+      "proprietes": [
+        {"nom": "intervalle", "type": "longueur", "lyrx": "placementTemplate[0]", "qgis": "interval", "qgis_unite": "interval_unit", "defaut": 10},
+        {"nom": "decalage_le_long", "type": "longueur", "lyrx": "offsetAlongLine", "lyrx_si": {"endings": ["NoConstraint", "Custom", null]}, "qgis": "offset_along_line", "qgis_unite": "offset_along_line_unit"},
+        {"nom": "orienter", "type": "booleen", "lyrx": "angleToLine", "qgis": "rotate", "defaut": true},
+        {"nom": "decalage", "type": "longueur", "lyrx": "offset", "qgis": "offset", "qgis_unite": "offset_unit"}
+      ]
+    },
+    {
+      "pivot": "sommets",
+      "lyrx": {"type": "CIMMarkerPlacementOnVertices", "modele": {"type": "CIMMarkerPlacementOnVertices", "angleToLine": true, "placeOnControlPoints": false, "placeOnEndPoints": true, "placeOnRegularVertices": true}},
+      "qgis": {"classe": "MarkerLine", "si_ou": [{"placements": "Vertex"}, {"placements": null, "placement": "vertex"}], "fixe": {"placement": "vertex", "placements": "Vertex"}},
+      "proprietes": [
+        {"nom": "orienter", "type": "booleen", "lyrx": "angleToLine", "qgis": "rotate", "defaut": true},
+        {"nom": "decalage", "type": "longueur", "lyrx": "offset", "qgis": "offset", "qgis_unite": "offset_unit"}
+      ]
+    },
+    {
+      "pivot": "extremites",
+      "lyrx": {"type": "CIMMarkerPlacementAtExtremities", "modele": {"type": "CIMMarkerPlacementAtExtremities", "angleToLine": true}},
+      "qgis": {"classe": "MarkerLine", "si_ou": [{"placements": ["FirstVertex", "LastVertex", "FirstVertex|LastVertex", "LastVertex|FirstVertex"]}, {"placements": null, "placement": ["firstvertex", "lastvertex"]}]},
+      "proprietes": [
+        {"nom": "quelles_extremites", "type": "liste", "liste": "extremites_marqueurs", "lyrx": "extremityPlacement", "qgis": "placements", "defaut": "les_deux"},
+        {"nom": "orienter", "type": "booleen", "lyrx": "angleToLine", "qgis": "rotate", "defaut": true},
+        {"nom": "decalage", "type": "longueur", "lyrx": "offset", "qgis": "offset", "qgis_unite": "offset_unit"}
+      ]
+    },
+    {
+      "pivot": "milieu_ligne",
+      "lyrx": {"type": "CIMMarkerPlacementAtRatioPositions", "si": {"positionArray": "[0.5]"}, "modele": {"type": "CIMMarkerPlacementAtRatioPositions", "angleToLine": true, "positionArray": [0.5]}},
+      "qgis": {"classe": "MarkerLine", "si_ou": [{"placements": "CentralPoint"}, {"placements": null, "placement": "centralpoint"}], "fixe": {"placement": "centralpoint", "placements": "CentralPoint"}},
+      "proprietes": [
+        {"nom": "orienter", "type": "booleen", "lyrx": "angleToLine", "qgis": "rotate", "defaut": true},
+        {"nom": "decalage", "type": "longueur", "lyrx": "offset", "qgis": "offset", "qgis_unite": "offset_unit"}
+      ]
+    },
+    {
+      "_doc": "Lecture seule : marqueurs ArcGIS « aux positions relatives » 0 et/ou 1 = aux extrémités. Écrits ensuite comme « extremites ».",
+      "pivot": "extremites",
+      "lyrx": {"type": "CIMMarkerPlacementAtRatioPositions", "si": {"positionArray": ["[0, 1]", "[1, 0]", "[0]", "[1]"]}},
+      "qgis": {"classe": "MarkerLine", "si_ou": [{"placements": ["FirstVertex", "LastVertex", "FirstVertex|LastVertex", "LastVertex|FirstVertex"]}, {"placements": null, "placement": ["firstvertex", "lastvertex"]}]},
+      "proprietes": [
+        {"nom": "quelles_extremites", "type": "liste", "liste": "positions_relatives", "lyrx": "positionArray", "qgis": "placements", "defaut": "les_deux"},
+        {"nom": "orienter", "type": "booleen", "lyrx": "angleToLine", "qgis": "rotate", "defaut": true},
+        {"nom": "decalage", "type": "longueur", "lyrx": "offset", "qgis": "offset", "qgis_unite": "offset_unit"}
+      ]
+    }
+  ]
+}

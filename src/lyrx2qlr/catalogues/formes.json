@@ -1,0 +1,37 @@
+{
+  "_doc": [
+    "Formes des marqueurs simples. ArcGIS Pro dessine un marqueur simple avec une géométrie (CIMVectorMarker) ; QGIS avec un nom de forme (SimpleMarker).",
+    "« signature » sert à reconnaître une géométrie ArcGIS : genre (courbe, anneau, chemin), nombre de sommets, alignée sur les axes ou non, proportion hauteur / largeur arrondie au dixième (anneaux).",
+    "« cim_geometrie » est la géométrie écrite dans le .lyrx (cadre de -2 à 2), « cim_symbole » le type du symbole qui la dessine.",
+    "La première forme dont la signature correspond est retenue."
+  ],
+  "defaut": "circle",
+  "formes": [
+    {"qgis": "circle", "signature": {"genre": "courbe", "arcs_seuls": true}, "cim_symbole": "CIMPolygonSymbol",
+     "cim_geometrie": {"curveRings": [[[0, 2], {"a": [[0, 2], [0, 0], 0, 1]}]]}},
+    {"qgis": "square", "signature": {"genre": "anneau", "sommets": 4, "aligne": true}, "cim_symbole": "CIMPolygonSymbol",
+     "cim_geometrie": {"rings": [[[-2, -2], [-2, 2], [2, 2], [2, -2], [-2, -2]]]}},
+    {"qgis": "diamond", "signature": {"genre": "anneau", "sommets": 4, "aligne": false}, "cim_symbole": "CIMPolygonSymbol",
+     "cim_geometrie": {"rings": [[[0, -2], [-2, 0], [0, 2], [2, 0], [0, -2]]]}},
+    {"qgis": "triangle", "signature": {"genre": "anneau", "sommets": 3, "proportion": 1.0}, "cim_symbole": "CIMPolygonSymbol",
+     "cim_geometrie": {"rings": [[[0, 2], [-2, -2], [2, -2], [0, 2]]]}},
+    {"qgis": "equilateral_triangle", "signature": {"genre": "anneau", "sommets": 3}, "cim_symbole": "CIMPolygonSymbol",
+     "cim_geometrie": {"rings": [[[0, 2], [-1.7320508, -1], [1.7320508, -1], [0, 2]]]}},
+    {"qgis": "pentagon", "signature": {"genre": "anneau", "sommets": 5}, "cim_symbole": "CIMPolygonSymbol",
+     "cim_geometrie": {"rings": [[[0, 2], [-1.9021130, 0.6180340], [-1.1755705, -1.6180340], [1.1755705, -1.6180340], [1.9021130, 0.6180340], [0, 2]]]}},
+    {"qgis": "hexagon", "signature": {"genre": "anneau", "sommets": 6}, "cim_symbole": "CIMPolygonSymbol",
+     "cim_geometrie": {"rings": [[[0, 2], [-1.7320508, 1], [-1.7320508, -1], [0, -2], [1.7320508, -1], [1.7320508, 1], [0, 2]]]}},
+    {"qgis": "octagon", "signature": {"genre": "anneau", "sommets": 8}, "cim_symbole": "CIMPolygonSymbol",
+     "cim_geometrie": {"rings": [[[0.8284271, 2], [-0.8284271, 2], [-2, 0.8284271], [-2, -0.8284271], [-0.8284271, -2], [0.8284271, -2], [2, -0.8284271], [2, 0.8284271], [0.8284271, 2]]]}},
+    {"qgis": "star", "signature": {"genre": "anneau", "sommets": 10}, "cim_symbole": "CIMPolygonSymbol",
+     "cim_geometrie": {"rings": [[[0, 2], [-0.4490279, 0.6180340], [-1.9021130, 0.6180340], [-0.7265425, -0.2360680], [-1.1755705, -1.6180340], [0, -0.7639320], [1.1755705, -1.6180340], [0.7265425, -0.2360680], [1.9021130, 0.6180340], [0.4490279, 0.6180340], [0, 2]]]}},
+    {"qgis": "cross_fill", "signature": {"genre": "anneau", "sommets": 12, "aligne": true, "proportion": 1.0}, "cim_symbole": "CIMPolygonSymbol",
+     "cim_geometrie": {"rings": [[[-0.4, 2], [0.4, 2], [0.4, 0.4], [2, 0.4], [2, -0.4], [0.4, -0.4], [0.4, -2], [-0.4, -2], [-0.4, -0.4], [-2, -0.4], [-2, 0.4], [-0.4, 0.4], [-0.4, 2]]]}},
+    {"qgis": "cross", "signature": {"genre": "chemin", "sommets": 2, "aligne": true}, "cim_symbole": "CIMLineSymbol",
+     "cim_geometrie": {"paths": [[[-2, 0], [2, 0]], [[0, -2], [0, 2]]]}},
+    {"qgis": "cross2", "signature": {"genre": "chemin", "sommets": 2, "aligne": false}, "cim_symbole": "CIMLineSymbol",
+     "cim_geometrie": {"paths": [[[-2, -2], [2, 2]], [[-2, 2], [2, -2]]]}},
+    {"qgis": "line", "signature": {"genre": "chemin", "sommets": 1}, "cim_symbole": "CIMLineSymbol",
+     "cim_geometrie": {"paths": [[[0, -2], [0, 2]]]}}
+  ]
+}

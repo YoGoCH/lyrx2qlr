@@ -1,0 +1,16 @@
+{
+  "_doc": [
+    "Versions des formats. Lecture : préfixes de versions acceptés sans avertissement. Écriture : version annoncée dans les fichiers produits.",
+    "Ajouter une version = ajouter son préfixe ici, puis lancer les tests sur un exemple de cette version."
+  ],
+  "lyrx": {
+    "lecture_versions": ["2.", "3."],
+    "ecriture": {"version": "3.1.0", "build": 41833}
+  },
+  "qgis": {
+    "lecture_versions": ["3.", "4."],
+    "ecriture": {"version": "3.40.0-Bratislava"},
+    "srs_defaut": "EPSG:2056",
+    "_srs_defaut": "Système de coordonnées écrit dans le .qlr quand le .lyrx n'en dit rien (EPSG:2056 = MN95 suisse). null pour laisser QGIS le lire dans les données."
+  }
+}

@@ -1,0 +1,28 @@
+<!-- Gabarit d'un réglage d'étiquettes QGIS (<settings>). Les propriétés de
+     catalogues/etiquettes.json viennent ensuite remplacer ces valeurs de départ. -->
+<settings calloutType="simple">
+  <text-style fontFamily="Arial" namedStyle="" fontSize="10" fontSizeUnit="Point" fontWeight="50" fontItalic="0"
+              fontUnderline="0" fontStrikeout="0" fontKerning="1" fontLetterSpacing="0" fontWordSpacing="0"
+              textColor="0,0,0,255" textOpacity="1" capitalization="0" blendMode="0" multilineHeight="1"
+              multilineHeightUnit="Percentage" allowHtml="0" textOrientation="horizontal" isExpression="0"
+              fieldName="" previewBkgrdColor="255,255,255,255" legendString="Aa" useSubstitutions="0">
+    <families/>
+    <text-buffer bufferDraw="0" bufferSize="1" bufferSizeUnits="MM" bufferColor="255,255,255,255"
+                 bufferOpacity="1" bufferNoFill="1" bufferJoinStyle="128" bufferBlendMode="0"/>
+    <text-mask maskEnabled="0" maskSize="1.5" maskSizeUnits="MM" maskOpacity="1" maskJoinStyle="128" maskType="0"/>
+    <background shapeDraw="0" shapeType="0"/>
+    <shadow shadowDraw="0"/>
+    <substitutions/>
+  </text-style>
+  <text-format wrapChar="" multilineAlign="3" autoWrapLength="0" useMaxLineLengthForAutoWrap="1" formatNumbers="0"
+               decimals="3" plussign="0" addDirectionSymbol="0"/>
+  <placement placement="1" placementFlags="10" dist="0" distUnits="MM" offsetType="0" quadOffset="4" xOffset="0"
+             yOffset="0" offsetUnits="MM" priority="5" maxCurvedCharAngleIn="25" maxCurvedCharAngleOut="-25"
+             centroidWhole="0" centroidInside="0" fitInPolygonOnly="0" repeatDistance="0" repeatDistanceUnits="MM"
+             overlapHandling="PreventOverlap" allowDegraded="0" polygonPlacementFlags="2" rotationAngle="0"
+             preserveRotation="1" layerType="UnknownGeometry"/>
+  <rendering drawLabels="1" scaleVisibility="0" scaleMin="0" scaleMax="0" fontLimitPixelSize="0" fontMinPixelSize="0"
+             fontMaxPixelSize="10000" obstacle="1" obstacleFactor="1" obstacleType="1" zIndex="0" upsidedownLabels="0"
+             labelPerPart="0" mergeLines="0" minFeatureSize="0" limitNumLabels="0" maxNumLabels="2000"
+             unplacedVisibility="0"/>
+</settings>

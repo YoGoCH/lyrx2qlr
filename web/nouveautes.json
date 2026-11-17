@@ -1,0 +1,60 @@
+{
+  "_doc": "Nouveautés affichées sur la page. Textes écrits à la main (la plus récente en tête) ; « ajouts » est calculé par outils/nouveautes.py.",
+  "versions": [
+    {
+      "version": "1.7.0",
+      "date": "2026-11-17",
+      "fr": "Outil « Contribuer » (onglet à droite) : envoyez un exemple bien ou mal converti, ou une paire de référence, pour entraîner lyrx2qlr. Les fichiers sont nettoyés dans votre navigateur avant l'envoi.",
+      "en": "“Contribute” panel (tab on the right): send a well or badly converted example, or a reference pair, to help train lyrx2qlr. Files are cleaned in your browser before sending.",
+      "ajouts": {
+        "modele": 0,
+        "catalogues": 0,
+        "regles": 0
+      }
+    },
+    {
+      "version": "1.6.0",
+      "date": "2026-11-17",
+      "fr": "Page : style sobre et mode sombre au choix, liste des nouveautés, mot d'avertissement sur les symbologies complexes.",
+      "en": "Page: optional plain style and dark mode, this list of changes, a word of caution about complex symbology.",
+      "ajouts": {
+        "modele": 0,
+        "catalogues": 0,
+        "regles": 0
+      }
+    },
+    {
+      "version": "1.5.1",
+      "date": "2026-11-16",
+      "fr": "Anciens .lyrx sans type de base : le serveur et le moteur sont retrouvés. L'extension QGIS explique pourquoi une base ne s'ouvre pas.",
+      "en": "Older .lyrx files without a database type: server and engine are recovered. The QGIS plugin explains why a database layer does not open.",
+      "ajouts": {
+        "modele": 0,
+        "catalogues": 2,
+        "regles": 0
+      }
+    },
+    {
+      "version": "1.5.0",
+      "date": "2026-11-16",
+      "fr": "Sources de données gardées : le fichier converti pointe sur les mêmes données (fichier, GeoPackage, Oracle, PostgreSQL, SQL Server), sans jamais recopier le mot de passe.",
+      "en": "Data sources kept: the converted file points to the same data (file, GeoPackage, Oracle, PostgreSQL, SQL Server), never copying the password.",
+      "ajouts": {
+        "modele": 4,
+        "catalogues": 45,
+        "regles": 3
+      }
+    },
+    {
+      "version": "1.4.0",
+      "date": "2026-11-16",
+      "fr": "Tout le corpus réel dessiné par les deux logiciels côte à côte : tailles en mètres, décalages de contours et de hachures, images repeintes corrigés.",
+      "en": "The whole real-world corpus drawn by both programs side by side: sizes in metres, outline and hatch offsets, recoloured pictures fixed.",
+      "ajouts": {
+        "modele": 15,
+        "catalogues": 12,
+        "regles": 0
+      }
+    }
+  ]
+}

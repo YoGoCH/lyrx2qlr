@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+.venv/
+# Dépendances de développement installées localement (pytest…)
+.devdeps/
+# Sorties des tests et des conversions locales
+sorties/
+tests/_sorties/
+# Données locales (shapefiles de Yoann, jamais dans le dépôt)
+donnees_locales/
+# Copie du cœur générée pour l'extension et le web
+qgis_plugin/lyrx2qlr_qgis/coeur/
+web/lyrx2qlr.zip
+web/_essai/
+# Fichiers du corpus : gardés sur ce poste seulement, jamais dans le dépôt (docs/corpus.md)
+corpus/fichiers/
+# Comparaisons visuelles du lot 2 (images faites sur les données locales)
+comparaisons_lot2/

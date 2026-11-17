@@ -1,0 +1,57 @@
+{
+  "_doc": [
+    "Méthodes de rendu (comment les entités reçoivent leur symbole) : nom neutre, type ArcGIS Pro, type QGIS.",
+    "La structure de chaque méthode (classes, bornes, valeurs) est lue et écrite par le code ; ce catalogue dit lesquelles existent.",
+    "« separateur_valeurs » : quand une catégorie ArcGIS porte sur plusieurs champs, QGIS reçoit une expression qui colle les champs avec ce texte."
+  ],
+  "rendus": [
+    {"pivot": "unique", "lyrx": "CIMSimpleRenderer", "qgis": "singleSymbol"},
+    {"pivot": "categories", "lyrx": "CIMUniqueValueRenderer", "qgis": "categorizedSymbol"},
+    {"pivot": "classes", "lyrx": "CIMClassBreaksRenderer", "qgis": "graduatedSymbol"}
+  ],
+  "non_pris_en_charge": {
+    "lyrx": {
+      "CIMProportionalRenderer": "Symboles proportionnels",
+      "CIMDotDensityRenderer": "Densité de points",
+      "CIMHeatMapRenderer": "Carte de chaleur",
+      "CIMChartRenderer": "Diagrammes",
+      "CIMDictionaryRenderer": "Dictionnaire de symboles",
+      "CIMUniqueValueRendererWithVisualVariables": "Valeurs uniques avec variables visuelles"
+    },
+    "qgis": {
+      "RuleRenderer": "Ensemble de règles",
+      "heatmapRenderer": "Carte de chaleur",
+      "pointDisplacement": "Déplacement de points",
+      "pointCluster": "Agrégation de points",
+      "invertedPolygonRenderer": "Polygones inversés",
+      "25dRenderer": "2,5 D",
+      "nullSymbol": "Aucun symbole",
+      "mergedFeatureRenderer": "Entités fusionnées",
+      "embeddedSymbol": "Symboles intégrés"
+    }
+  },
+  "signaler_lyrx": {
+    "_doc": "Propriétés ArcGIS connues mais pas encore converties : si elles sont présentes et non vides, le rapport le dit (niveau perte).",
+    "couche": {
+      "featureTable.relates": "Relations entre tables",
+      "featureTable.joins": "Jointures de tables",
+      "displayFilters": "Filtres d'affichage",
+      "featureReduction": "Agrégation / réduction d'entités",
+      "exclusionSet": "Entités exclues de l'affichage",
+      "symbolLayerDrawing.useSymbolLayerDrawing": "Dessin par niveaux de symboles (ordre de superposition)",
+      "pageDefinition": "Requête de page"
+    },
+    "rendu": {
+      "visualVariables": "Variables visuelles (taille, couleur, rotation ou transparence selon un champ)",
+      "rotationExpression": "Rotation selon un champ",
+      "normalizationField": "Normalisation par un champ"
+    }
+  },
+  "classe_type_lyrx": "GraduatedColor",
+  "separateur_valeurs": ", ",
+  "regles_qgis_simples": {
+    "_doc": "Ensemble de règles QGIS converti en valeurs uniques quand chaque règle est « champ = valeur » ou « champ IN (valeurs) » sur un même champ. Groupes : 1 = champ entre guillemets, 2 = champ sans guillemets, 3 = valeur(s).",
+    "egal": "\\s*(?:\"((?:[^\"]|\"\")+)\"|([A-Za-z_][A-Za-z0-9_]*))\\s*=\\s*('(?:[^']|'')*'|-?\\d+(?:\\.\\d+)?)\\s*",
+    "dans": "\\s*(?:\"((?:[^\"]|\"\")+)\"|([A-Za-z_][A-Za-z0-9_]*))\\s+IN\\s*\\((.*)\\)\\s*"
+  }
+}

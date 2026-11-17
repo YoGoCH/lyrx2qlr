@@ -1,0 +1,43 @@
+{
+  "_doc": [
+    "Polices de symboles propres à ArcGIS (absentes des postes QGIS).",
+    "« polices_esri » : les 75 polices ESRI installées par ArcGIS Pro 3.7 (relevé du lot 2). Un caractère d'une de ces polices sans remplacement est gardé en marqueur de police, avec un avertissement.",
+    "« substitutions » : vers QGIS, le caractère est remplacé par un marqueur simple de la forme indiquée (voir formes.json).",
+    "« facteur_taille » : encombrement du glyphe (mesuré sur la police) divisé par celui de la forme QGIS (mesuré par outils/lot2/formes_qgis.py).",
+    "« rendu » : « plein » (forme remplie), « creux » (contour seul) ou « trait » (croix : dessinée par le contour). Pour creux et trait, « epaisseur » est l'épaisseur du trait du glyphe, en fraction de la taille de police.",
+    "« angle » : rotation ajoutée (degrés), quand la forme QGIS n'a pas la même orientation que le glyphe.",
+    "Mesures et galerie : outils/lot2/polices_esri.py, docs/lot2.md. Première source : ancienne ébauche FME de Yoann."
+  ],
+  "polices_esri": ["ESRI AMFM Electric", "ESRI AMFM Gas", "ESRI AMFM Sewer", "ESRI AMFM Water", "ESRI ArcPad", "ESRI Arrowhead", "ESRI Business", "ESRI Cartography", "ESRI Caves 1", "ESRI Caves 2", "ESRI Caves 3", "ESRI Climate & Precipitation", "ESRI Commodities", "ESRI Conservation", "ESRI Crime Analysis", "ESRI Default Marker", "ESRI Dimensioning", "ESRI ERS Infrastructures S1", "ESRI ERS Operations S1", "ESRI Elements", "ESRI Enviro Hazard Analysis", "ESRI Enviro Hazard Incident", "ESRI Enviro Hazard Sites", "ESRI Environmental & Icons", "ESRI Fire Incident NFPA", "ESRI Geology", "ESRI Geology AGSO 1", "ESRI Geology USGS 95-525", "ESRI Geometric Symbols", "ESRI Hazardous Materials", "ESRI Hydrants", "ESRI IGL Font16", "ESRI IGL Font20", "ESRI IGL Font21", "ESRI IGL Font22", "ESRI IGL Font23", "ESRI IGL Font24", "ESRI IGL Font25", "ESRI Meteorological 01", "ESRI Mil2525C Modifiers", "ESRI MilMod 01", "ESRI MilMod 02", "ESRI MilRed 01", "ESRI MilSym 01", "ESRI MilSym 02", "ESRI MilSym 03", "ESRI MilSym 04", "ESRI MilSym 05", "ESRI NIMA City Graphic LN", "ESRI NIMA City Graphic PT", "ESRI NIMA DNC LN", "ESRI NIMA DNC PT", "ESRI NIMA VMAP1&2 LN", "ESRI NIMA VMAP1&2 PT", "ESRI North", "ESRI Oil, Gas, & Water", "ESRI Ordnance Survey", "ESRI Pipeline US 1", "ESRI Public1", "ESRI SDS 1.95 1", "ESRI SDS 1.95 2", "ESRI SDS 2.00 1", "ESRI SDS 2.00 2", "ESRI Shields", "ESRI Surveyor", "ESRI Telecom", "ESRI Transportation & Civic", "ESRI Transportation & Municipal", "ESRI US Forestry 1", "ESRI US Forestry 2", "ESRI US MUTCD 1", "ESRI US MUTCD 2", "ESRI US MUTCD 3", "ESRI Weather", "Esri Airfield Sign", "Esri Airport Sign"],
+  "substitutions": [
+    {"police": "ESRI Default Marker", "caractere": 33, "forme": "circle", "facteur_taille": 0.661, "rendu": "plein"},
+    {"police": "ESRI Default Marker", "caractere": 34, "forme": "square", "facteur_taille": 0.661, "rendu": "plein"},
+    {"police": "ESRI Default Marker", "caractere": 35, "forme": "equilateral_triangle", "facteur_taille": 0.669, "rendu": "plein"},
+    {"police": "ESRI Default Marker", "caractere": 36, "forme": "pentagon", "facteur_taille": 0.71, "rendu": "plein"},
+    {"police": "ESRI Default Marker", "caractere": 37, "forme": "hexagon", "facteur_taille": 0.68, "rendu": "plein", "angle": 30},
+    {"police": "ESRI Default Marker", "caractere": 38, "forme": "octagon", "facteur_taille": 0.661, "rendu": "plein"},
+    {"police": "ESRI Default Marker", "caractere": 39, "forme": "octagon", "facteur_taille": 0.661, "rendu": "plein"},
+    {"police": "ESRI Default Marker", "caractere": 40, "forme": "circle", "facteur_taille": 0.682, "rendu": "creux", "epaisseur": 0.03},
+    {"police": "ESRI Default Marker", "caractere": 41, "forme": "square", "facteur_taille": 0.682, "rendu": "creux", "epaisseur": 0.03},
+    {"police": "ESRI Default Marker", "caractere": 42, "forme": "equilateral_triangle", "facteur_taille": 0.748, "rendu": "creux", "epaisseur": 0.035},
+    {"police": "ESRI Default Marker", "caractere": 43, "forme": "pentagon", "facteur_taille": 0.665, "rendu": "creux", "epaisseur": 0.035},
+    {"police": "ESRI Default Marker", "caractere": 44, "forme": "hexagon", "facteur_taille": 0.644, "rendu": "creux", "epaisseur": 0.025, "angle": 30},
+    {"police": "ESRI Default Marker", "caractere": 45, "forme": "octagon", "facteur_taille": 0.682, "rendu": "creux", "epaisseur": 0.03},
+    {"police": "ESRI Default Marker", "caractere": 68, "forme": "cross2", "facteur_taille": 0.614, "rendu": "trait", "epaisseur": 0.075},
+    {"police": "ESRI Default Marker", "caractere": 69, "forme": "cross", "facteur_taille": 0.594, "rendu": "trait", "epaisseur": 0.105},
+    {"police": "ESRI Default Marker", "caractere": 94, "forme": "star", "facteur_taille": 0.581, "rendu": "plein"},
+    {"police": "ESRI Default Marker", "caractere": 95, "forme": "star", "facteur_taille": 0.701, "rendu": "creux", "epaisseur": 0.04},
+    {"police": "ESRI Default Marker", "caractere": 171, "forme": "circle", "facteur_taille": 0.702, "rendu": "creux", "epaisseur": 0.03},
+    {"police": "ESRI Default Marker", "caractere": 172, "forme": "circle", "facteur_taille": 0.661, "rendu": "plein"},
+    {"police": "ESRI Default Marker", "caractere": 174, "forme": "square", "facteur_taille": 0.682, "rendu": "plein"},
+    {"police": "ESRI Default Marker", "caractere": 175, "forme": "square", "facteur_taille": 0.682, "rendu": "plein"},
+    {"police": "ESRI Default Marker", "caractere": 183, "forme": "circle", "facteur_taille": 0.682, "rendu": "plein"},
+    {"police": "ESRI Default Marker", "caractere": 184, "forme": "equilateral_triangle", "facteur_taille": 0.778, "rendu": "plein"},
+    {"police": "ESRI Default Marker", "caractere": 185, "forme": "equilateral_triangle", "facteur_taille": 0.698, "rendu": "plein"},
+    {"police": "ESRI Default Marker", "caractere": 196, "forme": "circle", "facteur_taille": 0.682, "rendu": "plein"},
+    {"police": "ESRI Default Marker", "caractere": 199, "forme": "circle", "facteur_taille": 0.411, "rendu": "plein"},
+    {"police": "ESRI Default Marker", "caractere": 200, "forme": "circle", "facteur_taille": 0.48, "rendu": "plein"},
+    {"police": "ESRI Default Marker", "caractere": 201, "forme": "square", "facteur_taille": 0.661, "rendu": "plein"},
+    {"police": "ESRI Default Marker", "caractere": 203, "forme": "cross", "facteur_taille": 0.594, "rendu": "trait", "epaisseur": 0.1}
+  ]
+}
