@@ -5,7 +5,8 @@ de Yoann. L'atelier de règles (étape 2) et les contributions par GitHub (étap
 
 ## Ce qui existe (v1.7.0)
 
-- **Page web** : onglet « Contribuer » sur le bord droit, qui ouvre un panneau latéral
+- **Page web** : encadré « Un outil collaboratif » et son bouton « Contribuer un exemple », qui
+  ouvre un panneau latéral (l'onglet du bord droit a été retiré en v1.8.4)
   (`web/contribuer.js`). Aussi par le lien `#contribuer` et par le bouton « Contribuer » de chaque
   résultat, qui joint le fichier et propose « Conversion à corriger » s'il y a des pertes, sinon
   « Bonne conversion ». Quatre sortes de contribution :

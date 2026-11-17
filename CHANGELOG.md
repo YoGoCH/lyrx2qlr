@@ -1,5 +1,13 @@
 # Journal des versions
 
+## v1.8.4 — 17 novembre 2026
+
+La conversion ne change pas.
+
+- Page web : l'onglet « Contribuer » du bord droit est retiré. Le panneau s'ouvre par le bouton
+  « Contribuer un exemple » de l'encadré « Un outil collaboratif » (ou par le bouton « Contribuer »
+  d'un résultat, ou le lien `#contribuer`) ; à la fermeture, le focus revient sur ce bouton.
+
 ## v1.8.3 — 17 novembre 2026
 
 Page web allégée. La conversion ne change pas.

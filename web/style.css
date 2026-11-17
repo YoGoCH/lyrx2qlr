@@ -355,20 +355,8 @@ footer p { margin: 6px 0; }
 :root[data-style="sobre"] .logo .cyan { fill: var(--doux); }
 
 /* =============================================================================================
-   Outil « Contribuer » : onglet sur le bord droit, panneau latéral qui glisse depuis la droite.
+   Outil « Contribuer » : panneau latéral qui glisse depuis la droite.
    ============================================================================================= */
-.onglet-contribuer {
-  position: fixed; right: 0; top: 50%; z-index: 30;
-  transform: translateY(-50%); writing-mode: vertical-rl;
-  padding: 26px 12px; border-right: 0; border-radius: 12px 0 0 12px;
-  background: var(--rose); color: #1f1530; letter-spacing: .04em;
-  font-size: 1.18rem; font-weight: 800;
-  box-shadow: -5px 5px 0 var(--encre);
-}
-.onglet-contribuer:hover { transform: translate(-4px, -50%); box-shadow: -8px 6px 0 var(--encre); }
-.onglet-contribuer:active { transform: translate(0, -50%); box-shadow: -2px 2px 0 var(--encre); }
-body.panneau-ouvert .onglet-contribuer { visibility: hidden; }
-
 .voile { position: fixed; inset: 0; z-index: 40; background: color-mix(in srgb, var(--encre) 28%, transparent); }
 .panneau {
   position: fixed; top: 0; right: 0; bottom: 0; z-index: 50;
@@ -449,11 +437,8 @@ button.contribuer-resultat { margin-left: 6px; }
 @media (max-width: 480px) {
   .panneau { padding: 12px 16px 24px; border-left: 0; box-shadow: none; }
   .fichiers-contrib, .champs-ligne { grid-template-columns: 1fr; }
-  .onglet-contribuer { padding: 14px 6px; font-size: .92rem; }
 }
 
-:root[data-style="sobre"] .onglet-contribuer { background: var(--accent); color: var(--sur-accent); border: 1px solid var(--accent); border-right: 0; border-radius: 3px 0 0 3px; box-shadow: none; }
-:root[data-style="sobre"] .onglet-contribuer:hover { transform: translate(-2px, -50%); }
 :root[data-style="sobre"] .panneau { border-left: 1px solid var(--ligne); box-shadow: -2px 0 12px rgba(0, 0, 0, .12); }
 :root[data-style="sobre"] .panneau-tete h2 { text-shadow: none; font-weight: 700; }
 :root[data-style="sobre"] :is(.type, .fichier-contrib, .apercu, .champ input, .champ textarea) { border-width: 1px; border-color: var(--ligne); border-radius: 3px; box-shadow: none; }

@@ -8,7 +8,7 @@
 
 ## Trois façons d'aider
 
-1. **Envoyer un exemple** depuis la page web, onglet « Contribuer » : une conversion à corriger,
+1. **Envoyer un exemple** depuis la page web, bouton « Contribuer un exemple » : une conversion à corriger,
    une bonne conversion, ou une paire de référence (le même rendu fait à la main dans ArcGIS Pro et
    dans QGIS). Le navigateur retire les mots de passe, utilisateurs, serveurs, adresses e-mail et
    dossiers personnels avant l'envoi, et montre ce qu'il a retiré.
@@ -22,7 +22,7 @@ La connaissance est rangée dans les catalogues JSON de `src/lyrx2qlr/catalogues
 code. Une nouvelle correspondance, c'est en général **une ligne** de catalogue. Le mode d'emploi
 est dans [docs/catalogues.md](docs/catalogues.md).
 
-- Joindre un **fichier d'essai** qui montre le cas, nettoyé (onglet « Contribuer » de la page, ou
+- Joindre un **fichier d'essai** qui montre le cas, nettoyé (bouton « Contribuer un exemple » de la page, ou
   `python outils/preparer_exemples.py`, qui refuse les fichiers sensibles). Les nouveaux
   exemples vont dans `exemples/lyrx` ou `exemples/qlr` ; le corpus de fichiers téléchargés reste
   sur le poste du mainteneur.
@@ -38,7 +38,7 @@ est dans [docs/catalogues.md](docs/catalogues.md).
 
 Aucun mot de passe, aucune clé, aucune adresse e-mail réelle, aucune chaîne de connexion ni aucun
 nom de serveur interne dans un fichier, un ticket ou une demande de fusion. Les tests n'utilisent
-que des serveurs et des utilisateurs inventés. En cas de doute, passer le fichier dans l'onglet
+que des serveurs et des utilisateurs inventés. En cas de doute, passer le fichier dans l'outil
 « Contribuer » de la page et utiliser « Télécharger le colis » : le fichier dans `fichiers/` est
 nettoyé.
 

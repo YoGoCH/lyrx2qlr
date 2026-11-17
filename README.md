@@ -24,7 +24,7 @@ Pourquoi ce projet ? Aucun outil gratuit et entretenu ne fait cette conversion d
 sens (vérifié en novembre 2026, voir [docs/etat_de_l_art.md](docs/etat_de_l_art.md)).
 Besoin et chances de succès : [docs/positionnement.md](docs/positionnement.md). Prochaines
 étapes (ArcGIS Pro, extension officielle, anglais, code public) :
-[docs/feuille_de_route.md](docs/feuille_de_route.md). Pour aider : onglet « Contribuer » de la page web, ou
+[docs/feuille_de_route.md](docs/feuille_de_route.md). Pour aider : bouton « Contribuer un exemple » de la page web, ou
 [CONTRIBUTING.md](CONTRIBUTING.md) ; fonctionnement dans [docs/collaboratif.md](docs/collaboratif.md).
 
 ![Application web](docs/captures/application_web.jpg)

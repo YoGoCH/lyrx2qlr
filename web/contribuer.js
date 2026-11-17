@@ -10,8 +10,6 @@
 
   I.ajouter({
     fr: {
-      "contrib-onglet": "Contribuer",
-      "contrib-onglet-titre": "Aider à améliorer lyrx2qlr : envoyer un exemple, bon ou mauvais",
       "contrib-titre": "Contribuer",
       "contrib-fermer": "Fermer",
       "contrib-intro": "Aidez à entraîner lyrx2qlr : un exemple réel, qu'il soit bien ou mal converti, devient un cas de test et améliore les catalogues de correspondances.",
@@ -82,8 +80,6 @@
       "contribuer-resultat-titre": "Envoyer ce fichier pour améliorer lyrx2qlr (bon ou mauvais résultat)",
     },
     en: {
-      "contrib-onglet": "Contribute",
-      "contrib-onglet-titre": "Help improve lyrx2qlr: send an example, good or bad",
       "contrib-titre": "Contribute",
       "contrib-fermer": "Close",
       "contrib-intro": "Help train lyrx2qlr: a real example, well or badly converted, becomes a test case and improves the mapping catalogues.",
@@ -188,7 +184,6 @@
       panneau.hidden = false;
       $("voile-contribuer").hidden = false;
       document.body.classList.add("panneau-ouvert");
-      $("onglet-contribuer").setAttribute("aria-expanded", "true");
       requestAnimationFrame(() => panneau.classList.add("ouvert"));
     }
     const cible = options.type ? $("contrib-commentaire") : panneau.querySelector('input[name="type"]:checked') || panneau.querySelector('input[name="type"]');
@@ -202,9 +197,8 @@
     panneau.hidden = true;
     $("voile-contribuer").hidden = true;
     document.body.classList.remove("panneau-ouvert");
-    $("onglet-contribuer").setAttribute("aria-expanded", "false");
     if (location.hash === "#contribuer") history.replaceState(null, "", location.pathname + location.search);
-    (retourFocus && document.contains(retourFocus) ? retourFocus : $("onglet-contribuer")).focus();
+    (retourFocus && document.contains(retourFocus) ? retourFocus : $("appel-contribuer")).focus();
   }
 
   // Le focus reste dans le panneau tant qu'il est ouvert (Tab et Maj+Tab font le tour)
@@ -397,7 +391,6 @@
 
   document.addEventListener("DOMContentLoaded", () => {
     const panneau = $("panneau-contribuer");
-    $("onglet-contribuer").addEventListener("click", () => (panneau.hidden ? ouvrir() : fermer()));
     $("fermer-contribuer").addEventListener("click", fermer);
     $("voile-contribuer").addEventListener("click", fermer);
     panneau.addEventListener("keydown", garderFocus);

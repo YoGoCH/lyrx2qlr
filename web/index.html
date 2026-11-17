@@ -26,7 +26,7 @@
 <meta property="og:locale:alternate" content="en_GB">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#f3f4f6">
-<link rel="stylesheet" href="style.css?v=1ce2120b">
+<link rel="stylesheet" href="style.css?v=e58ded65">
 <!-- Style (papetche ou sobre) et mode (clair ou sombre) choisis la dernière fois, appliqués avant l'affichage pour éviter un clignotement -->
 <script>try { if (localStorage.getItem("lyrx2qlr-style") === "papetche") delete document.documentElement.dataset.style; var t = localStorage.getItem("lyrx2qlr-theme"); if (t === "dark" || t === "light") document.documentElement.dataset.theme = t; } catch (e) {}</script>
 </head>
@@ -100,7 +100,7 @@
       <h2 id="titre-appel" data-i18n="appel-titre">Un outil collaboratif</h2>
       <p data-i18n="appel-texte">Chaque exemple réel améliore les règles de conversion. Un fichier mal converti, ou bien converti ? Envoyez-le : il est nettoyé dans votre navigateur, et rien ne part sans votre accord.</p>
     </div>
-    <a class="bouton" href="#contribuer" data-i18n="appel-bouton">Contribuer un exemple</a>
+    <a class="bouton" id="appel-contribuer" href="#contribuer" aria-controls="panneau-contribuer" data-i18n="appel-bouton">Contribuer un exemple</a>
   </section>
 
   <section class="bloc" aria-labelledby="titre-logique">
@@ -195,10 +195,8 @@
   </footer>
 </main>
 
-<!-- Outil « Contribuer » : panneau latéral, ouvert par l'onglet du bord droit, par #contribuer ou
-     par le bouton « Contribuer » d'un résultat. Rien ne part sans le bouton « Envoyer ». -->
-<button type="button" id="onglet-contribuer" class="onglet-contribuer" aria-controls="panneau-contribuer" aria-expanded="false"
-        data-i18n-attr="title:contrib-onglet-titre"><span data-i18n="contrib-onglet">Contribuer</span></button>
+<!-- Outil « Contribuer » : panneau latéral, ouvert par le bouton « Contribuer un exemple » (lien #contribuer)
+     ou par le bouton « Contribuer » d'un résultat. Rien ne part sans le bouton « Envoyer ». -->
 <div id="voile-contribuer" class="voile" hidden></div>
 <aside id="panneau-contribuer" class="panneau" role="dialog" aria-modal="true" aria-labelledby="contrib-titre" hidden>
   <div class="panneau-tete">
@@ -291,7 +289,7 @@
 <script src="nouveautes.js?v=ded720ff"></script>
 <script src="repli.js?v=366fb0bb"></script>
 <script src="hors_ligne.js?v=81f4b954"></script>
-<script src="contribuer.js?v=975d58e4"></script>
+<script src="contribuer.js?v=8ffe3b8d"></script>
 <script src="app.js?v=0ddd84d4"></script>
 </body>
 </html>
