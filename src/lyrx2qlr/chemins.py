@@ -14,7 +14,8 @@ Dans un élément XML (.qlr) :  « text-style/text-buffer@bufferSize »
 from __future__ import annotations
 
 import re
-import xml.etree.ElementTree as ET
+# Contrôle de sécurité (B405) : éléments seulement ; la lecture passe par xml_sur.lire
+import xml.etree.ElementTree as ET  # nosec B405
 from typing import Any, Optional
 
 _ETAPE = re.compile(r"([^.\[\]]+)|\[(\d+)\]|\[([A-Za-z_]+)=([^\]]*)\]")

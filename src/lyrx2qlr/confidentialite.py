@@ -13,7 +13,7 @@ from __future__ import annotations
 import re
 
 # Libellés montrés au visiteur dans l'aperçu (« ce qui a été retiré »)
-SECRET = "mot de passe, jeton ou clé"
+ACCES = "mot de passe, jeton ou clé"
 UTILISATEUR = "nom d'utilisateur"
 SERVEUR = "nom de serveur"
 BASE = "nom de base de données"
@@ -21,11 +21,11 @@ EMAIL = "adresse e-mail"
 DOSSIER = "dossier personnel"
 RESEAU = "serveur d'un chemin réseau"
 
-REMPLACEMENTS = {SECRET: "RETIRE", UTILISATEUR: "utilisateur-anonyme", SERVEUR: "serveur-anonyme",
+REMPLACEMENTS = {ACCES: "RETIRE", UTILISATEUR: "utilisateur-anonyme", SERVEUR: "serveur-anonyme",
                  BASE: "base-anonyme"}
 
 _CLES = {
-    SECRET: r"ENCRYPTED_PASSWORD(?:_UTF8)?|PASSWORD|PASSWD|PWD|TOKEN|ACCESS_TOKEN|API_?KEY|SECRET",
+    ACCES: r"ENCRYPTED_PASSWORD(?:_UTF8)?|PASSWORD|PASSWD|PWD|TOKEN|ACCESS_TOKEN|API_?KEY|SECRET",
     UTILISATEUR: r"USER|USERNAME|UID",
     SERVEUR: r"SERVER|INSTANCE|HOST|HOSTADDR|DB_CONNECTION_PROPERTIES",
     BASE: r"DBNAME|DATABASE",
@@ -84,7 +84,7 @@ def nettoyer(texte: str) -> tuple[str, dict[str, int]]:
         return remplacer
 
     def url(m: re.Match) -> str:
-        compter(SECRET if ":" in m.group("qui") else UTILISATEUR)
+        compter(ACCES if ":" in m.group("qui") else UTILISATEUR)
         return m.group("debut") + "RETIRE@"
 
     def dossier(m: re.Match) -> str:

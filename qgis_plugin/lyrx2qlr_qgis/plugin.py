@@ -1,5 +1,6 @@
 """Menu « Extensions › lyrx2qlr » : importer un .lyrx, exporter la couche active en .lyrx, convertir un dossier.
 
+Compatible Qt5 et Qt6 : énumérations écrites en entier (Qt.WindowModality.WindowModal…) et exec().
 Le cœur de conversion est une copie de src/lyrx2qlr placée dans coeur/ par « python outils/construire.py extension ».
 """
 from __future__ import annotations
@@ -39,10 +40,10 @@ class FenetreRapport(QDialog):
         disposition.addWidget(etiquette)
         zone = QPlainTextEdit(texte)
         zone.setReadOnly(True)
-        zone.setLineWrapMode(QPlainTextEdit.WidgetWidth)
+        zone.setLineWrapMode(QPlainTextEdit.LineWrapMode.WidgetWidth)
         disposition.addWidget(zone)
-        boutons = QDialogButtonBox(QDialogButtonBox.Close)
-        enregistrer = boutons.addButton("Enregistrer le rapport…", QDialogButtonBox.ActionRole)
+        boutons = QDialogButtonBox(QDialogButtonBox.StandardButton.Close)
+        enregistrer = boutons.addButton("Enregistrer le rapport…", QDialogButtonBox.ButtonRole.ActionRole)
         enregistrer.clicked.connect(self.enregistrer)
         boutons.rejected.connect(self.reject)
         disposition.addWidget(boutons)
@@ -167,9 +168,9 @@ class Lyrx2QlrPlugin:
 
     def _rapport(self, titre: str, rapport: Rapport):
         if rapport.compter("perte") or rapport.compter("avertissement"):
-            FenetreRapport(self.iface.mainWindow(), titre, rapport.resume, rapport.en_texte()).exec_()
+            FenetreRapport(self.iface.mainWindow(), titre, rapport.resume, rapport.en_texte()).exec()
         else:
-            self.iface.messageBar().pushMessage("lyrx2qlr", f"{titre} : {rapport.resume}", Qgis.Success, 5)
+            self.iface.messageBar().pushMessage("lyrx2qlr", f"{titre} : {rapport.resume}", Qgis.MessageLevel.Success, 5)
 
     # --- actions ---------------------------------------------------------------------------------
     def importer_lyrx(self):
@@ -252,7 +253,7 @@ class Lyrx2QlrPlugin:
             QMessageBox.information(fenetre, "lyrx2qlr", "Aucun fichier .lyrx, .qlr ou .qml dans ce dossier.")
             return
         progres = QProgressDialog("Conversion…", "Arrêter", 0, len(fichiers), fenetre)
-        progres.setWindowModality(Qt.WindowModal)
+        progres.setWindowModality(Qt.WindowModality.WindowModal)
         textes, echecs, pertes = [], 0, 0
         for i, f in enumerate(fichiers):
             if progres.wasCanceled():
@@ -271,7 +272,7 @@ class Lyrx2QlrPlugin:
         resume = (f"{len(textes) - echecs} fichier(s) converti(s) sur {len(fichiers)}, {echecs} échec(s) ; "
                   f"{pertes} fichier(s) avec des éléments non convertis. Rapport enregistré dans "
                   f"« rapport_lyrx2qlr.txt » du dossier de sortie.")
-        FenetreRapport(fenetre, "Conversion du dossier", resume, texte).exec_()
+        FenetreRapport(fenetre, "Conversion du dossier", resume, texte).exec()
 
     def a_propos(self):
         QMessageBox.about(self.iface.mainWindow(), "lyrx2qlr",

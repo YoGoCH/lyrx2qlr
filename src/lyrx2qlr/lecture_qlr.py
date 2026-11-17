@@ -3,10 +3,11 @@ from __future__ import annotations
 
 import copy
 import re
-import xml.etree.ElementTree as ET
+# Contrôle de sécurité (B405) : éléments seulement ; la lecture passe par xml_sur.lire
+import xml.etree.ElementTree as ET  # nosec B405
 from typing import Optional
 
-from . import sources
+from . import sources, xml_sur
 from .catalogue import Catalogue, conditions_remplies
 from .modele import (Classe, ClasseEtiquette, Couche, CoucheSymbole, Document, Placement, Rendu,
                      Source, Symbole)
@@ -39,7 +40,7 @@ class LecteurQlr:
     def lire(self, donnees: bytes | str) -> Document:
         if isinstance(donnees, str):
             donnees = donnees.encode("utf-8")
-        racine = ET.fromstring(donnees)
+        racine = xml_sur.lire(donnees)
         doc = Document(format_source="qlr")
         if racine.tag == "qgis":  # fichier de style .qml
             doc.format_source = "qml"

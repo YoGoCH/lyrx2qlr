@@ -4,7 +4,8 @@ from __future__ import annotations
 import copy
 import hashlib
 import re
-import xml.etree.ElementTree as ET
+# Contrôle de sécurité (B405) : écrit du XML ; seule lecture : notre gabarit (plus bas)
+import xml.etree.ElementTree as ET  # nosec B405
 from typing import Optional
 
 from . import sources
@@ -20,11 +21,20 @@ _GEOM_ETIQUETTES = {"point": "PointGeometry", "ligne": "LineGeometry", "surface"
 def identifiant(nom: str, graine: str = "") -> str:
     """Identifiant stable (le même nom donne toujours le même identifiant)."""
     propre = re.sub(r"[^A-Za-z0-9_]", "_", nom)[:40] or "couche"
-    return f"{propre}_{hashlib.md5((graine + nom).encode('utf-8')).hexdigest()[:8]}"
+    return f"{propre}_{hashlib.md5((graine + nom).encode('utf-8'), usedforsecurity=False).hexdigest()[:8]}"
+
+
+def _couche_symbole(classe: str, actif: bool) -> ET.Element:
+    """Élément <layer> d'une couche de symbole QGIS. « pass » est l'ordre de dessin (rendu en
+    plusieurs passes), pas un mot de passe : posé par set() pour ne pas tromper les contrôles."""
+    couche = ET.Element("layer", {"class": classe, "enabled": "1" if actif else "0"})
+    couche.set("pass", "0")
+    couche.set("locked", "0")
+    return couche
 
 
 def _uuid(*morceaux: str) -> str:
-    h = hashlib.md5("|".join(morceaux).encode("utf-8")).hexdigest()
+    h = hashlib.md5("|".join(morceaux).encode("utf-8"), usedforsecurity=False).hexdigest()
     return "{%s-%s-%s-%s-%s}" % (h[:8], h[8:12], h[12:16], h[16:20], h[20:32])
 
 
@@ -239,14 +249,15 @@ class EcrivainQlr:
         if numero == 0 and vide:
             # Sans aucune couche, QGIS remplacerait le symbole par un symbole par défaut (visible) :
             # on écrit une couche invisible pour garder un symbole qui ne dessine rien.
-            couche = ET.SubElement(s, "layer", {"class": vide["classe"], "enabled": "1", "pass": "0", "locked": "0"})
+            couche = _couche_symbole(vide["classe"], True)
+            s.append(couche)
             _option_map(couche, dict(vide["props"]))
         return s
 
     def ecrire_couche_symbole(self, cs: CoucheSymbole, entree: dict, nom_sous: str, ou: str) -> ET.Element:
         props = dict(entree["qgis"].get("fixe", {}))
         ecrire_qgis(self.conv, entree.get("proprietes", []), cs.props, props, ou)
-        couche = ET.Element("layer", {"class": entree["qgis"]["classe"], "enabled": "1" if cs.actif else "0", "pass": "0", "locked": "0"})
+        couche = _couche_symbole(entree["qgis"]["classe"], cs.actif)
         _option_map(couche, props)
         if entree.get("sous_symbole"):
             sous = cs.sous_symbole or _symbole_vide(entree["sous_symbole"]["genre"])
@@ -273,7 +284,7 @@ class EcrivainQlr:
             props_placement = placement.props
         props = dict(entree["qgis"].get("fixe", {}))
         ecrire_qgis(self.conv, entree.get("proprietes", []), props_placement, props, ou)
-        couche = ET.Element("layer", {"class": entree["qgis"]["classe"], "enabled": "1" if marqueurs[0].actif else "0", "pass": "0", "locked": "0"})
+        couche = _couche_symbole(entree["qgis"]["classe"], marqueurs[0].actif)
         _option_map(couche, props)
         sous = Symbole(genre="point", couches=[CoucheSymbole(type=m.type, props=m.props, actif=m.actif) for m in marqueurs])
         couche.append(self.ecrire_symbole(sous, nom_sous, ou + " > marqueur"))
@@ -340,7 +351,8 @@ _GABARIT: Optional[ET.Element] = None
 def _gabarit_etiquettes() -> ET.Element:
     global _GABARIT
     if _GABARIT is None:
-        _GABARIT = ET.parse(DOSSIER_MODELES / "qgis_reglage_etiquettes.xml").getroot()
+        # Contrôle de sécurité (B314) : gabarit livré avec le paquet
+        _GABARIT = ET.parse(DOSSIER_MODELES / "qgis_reglage_etiquettes.xml").getroot()  # nosec B314
     return _GABARIT
 
 

@@ -31,7 +31,7 @@ def extension(qgis_app):
     plug = lyrx2qlr_qgis.classFactory(iface)
     plug.initGui()
     fenetres = []
-    module.FenetreRapport.exec_ = lambda self: fenetres.append(self.texte)
+    module.FenetreRapport.exec = lambda self: fenetres.append(self.texte)
     yield plug, module, iface, fenetres
     plug.unload()
 

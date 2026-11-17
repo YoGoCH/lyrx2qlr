@@ -2,6 +2,17 @@
   "_doc": "Nouveautés affichées sur la page. Textes écrits à la main (la plus récente en tête) ; « ajouts » est calculé par outils/nouveautes.py.",
   "versions": [
     {
+      "version": "1.8.1",
+      "date": "2026-11-17",
+      "fr": "Sécurité : un fichier .qlr ou .qml piégé (entités XML) est refusé. L'extension QGIS est prête pour Qt6 et passe le contrôle de plugins.qgis.org.",
+      "en": "Security: a booby-trapped .qlr or .qml file (XML entities) is refused. The QGIS plugin is Qt6-ready and passes the plugins.qgis.org checks.",
+      "ajouts": {
+        "modele": 0,
+        "catalogues": 0,
+        "regles": 0
+      }
+    },
+    {
       "version": "1.8.0",
       "date": "2026-11-17",
       "fr": "Bouton « Utiliser hors ligne » : la page se garde dans le navigateur et convertit sans internet ; elle peut aussi s'installer comme une application. Onglet « Contribuer » plus grand.",

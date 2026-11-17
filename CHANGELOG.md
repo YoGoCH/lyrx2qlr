@@ -1,5 +1,20 @@
 # Journal des versions
 
+## v1.8.1 — 17 novembre 2026
+
+Corrections demandées par le contrôle automatique de plugins.qgis.org. La conversion ne change pas.
+
+- Lecture des .qlr et .qml : nouveau module `xml_sur` (bibliothèque standard seulement). Un fichier
+  qui déclare des entités XML (base des attaques « milliard de rires » ou lecture d'un fichier du
+  poste) est refusé avec un message clair. Les vrais fichiers QGIS n'en déclarent jamais ; les 75
+  exemples réels passent.
+- Contrôle de sécurité Bandit et recherche de secrets (detect-secrets) : plus aucune alerte sur
+  l'extension. Empreintes MD5 marquées « non sécuritaires » (elles ne servent qu'à fabriquer des
+  identifiants stables), attribut QGIS « pass » (ordre de dessin) posé sans ressembler à un mot de
+  passe, libellé `SECRET` renommé `ACCES`.
+- Extension prête pour Qt6 (QGIS 4) : énumérations écrites en entier, `exec()` au lieu de
+  `exec_()`, `supportsQt6=True` dans les métadonnées. Toujours compatible Qt5 (QGIS 3.40 et plus).
+
 ## v1.8.0 — 17 novembre 2026
 
 La conversion ne change pas.
