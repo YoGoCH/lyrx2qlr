@@ -8,9 +8,9 @@ dans [positionnement.md](positionnement.md). L'outil collaboratif
 | # | Étape | État | Dépend de |
 |---|---|---|---|
 | 1 | Valider les .lyrx dans ArcGIS Pro (lot 2) | **fait** (v1.3.0) : voir [lot2.md](lot2.md) | rien |
-| 2 | Publier l'extension sur plugins.qgis.org | à faire | 4 (dépôt public), 3 (description en anglais) |
+| 2 | Publier l'extension sur plugins.qgis.org | ZIP prêt (v1.7.0 : anglais, icône, licence) ; reste l'envoi par Yoann (compte OSGeo, vraie adresse e-mail) | rien |
 | 3 | Proposer la page en anglais | **fait** (v1.2.2), sauf les messages du rapport | rien |
-| 4 | Rendre le code public | licence et corpus décidés ; reste les exemples et le dépôt neuf | voir plus bas |
+| 4 | Rendre le code public | **fait** (17 novembre 2026) : copie publique https://github.com/YoGoCH/lyrx2qlr_code_public, tests GitHub au vert | rien |
 
 Ordre conseillé : **3 et 4** tout de suite (aucune dépendance), **2** juste après, **1** en
 parallèle (ArcGIS Pro est installé depuis le 15 novembre 2026). On ne fait connaître l'outil **côté ArcGIS** qu'après l'étape 1.
