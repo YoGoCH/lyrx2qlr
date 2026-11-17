@@ -37,8 +37,7 @@ de Yoann. L'atelier de règles (étape 2) et les contributions par GitHub (étap
   Purge automatique après 12 mois ; les colis ne sont pas sauvegardés ; pas d'avis automatique.
 - **Récupérer les colis** : dans Git Bash, à la racine du dépôt papetche,
   `bash outils/recuperer-contributions.sh [dossier]` copie les nouveaux colis dans
-  `~/lyrx2qlr-contributions` (ou le dossier donné) ; ils restent aussi sur le serveur. Pour
-  seulement les lister : `ssh cacarte ls -l /srv/lyrx2qlr-contributions`. Puis
+  `~/lyrx2qlr-contributions` (ou le dossier donné) ; ils restent aussi sur le serveur. Puis
   `outils/contributions.py ~/lyrx2qlr-contributions`. **Ce sont des fichiers d'inconnus** : les
   ouvrir comme non sûrs (pas de double-clic dans ArcGIS ou QGIS avant le tri, qui relit sans rien
   exécuter).
@@ -103,7 +102,7 @@ Trois points demandent une décision de Yoann :
 │   règle proposée (facultatif) · commentaire · licence choisie │        └───────────┬─────────────┘
 │   (aperçu complet avant l'envoi, case « j'accepte »)          │                    │ récupération
 └──────────────────────────────────────────────────────────────┘                    ▼
-                                                    POSTE DE YOANN (dépôt lyrx_2_qlr)
+                                                    POSTE DE YOANN (dépôt lyrx2qlr)   
                                           ┌──────────────────────────────────────────────┐
                                           │ outils/contributions.py                      │
                                           │  • relit chaque colis (sans rien exécuter)   │

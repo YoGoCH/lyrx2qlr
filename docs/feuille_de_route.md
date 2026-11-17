@@ -10,7 +10,7 @@ dans [positionnement.md](positionnement.md). L'outil collaboratif
 | 1 | Valider les .lyrx dans ArcGIS Pro (lot 2) | **fait** (v1.3.0) : voir [lot2.md](lot2.md) | rien |
 | 2 | Publier l'extension sur plugins.qgis.org | ZIP prêt (v1.7.0 : anglais, icône, licence) ; reste l'envoi par Yoann (compte OSGeo, vraie adresse e-mail) | rien |
 | 3 | Proposer la page en anglais | **fait** (v1.2.2), sauf les messages du rapport | rien |
-| 4 | Rendre le code public | **fait** (17 novembre 2026) : copie publique https://github.com/YoGoCH/lyrx2qlr_code_public, tests GitHub au vert | rien |
+| 4 | Rendre le code public | **fait** (17 novembre 2026) : dépôt de travail public, https://github.com/YoGoCH/lyrx2qlr_code_public | rien |
 
 Ordre conseillé : **3 et 4** tout de suite (aucune dépendance), **2** juste après, **1** en
 parallèle (ArcGIS Pro est installé depuis le 15 novembre 2026). On ne fait connaître l'outil **côté ArcGIS** qu'après l'étape 1.
@@ -110,14 +110,15 @@ Terminé quand : un visiteur anglophone peut convertir un fichier et comprendre 
 
 ## 4. Rendre le code public
 
-**Décision du 17 novembre 2026 (Yoann) : une copie publique à part, `YoGoCH/lyrx2qlr_code_public`.**
-Le dépôt de travail `lyrx_2_qlr` reste privé, avec son historique, les symbologies réelles et les
-notes pour Claude. `outils/publier_code.py` copie le dernier commit vers la copie publique (un
-commit par copie, sans historique), sans `exemples/lyrx`, `exemples/qlr`, `corpus/`, `CLAUDE.md`
-ni `.claude/`, après contrôle (fichiers de symbologie, e-mails, mots de
-`donnees_locales/mots_interdits.txt`). Les tests qui demandent les symbologies réelles y sont
-sautés. L'extension (`metadata.txt`) pointe vers la copie publique. À relancer avec `--pousser`
-après chaque version. Le texte ci-dessous est l'étude d'avant cette décision.
+**Fait le 17 novembre 2026 : le dépôt de travail est public**, https://github.com/YoGoCH/lyrx2qlr_code_public.
+Le même jour, une copie publique à part avait d'abord été essayée ; Yoann a préféré travailler
+directement en public, par transparence. L'historique public commence à la v1.7.0 : l'ancien
+historique (qui contenait le corpus) reste dans l'ancien dépôt privé `YoGoCH/lyrx_2_qlr`, gardé comme
+archive. Restent sur le poste, ignorés par git : les symbologies réelles (`exemples/lyrx`,
+`exemples/qlr`), le corpus (`corpus/`), les notes pour Claude (`CLAUDE.md`, `.claude/`).
+`outils/verifier_depot.py` le contrôle avant chaque `git push` (crochet) et dans les tests. Les
+tests qui demandent les symbologies réelles sont sautés sur GitHub et tournent sur le poste.
+Le texte ci-dessous est l'étude d'avant cette décision.
 
 Décidé le 15 novembre 2026 :
 

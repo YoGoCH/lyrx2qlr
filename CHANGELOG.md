@@ -1,5 +1,25 @@
 # Journal des versions
 
+## v1.7.1 — 17 novembre 2026
+
+Le code est public : https://github.com/YoGoCH/lyrx2qlr_code_public (licence GPL-3.0). La
+conversion ne change pas.
+
+- Le dépôt de travail est désormais public. Son historique commence à la v1.7.0 ; l'historique
+  plus ancien (qui contenait le corpus de fichiers réels) reste archivé à part.
+- Restent sur le poste du mainteneur, ignorés par git : les symbologies réelles de test
+  (`exemples/lyrx`, `exemples/qlr`), le corpus et les notes de travail. Les tests qui en ont besoin
+  sont sautés sur GitHub.
+- Nouveau contrôle `outils/verifier_depot.py` (avant chaque envoi et dans les tests) : aucun fichier
+  privé, aucune adresse e-mail réelle, aucun mot interdit dans le dépôt.
+- Extension QGIS : `metadata.txt` en anglais, icône, liens vers le dépôt public (pour
+  plugins.qgis.org). `CONTRIBUTING.md` et modèle de ticket « Fichier mal converti ».
+- Tests GitHub : image QGIS `qgis/qgis:3.40` (l'ancienne étiquette n'existe plus), et sortie
+  directe après les tests dans QGIS (plantage connu de QGIS à l'arrêt dans un conteneur).
+- Page web : lien « code ouvert sur GitHub » en bas de page.
+- Outil « Contribuer » : les dossiers de shapefiles et les expressions ne sont plus abîmés par le
+  nettoyage ; un refus du serveur est affiché tel quel.
+
 ## v1.7.0 — 17 novembre 2026
 
 Outil collaboratif « Contribuer » : les utilisateurs peuvent envoyer des exemples pour entraîner

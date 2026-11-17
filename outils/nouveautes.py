@@ -89,7 +89,14 @@ def _regles(ref: str | None) -> int:
 def main() -> int:
     donnees = json.loads(CIBLE.read_text(encoding="utf-8"))
     versions = donnees["versions"]  # la plus récente en tête
-    for v in versions:
+    for i, v in enumerate(versions):
+        # Le dépôt public (depuis la v1.7.0) n'a pas l'historique des versions plus anciennes : leurs
+        # chiffres, calculés avant la migration, sont gardés tels quels. Seule la version en cours
+        # (la première, sans étiquette) est comparée aux fichiers du poste.
+        if not _etiquette_existe(v["version"]) and i > 0 and "ajouts" in v:
+            continue
+        if _etiquette_existe(v["version"]) and _etiquette_precedente(v["version"]) is None and "ajouts" in v:
+            continue
         # Comparaison avec l'étiquette git qui précède, même si sa version n'est pas affichée
         avant = _etiquette_precedente(v["version"]) or ARBRE_VIDE
         apres = f"v{v['version']}" if _etiquette_existe(v["version"]) else None

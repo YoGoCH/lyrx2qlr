@@ -277,4 +277,4 @@ class Lyrx2QlrPlugin:
         QMessageBox.about(self.iface.mainWindow(), "lyrx2qlr",
                           f"<b>lyrx2qlr {__version__}</b><br>Conversion de symbologies ArcGIS Pro (.lyrx) ⇄ QGIS (.qlr)."
                           "<br>Même cœur que l'application web et la ligne de commande."
-                          "<br><a href='https://github.com/YoGoCH/lyrx_2_qlr'>github.com/YoGoCH/lyrx_2_qlr</a>")
+                          "<br><a href='https://github.com/YoGoCH/lyrx2qlr_code_public'>github.com/YoGoCH/lyrx2qlr_code_public</a>")

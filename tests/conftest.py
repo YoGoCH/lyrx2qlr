@@ -17,7 +17,7 @@ EXEMPLES = RACINE / "exemples"
 EXEMPLES_LYRX = sorted((EXEMPLES / "lyrx").glob("*.lyrx")) + sorted((EXEMPLES / "fabriques").glob("*.lyrx"))
 EXEMPLES_QLR = sorted((EXEMPLES / "qlr").glob("*.qlr")) + sorted((EXEMPLES / "fabriques").glob("*.qlr"))
 
-# La copie publique du code (outils/publier_code.py) n'a pas les symbologies réelles de exemples/lyrx et
+# Le dépôt public n'a pas les symbologies réelles de exemples/lyrx et
 # exemples/qlr : les tests qui en ont besoin sont alors sautés.
 EXEMPLES_REELS = bool(sorted((EXEMPLES / "lyrx").glob("*.lyrx")))
 avec_exemples_reels = pytest.mark.skipif(not EXEMPLES_REELS, reason="symbologies réelles absentes (copie publique du code)")

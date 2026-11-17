@@ -2,6 +2,17 @@
   "_doc": "Nouveautés affichées sur la page. Textes écrits à la main (la plus récente en tête) ; « ajouts » est calculé par outils/nouveautes.py.",
   "versions": [
     {
+      "version": "1.7.1",
+      "date": "2026-11-17",
+      "fr": "Le code est public sur GitHub (licence GPL-3.0) : on peut le lire, signaler un fichier mal converti ou proposer une règle.",
+      "en": "The code is public on GitHub (GPL-3.0 licence): you can read it, report a badly converted file or suggest a rule.",
+      "ajouts": {
+        "modele": 0,
+        "catalogues": 0,
+        "regles": 0
+      }
+    },
+    {
       "version": "1.7.0",
       "date": "2026-11-17",
       "fr": "Outil « Contribuer » (onglet à droite) : envoyez un exemple bien ou mal converti, ou une paire de référence, pour entraîner lyrx2qlr. Les fichiers sont nettoyés dans votre navigateur avant l'envoi.",
