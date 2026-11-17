@@ -1,0 +1,257 @@
+<qlr>
+  <layer-tree-group expanded="1" checked="Qt::Checked" name="">
+    <customproperties/>
+    <layer-tree-layer source="./SSCM_SSCM_TPR_ABRI_PC" checked="Qt::Checked" expanded="1" name="SSCM_SSCM_TPR_ABRI_PC" id="SSCM_SSCM_TPR_ABRI_PC" providerKey="ogr">
+      <customproperties/>
+    </layer-tree-layer>
+  </layer-tree-group>
+  <maplayers>
+    <maplayer simplifyLocal="1" labelsEnabled="0" type="vector" maxScale="" readOnly="0" minScale="" refreshOnNotifyEnabled="0" simplifyAlgorithm="0" simplifyDrawingTol="1" hasScaleBasedVisibilityFlag="0" simplifyDrawingHints="1" refreshOnNotifyMessage="" simplifyMaxScale="1" autoRefreshEnabled="0" styleCategories="AllStyleCategories" autoRefreshTime="0" geometry="Point">
+      <extent>
+        <xmin>2530370.59700000006705523</xmin>
+        <ymin>1153464.33100000000558794</ymin>
+        <xmax>2540291.325999999884516</xmax>
+        <ymax>1160834.15200000000186265</ymax>
+      </extent>
+      <id>SSCM_SSCM_TPR_ABRI_PC</id>
+      <datasource>./SSCM_SSCM_TPR_ABRI_PC.shp</datasource>
+      <keywordList>
+        <value/>
+      </keywordList>
+      <layername>SSCM_SSCM_TPR_ABRI_PC</layername>
+      <srs>
+        <spatialrefsys>
+          <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
+          <srsid>47</srsid>
+          <srid>2056</srid>
+          <authid>EPSG:2056</authid>
+          <description>CH1903+ / LV95</description>
+          <projectionacronym>somerc</projectionacronym>
+          <ellipsoidacronym>bessel</ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <resourceMetadata>
+        <identifier/>
+        <parentidentifier/>
+        <language/>
+        <type/>
+        <title/>
+        <abstract/>
+        <contact>
+          <name/>
+          <organization/>
+          <position/>
+          <voice/>
+          <fax/>
+          <email/>
+          <role/>
+        </contact>
+        <links/>
+        <fees/>
+        <encoding/>
+        <crs>
+          <spatialrefsys>
+            <proj4/>
+            <srsid>0</srsid>
+            <srid>0</srid>
+            <authid/>
+            <description/>
+            <projectionacronym/>
+            <ellipsoidacronym/>
+            <geographicflag>false</geographicflag>
+          </spatialrefsys>
+        </crs>
+        <extent>
+          <spatial miny="0" maxx="0" dimensions="2" minz="0" maxz="0" minx="0" maxy="0" crs=""/>
+          <temporal>
+            <period>
+              <start/>
+              <end/>
+            </period>
+          </temporal>
+        </extent>
+      </resourceMetadata>
+      <provider encoding="UTF-8">ogr</provider>
+      <vectorjoins/>
+      <layerDependencies/>
+      <dataDependencies/>
+      <legend type="default-vector"/>
+      <expressionfields/>
+      <map-layer-style-manager current="dÃ©faut">
+        <map-layer-style name="dÃ©faut"/>
+      </map-layer-style-manager>
+      <auxiliaryLayer/>
+      <flags>
+        <Identifiable>1</Identifiable>
+        <Removable>1</Removable>
+        <Searchable>1</Searchable>
+      </flags>
+      <renderer-v2 enableorderby="0" attr="CAPACITE" type="graduatedSymbol" symbollevels="0" forceraster="0" graduatedMethod="GraduatedColor"><ranges><range label="&lt; 200" lower="0.00001" render="true" symbol="0" upper="200"/><range label="201 - 1'000" lower="200" render="true" symbol="1" upper="1000"/><range label="&gt; 1'000" lower="1000" render="true" symbol="2" upper="3410"/></ranges>
+        <categories/>
+        <symbols>
+        <symbol type="marker" clip_to_extent="1" force_rhr="0" name="0" alpha="1"><layer enabled="1" pass="0" class="SimpleMarker" locked="0">
+              <Option type="Map">
+                <Option value="0" type="QString" name="angle"/>
+                <Option value="square" type="QString" name="cap_style"/>
+                <Option value="255,170,0,255" type="QString" name="color"/>
+                <Option value="1" type="QString" name="horizontal_anchor_point"/>
+                <Option value="bevel" type="QString" name="joinstyle"/>
+                <Option value="circle" type="QString" name="name"/>
+                <Option value="0,0" type="QString" name="offset"/>
+                <Option value="3x:0,0,0,0,0,0" type="QString" name="offset_map_unit_scale"/>
+                <Option value="Point" type="QString" name="offset_unit"/>
+                <Option v="0,0,0,255" type="QString" name="outline_color"/>
+                <Option value="solid" type="QString" name="outline_style"/>
+                <Option value="1" type="QString" name="outline_width"/>
+                <Option value="3x:0,0,0,0,0,0" type="QString" name="outline_width_map_unit_scale"/>
+                <Option value="Point" type="QString" name="outline_width_unit"/>
+                <Option value="diameter" type="QString" name="scale_method"/>
+                <Option value="4" type="QString" name="size"/>
+                <Option value="3x:0,0,0,0,0,0" type="QString" name="size_map_unit_scale"/>
+                <Option value="Point" type="QString" name="size_unit"/>
+                <Option value="1" type="QString" name="vertical_anchor_point"/>
+              </Option>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option value="" type="QString" name="name"/>
+                  <Option name="properties"/>
+                  <Option value="collection" type="QString" name="type"/>
+                </Option>
+              </data_defined_properties>
+            </layer></symbol><symbol type="marker" clip_to_extent="1" force_rhr="0" name="1" alpha="1"><layer enabled="1" pass="0" class="SimpleMarker" locked="0">
+              <Option type="Map">
+                <Option value="0" type="QString" name="angle"/>
+                <Option value="square" type="QString" name="cap_style"/>
+                <Option value="255,170,0,255" type="QString" name="color"/>
+                <Option value="1" type="QString" name="horizontal_anchor_point"/>
+                <Option value="bevel" type="QString" name="joinstyle"/>
+                <Option value="circle" type="QString" name="name"/>
+                <Option value="0,0" type="QString" name="offset"/>
+                <Option value="3x:0,0,0,0,0,0" type="QString" name="offset_map_unit_scale"/>
+                <Option value="Point" type="QString" name="offset_unit"/>
+                <Option v="0,0,0,255" type="QString" name="outline_color"/>
+                <Option value="solid" type="QString" name="outline_style"/>
+                <Option value="1" type="QString" name="outline_width"/>
+                <Option value="3x:0,0,0,0,0,0" type="QString" name="outline_width_map_unit_scale"/>
+                <Option value="Point" type="QString" name="outline_width_unit"/>
+                <Option value="diameter" type="QString" name="scale_method"/>
+                <Option value="10" type="QString" name="size"/>
+                <Option value="3x:0,0,0,0,0,0" type="QString" name="size_map_unit_scale"/>
+                <Option value="Point" type="QString" name="size_unit"/>
+                <Option value="1" type="QString" name="vertical_anchor_point"/>
+              </Option>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option value="" type="QString" name="name"/>
+                  <Option name="properties"/>
+                  <Option value="collection" type="QString" name="type"/>
+                </Option>
+              </data_defined_properties>
+            </layer></symbol><symbol type="marker" clip_to_extent="1" force_rhr="0" name="2" alpha="1"><layer enabled="1" pass="0" class="SimpleMarker" locked="0">
+              <Option type="Map">
+                <Option value="0" type="QString" name="angle"/>
+                <Option value="square" type="QString" name="cap_style"/>
+                <Option value="255,170,0,255" type="QString" name="color"/>
+                <Option value="1" type="QString" name="horizontal_anchor_point"/>
+                <Option value="bevel" type="QString" name="joinstyle"/>
+                <Option value="circle" type="QString" name="name"/>
+                <Option value="0,0" type="QString" name="offset"/>
+                <Option value="3x:0,0,0,0,0,0" type="QString" name="offset_map_unit_scale"/>
+                <Option value="Point" type="QString" name="offset_unit"/>
+                <Option v="0,0,0,255" type="QString" name="outline_color"/>
+                <Option value="solid" type="QString" name="outline_style"/>
+                <Option value="1" type="QString" name="outline_width"/>
+                <Option value="3x:0,0,0,0,0,0" type="QString" name="outline_width_map_unit_scale"/>
+                <Option value="Point" type="QString" name="outline_width_unit"/>
+                <Option value="diameter" type="QString" name="scale_method"/>
+                <Option value="18" type="QString" name="size"/>
+                <Option value="3x:0,0,0,0,0,0" type="QString" name="size_map_unit_scale"/>
+                <Option value="Point" type="QString" name="size_unit"/>
+                <Option value="1" type="QString" name="vertical_anchor_point"/>
+              </Option>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option value="" type="QString" name="name"/>
+                  <Option name="properties"/>
+                  <Option value="collection" type="QString" name="type"/>
+                </Option>
+              </data_defined_properties>
+            </layer></symbol></symbols>
+        <rotation/>
+        <sizescale/>
+      </renderer-v2>
+      <customproperties>
+        <property value="0" key="embeddedWidgets/count"/>
+        <property key="variableNames"/>
+        <property key="variableValues"/>
+      </customproperties>
+      <blendMode>0</blendMode>
+      <featureBlendMode>0</featureBlendMode>
+      <layerOpacity>1</layerOpacity>
+      <SingleCategoryDiagramRenderer attributeLegend="1" diagramType="Histogram">
+        <DiagramCategory enabled="0" sizeType="MM" width="15" maxScaleDenominator="1e+08" lineSizeScale="3x:0,0,0,0,0,0" diagramOrientation="Up" backgroundColor="#ffffff" sizeScale="3x:0,0,0,0,0,0" scaleDependency="Area" barWidth="5" scaleBasedVisibility="0" labelPlacementMethod="XHeight" opacity="1" penWidth="0" backgroundAlpha="255" lineSizeType="MM" minimumSize="0" rotationOffset="270" height="15" minScaleDenominator="0" penAlpha="255" penColor="#000000">
+          <fontProperties description="MS Shell Dlg 2,7.8,-1,5,50,0,0,0,0,0" style=""/>
+        </DiagramCategory>
+      </SingleCategoryDiagramRenderer>
+      <DiagramLayerSettings showAll="1" zIndex="0" obstacle="0" placement="1" dist="0" priority="0" linePlacementFlags="18">
+        <properties>
+          <Option type="Map">
+            <Option value="" type="QString" name="name"/>
+            <Option name="properties"/>
+            <Option value="collection" type="QString" name="type"/>
+          </Option>
+        </properties>
+      </DiagramLayerSettings>
+      <geometryOptions removeDuplicateNodes="0" geometryPrecision="0">
+        <activeChecks/>
+        <checkConfiguration/>
+      </geometryOptions>
+      <fieldConfiguration/>
+      <aliases/>
+      <excludeAttributesWMS/>
+      <excludeAttributesWFS/>
+      <defaults/>
+      <constraints/>
+      <constraintExpressions/>
+      <expressionfields/>
+      <attributeactions>
+        <defaultAction value="{00000000-0000-0000-0000-000000000000}" key="Canvas"/>
+      </attributeactions>
+      <attributetableconfig actionWidgetStyle="dropDown" sortOrder="0" sortExpression="">
+        <columns/>
+      </attributetableconfig>
+      <conditionalstyles>
+        <rowstyles/>
+        <fieldstyles/>
+      </conditionalstyles>
+      <editform tolerant="1"/>
+      <editforminit/>
+      <editforminitcodesource>0</editforminitcodesource>
+      <editforminitfilepath/>
+      <editforminitcode># -*- coding: utf-8 -*-
+"""
+Les formulaires QGIS peuvent avoir une fonction Python qui sera appelÃ©e Ã  l'ouverture du formulaire.
+
+Utilisez cette fonction pour ajouter plus de fonctionnalitÃ©s Ã  vos formulaires.
+
+Entrez le nom de la fonction dans le champ "Fonction d'initialisation Python".
+Voici un exemple Ã  suivre:
+"""
+from qgis.PyQt.QtWidgets import QWidget
+
+def my_form_open(dialog, layer, feature):
+    geom = feature.geometry()
+    control = dialog.findChild(QWidget, "MyLineEdit")
+
+</editforminitcode>
+      <featformsuppress>0</featformsuppress>
+      <editorlayout>generatedlayout</editorlayout>
+      <editable/>
+      <labelOnTop/>
+      <widgets/>
+      <previewExpression>GLOBALID_T</previewExpression>
+      <mapTip/>
+    </maplayer>
+  </maplayers>
+</qlr>

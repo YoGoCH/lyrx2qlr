@@ -1,0 +1,328 @@
+<qlr>
+  <layer-tree-group expanded="1" checked="Qt::Checked" name="">
+    <customproperties/>
+    <layer-tree-layer source="./DGTL_DGTL_CONTENU_SUPERPOSE_L" checked="Qt::Checked" expanded="1" name="DGTL_DGTL_CONTENU_SUPERPOSE_L" id="DGTL_DGTL_CONTENU_SUPERPOSE_L" providerKey="ogr">
+      <customproperties/>
+    </layer-tree-layer>
+  </layer-tree-group>
+  <maplayers>
+    <maplayer simplifyLocal="1" labelsEnabled="0" type="vector" maxScale="0" readOnly="0" minScale="1e+08" refreshOnNotifyEnabled="0" simplifyAlgorithm="0" simplifyDrawingTol="1" hasScaleBasedVisibilityFlag="0" simplifyDrawingHints="1" refreshOnNotifyMessage="" simplifyMaxScale="1" autoRefreshEnabled="0" styleCategories="AllStyleCategories" autoRefreshTime="0" geometry="Line">
+      <extent>
+        <xmin>2530370.59700000006705523</xmin>
+        <ymin>1153464.33100000000558794</ymin>
+        <xmax>2540291.325999999884516</xmax>
+        <ymax>1160834.15200000000186265</ymax>
+      </extent>
+      <id>DGTL_DGTL_CONTENU_SUPERPOSE_L</id>
+      <datasource>./DGTL_DGTL_CONTENU_SUPERPOSE_L.shp</datasource>
+      <keywordList>
+        <value/>
+      </keywordList>
+      <layername>DGTL_DGTL_CONTENU_SUPERPOSE_L</layername>
+      <srs>
+        <spatialrefsys>
+          <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
+          <srsid>47</srsid>
+          <srid>2056</srid>
+          <authid>EPSG:2056</authid>
+          <description>CH1903+ / LV95</description>
+          <projectionacronym>somerc</projectionacronym>
+          <ellipsoidacronym>bessel</ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <resourceMetadata>
+        <identifier/>
+        <parentidentifier/>
+        <language/>
+        <type/>
+        <title/>
+        <abstract/>
+        <contact>
+          <name/>
+          <organization/>
+          <position/>
+          <voice/>
+          <fax/>
+          <email/>
+          <role/>
+        </contact>
+        <links/>
+        <fees/>
+        <encoding/>
+        <crs>
+          <spatialrefsys>
+            <proj4/>
+            <srsid>0</srsid>
+            <srid>0</srid>
+            <authid/>
+            <description/>
+            <projectionacronym/>
+            <ellipsoidacronym/>
+            <geographicflag>false</geographicflag>
+          </spatialrefsys>
+        </crs>
+        <extent>
+          <spatial miny="0" maxx="0" dimensions="2" minz="0" maxz="0" minx="0" maxy="0" crs=""/>
+          <temporal>
+            <period>
+              <start/>
+              <end/>
+            </period>
+          </temporal>
+        </extent>
+      </resourceMetadata>
+      <provider encoding="UTF-8">ogr</provider>
+      <vectorjoins/>
+      <layerDependencies/>
+      <dataDependencies/>
+      <legend type="default-vector"/>
+      <expressionfields/>
+      <map-layer-style-manager current="dÃ©faut">
+        <map-layer-style name="dÃ©faut"/>
+      </map-layer-style-manager>
+      <auxiliaryLayer/>
+      <flags>
+        <Identifiable>1</Identifiable>
+        <Removable>1</Removable>
+        <Searchable>1</Searchable>
+      </flags>
+      <renderer-v2 enableorderby="0" attr="CODE_VD_N2" type="categorizedSymbol" symbollevels="1" forceraster="0">
+        <categories><category render="true" value="7101" symbol="0" label="Alignement"/><category render="true" value="7909" symbol="1" label="Autres contenus linéaires"/></categories>
+        <symbols>
+        <symbol type="line" clip_to_extent="1" force_rhr="0" name="0" alpha="1"><layer class="SimpleLine" pass="0" locked="0" enabled="1">
+              <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
+              <prop v="229,0,0,255" k="color"/>
+              <prop v="bevel" k="joinstyle"/>
+              <prop v="0,0" k="offset"/>
+              <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+              <prop v="Point" k="offset_unit"/>
+              <prop v="229,0,0,255" k="outline_color"/>
+              <prop v="dash dot" k="outline_style"/>
+              <prop v="1" k="outline_width"/>
+              <prop v="Point" k="outline_width_unit"/>
+              <prop v="solid" k="style"/>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option value="" type="QString" name="name"/>
+                  <Option name="properties"/>
+                  <Option value="collection" type="QString" name="type"/>
+                </Option>
+              </data_defined_properties>
+            </layer></symbol><symbol type="line" clip_to_extent="1" force_rhr="0" name="1" alpha="1"><layer class="SimpleLine" pass="0" locked="0" enabled="1">
+              <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
+              <prop v="255,0,255,255" k="color"/>
+              <prop v="bevel" k="joinstyle"/>
+              <prop v="0,0" k="offset"/>
+              <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+              <prop v="Point" k="offset_unit"/>
+              <prop v="255,0,255,255" k="outline_color"/>
+              <prop v="solid" k="outline_style"/>
+              <prop v="0.30000000000000004" k="outline_width"/>
+              <prop v="Point" k="outline_width_unit"/>
+              <prop v="solid" k="style"/>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option value="" type="QString" name="name"/>
+                  <Option name="properties"/>
+                  <Option value="collection" type="QString" name="type"/>
+                </Option>
+              </data_defined_properties>
+            </layer></symbol></symbols>
+        <rotation/>
+        <sizescale/>
+      </renderer-v2>
+      <customproperties>
+        <property value="0" key="embeddedWidgets/count"/>
+        <property key="variableNames"/>
+        <property key="variableValues"/>
+      </customproperties>
+      <blendMode>0</blendMode>
+      <featureBlendMode>0</featureBlendMode>
+      <layerOpacity>1</layerOpacity>
+      <SingleCategoryDiagramRenderer attributeLegend="1" diagramType="Histogram">
+        <DiagramCategory enabled="0" sizeType="MM" width="15" maxScaleDenominator="1e+08" lineSizeScale="3x:0,0,0,0,0,0" diagramOrientation="Up" backgroundColor="#ffffff" sizeScale="3x:0,0,0,0,0,0" scaleDependency="Area" barWidth="5" scaleBasedVisibility="0" labelPlacementMethod="XHeight" opacity="1" penWidth="0" backgroundAlpha="255" lineSizeType="MM" minimumSize="0" rotationOffset="270" height="15" minScaleDenominator="0" penAlpha="255" penColor="#000000">
+          <fontProperties description="MS Shell Dlg 2,7.8,-1,5,50,0,0,0,0,0" style=""/>
+        </DiagramCategory>
+      </SingleCategoryDiagramRenderer>
+      <DiagramLayerSettings showAll="1" zIndex="0" obstacle="0" placement="1" dist="0" priority="0" linePlacementFlags="18">
+        <properties>
+          <Option type="Map">
+            <Option value="" type="QString" name="name"/>
+            <Option name="properties"/>
+            <Option value="collection" type="QString" name="type"/>
+          </Option>
+        </properties>
+      </DiagramLayerSettings>
+      <geometryOptions removeDuplicateNodes="0" geometryPrecision="0">
+        <activeChecks/>
+        <checkConfiguration/>
+      </geometryOptions>
+      <fieldConfiguration><field name="CODE_VD_N2">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="DESIGN_VD2">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="CODE_CH">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="DESIGN_CH">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="CODE_COM">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="DESIGN_COM">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="ABREVIATIO">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="STATUT_JUR">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="DATE_EV">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="DATE_FIN">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="FORCE_OBLI">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="REMARQ_GEO">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="REMARQ_TYP">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="NORMAT">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="SYMBOLE">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="SOUS_THEME">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="SHAPE.LEN">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="GLOBALID_G">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="GLOBALID_T">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="LONGUEUR">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field></fieldConfiguration>
+      <aliases><alias name="Code VD NORMAT 2" field="CODE_VD_N2" index="0"/><alias name="Désignation VD NORMAT 2" field="DESIGN_VD2" index="1"/><alias name="Code fédéral" field="CODE_CH" index="2"/><alias name="Désignation fédérale" field="DESIGN_CH" index="3"/><alias name="Code communal" field="CODE_COM" index="4"/><alias name="Désignation communale" field="DESIGN_COM" index="5"/><alias name="Abréviation" field="ABREVIATIO" index="6"/><alias name="Statut juridique" field="STATUT_JUR" index="7"/><alias name="Date constatation entrée en vigueur" field="DATE_EV" index="8"/><alias name="Date fin de validité" field="DATE_FIN" index="9"/><alias name="Force obligatoire" field="FORCE_OBLI" index="10"/><alias name="Remarques Géométrie" field="REMARQ_GEO" index="11"/><alias name="Remarques Type" field="REMARQ_TYP" index="12"/><alias name="Source géodonnées" field="NORMAT" index="13"/><alias name="Symbole" field="SYMBOLE" index="14"/><alias name="Sous-thème" field="SOUS_THEME" index="15"/><alias name="SHAPE.LEN" field="SHAPE.LEN" index="16"/><alias name="GLOBALID_GEO" field="GLOBALID_G" index="19"/><alias name="GLOBALID_TYPE" field="GLOBALID_T" index="20"/><alias name="Longueur [m]" field="LONGUEUR" index="21"/></aliases>
+      <excludeAttributesWMS/>
+      <excludeAttributesWFS/>
+      <defaults><default field="CODE_VD_N2" expression="" applyOnUpdate="0"/><default field="DESIGN_VD2" expression="" applyOnUpdate="0"/><default field="CODE_CH" expression="" applyOnUpdate="0"/><default field="DESIGN_CH" expression="" applyOnUpdate="0"/><default field="CODE_COM" expression="" applyOnUpdate="0"/><default field="DESIGN_COM" expression="" applyOnUpdate="0"/><default field="ABREVIATIO" expression="" applyOnUpdate="0"/><default field="STATUT_JUR" expression="" applyOnUpdate="0"/><default field="DATE_EV" expression="" applyOnUpdate="0"/><default field="DATE_FIN" expression="" applyOnUpdate="0"/><default field="FORCE_OBLI" expression="" applyOnUpdate="0"/><default field="REMARQ_GEO" expression="" applyOnUpdate="0"/><default field="REMARQ_TYP" expression="" applyOnUpdate="0"/><default field="NORMAT" expression="" applyOnUpdate="0"/><default field="SYMBOLE" expression="" applyOnUpdate="0"/><default field="SOUS_THEME" expression="" applyOnUpdate="0"/><default field="SHAPE.LEN" expression="" applyOnUpdate="0"/><default field="GLOBALID_G" expression="" applyOnUpdate="0"/><default field="GLOBALID_T" expression="" applyOnUpdate="0"/><default field="LONGUEUR" expression="" applyOnUpdate="0"/></defaults>
+      <constraints><constraint field="CODE_VD_N2" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="DESIGN_VD2" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="CODE_CH" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="DESIGN_CH" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="CODE_COM" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="DESIGN_COM" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="ABREVIATIO" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="STATUT_JUR" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="DATE_EV" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="DATE_FIN" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="FORCE_OBLI" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="REMARQ_GEO" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="REMARQ_TYP" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="NORMAT" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="SYMBOLE" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="SOUS_THEME" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="SHAPE.LEN" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="GLOBALID_G" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="GLOBALID_T" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="LONGUEUR" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/></constraints>
+      <constraintExpressions><constraint field="CODE_VD_N2" desc="" exp=""/><constraint field="DESIGN_VD2" desc="" exp=""/><constraint field="CODE_CH" desc="" exp=""/><constraint field="DESIGN_CH" desc="" exp=""/><constraint field="CODE_COM" desc="" exp=""/><constraint field="DESIGN_COM" desc="" exp=""/><constraint field="ABREVIATIO" desc="" exp=""/><constraint field="STATUT_JUR" desc="" exp=""/><constraint field="DATE_EV" desc="" exp=""/><constraint field="DATE_FIN" desc="" exp=""/><constraint field="FORCE_OBLI" desc="" exp=""/><constraint field="REMARQ_GEO" desc="" exp=""/><constraint field="REMARQ_TYP" desc="" exp=""/><constraint field="NORMAT" desc="" exp=""/><constraint field="SYMBOLE" desc="" exp=""/><constraint field="SOUS_THEME" desc="" exp=""/><constraint field="SHAPE.LEN" desc="" exp=""/><constraint field="GLOBALID_G" desc="" exp=""/><constraint field="GLOBALID_T" desc="" exp=""/><constraint field="LONGUEUR" desc="" exp=""/></constraintExpressions>
+      <expressionfields/>
+      <attributeactions>
+        <defaultAction value="{00000000-0000-0000-0000-000000000000}" key="Canvas"/>
+      </attributeactions>
+      <attributetableconfig actionWidgetStyle="dropDown" sortOrder="0" sortExpression="">
+        <columns><column type="field" width="-1" hidden="0" name="CODE_VD_N2"/><column type="field" width="-1" hidden="0" name="DESIGN_VD2"/><column type="field" width="-1" hidden="0" name="CODE_CH"/><column type="field" width="-1" hidden="0" name="DESIGN_CH"/><column type="field" width="-1" hidden="0" name="CODE_COM"/><column type="field" width="-1" hidden="0" name="DESIGN_COM"/><column type="field" width="-1" hidden="0" name="ABREVIATIO"/><column type="field" width="-1" hidden="0" name="STATUT_JUR"/><column type="field" width="-1" hidden="0" name="DATE_EV"/><column type="field" width="-1" hidden="0" name="DATE_FIN"/><column type="field" width="-1" hidden="0" name="FORCE_OBLI"/><column type="field" width="-1" hidden="0" name="REMARQ_GEO"/><column type="field" width="-1" hidden="0" name="REMARQ_TYP"/><column type="field" width="-1" hidden="0" name="NORMAT"/><column type="field" width="-1" hidden="0" name="SYMBOLE"/><column type="field" width="-1" hidden="0" name="SOUS_THEME"/><column type="field" width="-1" hidden="0" name="SHAPE.LEN"/><column type="field" width="-1" hidden="0" name="GLOBALID_G"/><column type="field" width="-1" hidden="0" name="GLOBALID_T"/><column type="field" width="-1" hidden="0" name="LONGUEUR"/></columns>
+      </attributetableconfig>
+      <conditionalstyles>
+        <rowstyles/>
+        <fieldstyles/>
+      </conditionalstyles>
+      <editform tolerant="1"/>
+      <editforminit/>
+      <editforminitcodesource>0</editforminitcodesource>
+      <editforminitfilepath/>
+      <editforminitcode># -*- coding: utf-8 -*-
+"""
+Les formulaires QGIS peuvent avoir une fonction Python qui sera appelÃ©e Ã  l'ouverture du formulaire.
+
+Utilisez cette fonction pour ajouter plus de fonctionnalitÃ©s Ã  vos formulaires.
+
+Entrez le nom de la fonction dans le champ "Fonction d'initialisation Python".
+Voici un exemple Ã  suivre:
+"""
+from qgis.PyQt.QtWidgets import QWidget
+
+def my_form_open(dialog, layer, feature):
+    geom = feature.geometry()
+    control = dialog.findChild(QWidget, "MyLineEdit")
+
+</editforminitcode>
+      <featformsuppress>0</featformsuppress>
+      <editorlayout>generatedlayout</editorlayout>
+      <editable><field name="CODE_VD_N2" editable="1"/><field name="DESIGN_VD2" editable="1"/><field name="CODE_CH" editable="1"/><field name="DESIGN_CH" editable="1"/><field name="CODE_COM" editable="1"/><field name="DESIGN_COM" editable="1"/><field name="ABREVIATIO" editable="1"/><field name="STATUT_JUR" editable="1"/><field name="DATE_EV" editable="1"/><field name="DATE_FIN" editable="1"/><field name="FORCE_OBLI" editable="1"/><field name="REMARQ_GEO" editable="1"/><field name="REMARQ_TYP" editable="1"/><field name="NORMAT" editable="1"/><field name="SYMBOLE" editable="1"/><field name="SOUS_THEME" editable="1"/><field name="SHAPE.LEN" editable="1"/><field name="GLOBALID_G" editable="1"/><field name="GLOBALID_T" editable="1"/><field name="LONGUEUR" editable="1"/></editable>
+      <labelOnTop><field name="CODE_VD_N2" labelOnTop="0"/><field name="DESIGN_VD2" labelOnTop="0"/><field name="CODE_CH" labelOnTop="0"/><field name="DESIGN_CH" labelOnTop="0"/><field name="CODE_COM" labelOnTop="0"/><field name="DESIGN_COM" labelOnTop="0"/><field name="ABREVIATIO" labelOnTop="0"/><field name="STATUT_JUR" labelOnTop="0"/><field name="DATE_EV" labelOnTop="0"/><field name="DATE_FIN" labelOnTop="0"/><field name="FORCE_OBLI" labelOnTop="0"/><field name="REMARQ_GEO" labelOnTop="0"/><field name="REMARQ_TYP" labelOnTop="0"/><field name="NORMAT" labelOnTop="0"/><field name="SYMBOLE" labelOnTop="0"/><field name="SOUS_THEME" labelOnTop="0"/><field name="SHAPE.LEN" labelOnTop="0"/><field name="GLOBALID_G" labelOnTop="0"/><field name="GLOBALID_T" labelOnTop="0"/><field name="LONGUEUR" labelOnTop="0"/></labelOnTop>
+      <widgets/>
+      <previewExpression>GLOBALID_T</previewExpression>
+      <mapTip/>
+    </maplayer>
+  </maplayers>
+</qlr>

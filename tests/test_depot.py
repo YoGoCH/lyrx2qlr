@@ -19,7 +19,7 @@ def test_rien_de_prive_dans_le_depot():
 def test_le_controle_refuse_ce_qui_est_prive():
     import verifier_depot
     problemes = verifier_depot.controler({
-        "exemples/lyrx/vrai.lyrx": b"{}",
+        "corpus/fichiers/vrai.lyrx": b"{}",
         "CLAUDE.md": b"notes",
         "docs/x.md": ("écrire à jean" + "@" + "entreprise.ch").encode(),  # écrite en morceaux : le contrôle lit aussi ce fichier
         "outils/y.gpkg": b"",

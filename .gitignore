@@ -22,9 +22,7 @@ corpus/fichiers/
 # Comparaisons visuelles du lot 2 (images faites sur les données locales)
 comparaisons_lot2/
 # Le dépôt est public (17.11.2026). Restent sur le poste seulement, contrôlé par outils/verifier_depot.py :
-# symbologies réelles de travail et d'entraînement, corpus, notes de travail pour Claude.
-exemples/lyrx/
-exemples/qlr/
+# corpus de fichiers réels téléchargés (licences diverses), notes de travail pour Claude.
 corpus/
 CLAUDE.md
 .claude/

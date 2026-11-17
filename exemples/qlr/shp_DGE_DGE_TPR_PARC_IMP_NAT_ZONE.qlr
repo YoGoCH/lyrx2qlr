@@ -1,0 +1,470 @@
+<qlr>
+  <layer-tree-group expanded="1" checked="Qt::Checked" name="">
+    <customproperties/>
+    <layer-tree-layer source="./DGE_DGE_TPR_PARC_IMP_NAT_ZONE" checked="Qt::Checked" expanded="1" name="DGE_DGE_TPR_PARC_IMP_NAT_ZONE" id="DGE_DGE_TPR_PARC_IMP_NAT_ZONE" providerKey="ogr">
+      <customproperties/>
+    </layer-tree-layer>
+  </layer-tree-group>
+  <maplayers>
+    <maplayer simplifyLocal="1" labelsEnabled="0" type="vector" maxScale="" readOnly="0" minScale="" refreshOnNotifyEnabled="0" simplifyAlgorithm="0" simplifyDrawingTol="1" hasScaleBasedVisibilityFlag="0" simplifyDrawingHints="1" refreshOnNotifyMessage="" simplifyMaxScale="1" autoRefreshEnabled="0" styleCategories="AllStyleCategories" autoRefreshTime="0" geometry="Polygon">
+      <extent>
+        <xmin>2530370.59700000006705523</xmin>
+        <ymin>1153464.33100000000558794</ymin>
+        <xmax>2540291.325999999884516</xmax>
+        <ymax>1160834.15200000000186265</ymax>
+      </extent>
+      <id>DGE_DGE_TPR_PARC_IMP_NAT_ZONE</id>
+      <datasource>./DGE_DGE_TPR_PARC_IMP_NAT_ZONE.shp</datasource>
+      <keywordList>
+        <value/>
+      </keywordList>
+      <layername>DGE_DGE_TPR_PARC_IMP_NAT_ZONE</layername>
+      <srs>
+        <spatialrefsys>
+          <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
+          <srsid>47</srsid>
+          <srid>2056</srid>
+          <authid>EPSG:2056</authid>
+          <description>CH1903+ / LV95</description>
+          <projectionacronym>somerc</projectionacronym>
+          <ellipsoidacronym>bessel</ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <resourceMetadata>
+        <identifier/>
+        <parentidentifier/>
+        <language/>
+        <type/>
+        <title/>
+        <abstract/>
+        <contact>
+          <name/>
+          <organization/>
+          <position/>
+          <voice/>
+          <fax/>
+          <email/>
+          <role/>
+        </contact>
+        <links/>
+        <fees/>
+        <encoding/>
+        <crs>
+          <spatialrefsys>
+            <proj4/>
+            <srsid>0</srsid>
+            <srid>0</srid>
+            <authid/>
+            <description/>
+            <projectionacronym/>
+            <ellipsoidacronym/>
+            <geographicflag>false</geographicflag>
+          </spatialrefsys>
+        </crs>
+        <extent>
+          <spatial miny="0" maxx="0" dimensions="2" minz="0" maxz="0" minx="0" maxy="0" crs=""/>
+          <temporal>
+            <period>
+              <start/>
+              <end/>
+            </period>
+          </temporal>
+        </extent>
+      </resourceMetadata>
+      <provider encoding="UTF-8">ogr</provider>
+      <vectorjoins/>
+      <layerDependencies/>
+      <dataDependencies/>
+      <legend type="default-vector"/>
+      <expressionfields/>
+      <map-layer-style-manager current="dÃ©faut">
+        <map-layer-style name="dÃ©faut"/>
+      </map-layer-style-manager>
+      <auxiliaryLayer/>
+      <flags>
+        <Identifiable>1</Identifiable>
+        <Removable>1</Removable>
+        <Searchable>1</Searchable>
+      </flags>
+      <renderer-v2 enableorderby="0" attr="ZONE_TXT" type="categorizedSymbol" symbollevels="1" forceraster="0">
+        <categories><category render="true" value="Parc naturel régional" symbol="0" label="Parc naturel régional"/><category render="true" value="Zone centrale parc naturel périurbain" symbol="1" label="Zone centrale parc naturel périurbain"/><category render="true" value="Zone de transition parc naturel périurbain" symbol="2" label="Zone de transition parc naturel périurbain"/></categories>
+        <symbols>
+        <symbol type="fill" clip_to_extent="1" force_rhr="0" name="1" alpha="1"><layer class="SimpleLine" pass="0" locked="0" enabled="1">
+              <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
+              <prop v="115,38,0,255" k="color"/>
+              <prop v="bevel" k="joinstyle"/>
+              <prop v="0,0" k="offset"/>
+              <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+              <prop v="Point" k="offset_unit"/>
+              <prop v="115,38,0,255" k="outline_color"/>
+              <prop v="solid" k="outline_style"/>
+              <prop v="0.5" k="outline_width"/>
+              <prop v="Point" k="outline_width_unit"/>
+              <prop v="solid" k="style"/>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option value="" type="QString" name="name"/>
+                  <Option name="properties"/>
+                  <Option value="collection" type="QString" name="type"/>
+                </Option>
+              </data_defined_properties>
+            </layer><layer class="LinePatternFill" pass="0" locked="0" enabled="1">
+	<prop v="135" k="angle"/>
+	<prop v="125,125,125,255" k="color"/>
+	<prop v="5" k="distance"/>
+	<prop v="3x:0,0,0,0,0,0" k="distance_map_unit_scale"/>
+	<prop v="Point" k="distance_unit"/>
+	<prop v="0.5" k="line_width"/>
+	<prop v="3x:0,0,0,0,0,0" k="line_width_map_unit_scale"/>
+	<prop v="Point" k="line_width_unit"/>
+	<prop v="viewport" k="coordinate_reference"/>
+	<prop v="0" k="offset"/>
+	<prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+	<prop v="Point" k="offset_unit"/>
+	<prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+	<prop v="Point" k="outline_width_unit"/>
+	<data_defined_properties>
+		<Option type="Map">
+			<Option value="" type="QString" name="name"/>
+			<Option name="properties"/>
+			<Option value="collection" type="QString" name="type"/>
+		</Option>
+	</data_defined_properties>
+	<symbol type="line" clip_to_extent="1" force_rhr="0" name="@1@1" alpha="1">
+		<layer class="SimpleLine" pass="0" locked="0" enabled="1">
+			<prop v="square" k="capstyle"/>
+			<prop v="5;2" k="customdash"/>
+			<prop v="3x:0,0,0,0,0,0" k="customdash_map_unit_scale"/>
+			<prop v="Point" k="customdash_unit"/>
+			<prop v="0" k="draw_inside_polygon"/>
+			<prop v="bevel" k="joinstyle"/>
+			<prop v="115,38,0,255" k="line_color"/>
+			<prop v="solid" k="line_style"/>
+			<prop v="0.5" k="line_width"/>
+			<prop v="Point" k="line_width_unit"/>
+			<prop v="0" k="offset"/>
+			<prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+			<prop v="Point" k="offset_unit"/>
+			<prop v="0" k="ring_filter"/>
+			<prop v="0" k="use_custom_dash"/>
+			<prop v="3x:0,0,0,0,0,0" k="width_map_unit_scale"/>
+			<data_defined_properties>
+				<Option type="Map">
+					<Option value="" type="QString" name="name"/>
+					<Option name="properties"/>
+					<Option value="collection" type="QString" name="type"/>
+				</Option>
+			</data_defined_properties>
+		</layer>
+	</symbol>
+</layer><layer class="LinePatternFill" pass="0" locked="0" enabled="1">
+	<prop v="45" k="angle"/>
+	<prop v="125,125,125,255" k="color"/>
+	<prop v="5" k="distance"/>
+	<prop v="3x:0,0,0,0,0,0" k="distance_map_unit_scale"/>
+	<prop v="Point" k="distance_unit"/>
+	<prop v="0.5" k="line_width"/>
+	<prop v="3x:0,0,0,0,0,0" k="line_width_map_unit_scale"/>
+	<prop v="Point" k="line_width_unit"/>
+	<prop v="viewport" k="coordinate_reference"/>
+	<prop v="0" k="offset"/>
+	<prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+	<prop v="Point" k="offset_unit"/>
+	<prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+	<prop v="Point" k="outline_width_unit"/>
+	<data_defined_properties>
+		<Option type="Map">
+			<Option value="" type="QString" name="name"/>
+			<Option name="properties"/>
+			<Option value="collection" type="QString" name="type"/>
+		</Option>
+	</data_defined_properties>
+	<symbol type="line" clip_to_extent="1" force_rhr="0" name="@1@2" alpha="1">
+		<layer class="SimpleLine" pass="0" locked="0" enabled="1">
+			<prop v="square" k="capstyle"/>
+			<prop v="5;2" k="customdash"/>
+			<prop v="3x:0,0,0,0,0,0" k="customdash_map_unit_scale"/>
+			<prop v="Point" k="customdash_unit"/>
+			<prop v="0" k="draw_inside_polygon"/>
+			<prop v="bevel" k="joinstyle"/>
+			<prop v="115,38,0,255" k="line_color"/>
+			<prop v="solid" k="line_style"/>
+			<prop v="0.5" k="line_width"/>
+			<prop v="Point" k="line_width_unit"/>
+			<prop v="0" k="offset"/>
+			<prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+			<prop v="Point" k="offset_unit"/>
+			<prop v="0" k="ring_filter"/>
+			<prop v="0" k="use_custom_dash"/>
+			<prop v="3x:0,0,0,0,0,0" k="width_map_unit_scale"/>
+			<data_defined_properties>
+				<Option type="Map">
+					<Option value="" type="QString" name="name"/>
+					<Option name="properties"/>
+					<Option value="collection" type="QString" name="type"/>
+				</Option>
+			</data_defined_properties>
+		</layer>
+	</symbol>
+</layer></symbol><symbol type="fill" clip_to_extent="1" force_rhr="0" name="0" alpha="1"><layer class="SimpleLine" pass="0" locked="0" enabled="1">
+              <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
+              <prop v="255,170,0,255" k="color"/>
+              <prop v="bevel" k="joinstyle"/>
+              <prop v="0,0" k="offset"/>
+              <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+              <prop v="Point" k="offset_unit"/>
+              <prop v="255,170,0,255" k="outline_color"/>
+              <prop v="solid" k="outline_style"/>
+              <prop v="0.5" k="outline_width"/>
+              <prop v="Point" k="outline_width_unit"/>
+              <prop v="solid" k="style"/>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option value="" type="QString" name="name"/>
+                  <Option name="properties"/>
+                  <Option value="collection" type="QString" name="type"/>
+                </Option>
+              </data_defined_properties>
+            </layer></symbol><symbol type="fill" clip_to_extent="1" force_rhr="0" name="2" alpha="1"><layer class="SimpleLine" pass="0" locked="0" enabled="1">
+              <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
+              <prop v="115,38,0,255" k="color"/>
+              <prop v="bevel" k="joinstyle"/>
+              <prop v="0,0" k="offset"/>
+              <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+              <prop v="Point" k="offset_unit"/>
+              <prop v="115,38,0,255" k="outline_color"/>
+              <prop v="solid" k="outline_style"/>
+              <prop v="0.5" k="outline_width"/>
+              <prop v="Point" k="outline_width_unit"/>
+              <prop v="solid" k="style"/>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option value="" type="QString" name="name"/>
+                  <Option name="properties"/>
+                  <Option value="collection" type="QString" name="type"/>
+                </Option>
+              </data_defined_properties>
+            </layer><layer class="LinePatternFill" pass="0" locked="0" enabled="1">
+	<prop v="45" k="angle"/>
+	<prop v="125,125,125,255" k="color"/>
+	<prop v="5" k="distance"/>
+	<prop v="3x:0,0,0,0,0,0" k="distance_map_unit_scale"/>
+	<prop v="Point" k="distance_unit"/>
+	<prop v="0.5" k="line_width"/>
+	<prop v="3x:0,0,0,0,0,0" k="line_width_map_unit_scale"/>
+	<prop v="Point" k="line_width_unit"/>
+	<prop v="viewport" k="coordinate_reference"/>
+	<prop v="0" k="offset"/>
+	<prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+	<prop v="Point" k="offset_unit"/>
+	<prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+	<prop v="Point" k="outline_width_unit"/>
+	<data_defined_properties>
+		<Option type="Map">
+			<Option value="" type="QString" name="name"/>
+			<Option name="properties"/>
+			<Option value="collection" type="QString" name="type"/>
+		</Option>
+	</data_defined_properties>
+	<symbol type="line" clip_to_extent="1" force_rhr="0" name="@2@1" alpha="1">
+		<layer class="SimpleLine" pass="0" locked="0" enabled="1">
+			<prop v="square" k="capstyle"/>
+			<prop v="5;2" k="customdash"/>
+			<prop v="3x:0,0,0,0,0,0" k="customdash_map_unit_scale"/>
+			<prop v="Point" k="customdash_unit"/>
+			<prop v="0" k="draw_inside_polygon"/>
+			<prop v="bevel" k="joinstyle"/>
+			<prop v="115,38,0,255" k="line_color"/>
+			<prop v="solid" k="line_style"/>
+			<prop v="0.5" k="line_width"/>
+			<prop v="Point" k="line_width_unit"/>
+			<prop v="0" k="offset"/>
+			<prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+			<prop v="Point" k="offset_unit"/>
+			<prop v="0" k="ring_filter"/>
+			<prop v="0" k="use_custom_dash"/>
+			<prop v="3x:0,0,0,0,0,0" k="width_map_unit_scale"/>
+			<data_defined_properties>
+				<Option type="Map">
+					<Option value="" type="QString" name="name"/>
+					<Option name="properties"/>
+					<Option value="collection" type="QString" name="type"/>
+				</Option>
+			</data_defined_properties>
+		</layer>
+	</symbol>
+</layer></symbol></symbols>
+        <rotation/>
+        <sizescale/>
+      </renderer-v2>
+      <customproperties>
+        <property value="0" key="embeddedWidgets/count"/>
+        <property key="variableNames"/>
+        <property key="variableValues"/>
+      </customproperties>
+      <blendMode>0</blendMode>
+      <featureBlendMode>0</featureBlendMode>
+      <layerOpacity>1</layerOpacity>
+      <SingleCategoryDiagramRenderer attributeLegend="1" diagramType="Histogram">
+        <DiagramCategory enabled="0" sizeType="MM" width="15" maxScaleDenominator="1e+08" lineSizeScale="3x:0,0,0,0,0,0" diagramOrientation="Up" backgroundColor="#ffffff" sizeScale="3x:0,0,0,0,0,0" scaleDependency="Area" barWidth="5" scaleBasedVisibility="0" labelPlacementMethod="XHeight" opacity="1" penWidth="0" backgroundAlpha="255" lineSizeType="MM" minimumSize="0" rotationOffset="270" height="15" minScaleDenominator="0" penAlpha="255" penColor="#000000">
+          <fontProperties description="MS Shell Dlg 2,7.8,-1,5,50,0,0,0,0,0" style=""/>
+        </DiagramCategory>
+      </SingleCategoryDiagramRenderer>
+      <DiagramLayerSettings showAll="1" zIndex="0" obstacle="0" placement="1" dist="0" priority="0" linePlacementFlags="18">
+        <properties>
+          <Option type="Map">
+            <Option value="" type="QString" name="name"/>
+            <Option name="properties"/>
+            <Option value="collection" type="QString" name="type"/>
+          </Option>
+        </properties>
+      </DiagramLayerSettings>
+      <geometryOptions removeDuplicateNodes="0" geometryPrecision="0">
+        <activeChecks/>
+        <checkConfiguration/>
+      </geometryOptions>
+      <fieldConfiguration><field name="NAME">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="OBJNUMMER">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="STATUS_TXT">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="KATEGORI_T">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="RECHTSGR_T">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="TEILOBJNUM">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="ZONE_TXT">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="KATEGORI_C">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="STATUS_COD">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="RECHTSGR_C">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="INKRAFTSET">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="MUTATIONSD">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="MUTATIONSG">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="ZONE_CODE">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="SHAPE.AREA">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="SHAPE.LEN">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field></fieldConfiguration>
+      <aliases><alias name="Nom" field="NAME" index="0"/><alias name="Numéro d'objet" field="OBJNUMMER" index="1"/><alias name="Statut" field="STATUS_TXT" index="2"/><alias name="Catégorie" field="KATEGORI_T" index="3"/><alias name="Base juridique" field="RECHTSGR_T" index="4"/><alias name="Numéro de sous-objet" field="TEILOBJNUM" index="5"/><alias name="Zone" field="ZONE_TXT" index="6"/><alias name="Catégorie" field="KATEGORI_C" index="8"/><alias name="Statut" field="STATUS_COD" index="9"/><alias name="Base juridique" field="RECHTSGR_C" index="10"/><alias name="INKRAFTSETZUNGSDATUM" field="INKRAFTSET" index="11"/><alias name="MUTATIONSDATUM" field="MUTATIONSD" index="12"/><alias name="MUTATIONSGRUND" field="MUTATIONSG" index="13"/><alias name="ZONE_CODE" field="ZONE_CODE" index="14"/><alias name="Surface (m2)" field="SHAPE.AREA" index="16"/><alias name="SHAPE.LEN" field="SHAPE.LEN" index="17"/></aliases>
+      <excludeAttributesWMS/>
+      <excludeAttributesWFS/>
+      <defaults><default field="NAME" expression="" applyOnUpdate="0"/><default field="OBJNUMMER" expression="" applyOnUpdate="0"/><default field="STATUS_TXT" expression="" applyOnUpdate="0"/><default field="KATEGORI_T" expression="" applyOnUpdate="0"/><default field="RECHTSGR_T" expression="" applyOnUpdate="0"/><default field="TEILOBJNUM" expression="" applyOnUpdate="0"/><default field="ZONE_TXT" expression="" applyOnUpdate="0"/><default field="KATEGORI_C" expression="" applyOnUpdate="0"/><default field="STATUS_COD" expression="" applyOnUpdate="0"/><default field="RECHTSGR_C" expression="" applyOnUpdate="0"/><default field="INKRAFTSET" expression="" applyOnUpdate="0"/><default field="MUTATIONSD" expression="" applyOnUpdate="0"/><default field="MUTATIONSG" expression="" applyOnUpdate="0"/><default field="ZONE_CODE" expression="" applyOnUpdate="0"/><default field="SHAPE.AREA" expression="" applyOnUpdate="0"/><default field="SHAPE.LEN" expression="" applyOnUpdate="0"/></defaults>
+      <constraints><constraint field="NAME" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="OBJNUMMER" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="STATUS_TXT" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="KATEGORI_T" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="RECHTSGR_T" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="TEILOBJNUM" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="ZONE_TXT" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="KATEGORI_C" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="STATUS_COD" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="RECHTSGR_C" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="INKRAFTSET" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="MUTATIONSD" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="MUTATIONSG" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="ZONE_CODE" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="SHAPE.AREA" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="SHAPE.LEN" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/></constraints>
+      <constraintExpressions><constraint field="NAME" desc="" exp=""/><constraint field="OBJNUMMER" desc="" exp=""/><constraint field="STATUS_TXT" desc="" exp=""/><constraint field="KATEGORI_T" desc="" exp=""/><constraint field="RECHTSGR_T" desc="" exp=""/><constraint field="TEILOBJNUM" desc="" exp=""/><constraint field="ZONE_TXT" desc="" exp=""/><constraint field="KATEGORI_C" desc="" exp=""/><constraint field="STATUS_COD" desc="" exp=""/><constraint field="RECHTSGR_C" desc="" exp=""/><constraint field="INKRAFTSET" desc="" exp=""/><constraint field="MUTATIONSD" desc="" exp=""/><constraint field="MUTATIONSG" desc="" exp=""/><constraint field="ZONE_CODE" desc="" exp=""/><constraint field="SHAPE.AREA" desc="" exp=""/><constraint field="SHAPE.LEN" desc="" exp=""/></constraintExpressions>
+      <expressionfields/>
+      <attributeactions>
+        <defaultAction value="{00000000-0000-0000-0000-000000000000}" key="Canvas"/>
+      </attributeactions>
+      <attributetableconfig actionWidgetStyle="dropDown" sortOrder="0" sortExpression="">
+        <columns><column type="field" width="-1" hidden="0" name="NAME"/><column type="field" width="-1" hidden="0" name="OBJNUMMER"/><column type="field" width="-1" hidden="0" name="STATUS_TXT"/><column type="field" width="-1" hidden="0" name="KATEGORI_T"/><column type="field" width="-1" hidden="0" name="RECHTSGR_T"/><column type="field" width="-1" hidden="0" name="TEILOBJNUM"/><column type="field" width="-1" hidden="0" name="ZONE_TXT"/><column type="field" width="-1" hidden="0" name="KATEGORI_C"/><column type="field" width="-1" hidden="0" name="STATUS_COD"/><column type="field" width="-1" hidden="0" name="RECHTSGR_C"/><column type="field" width="-1" hidden="0" name="INKRAFTSET"/><column type="field" width="-1" hidden="0" name="MUTATIONSD"/><column type="field" width="-1" hidden="0" name="MUTATIONSG"/><column type="field" width="-1" hidden="0" name="ZONE_CODE"/><column type="field" width="-1" hidden="0" name="SHAPE.AREA"/><column type="field" width="-1" hidden="0" name="SHAPE.LEN"/></columns>
+      </attributetableconfig>
+      <conditionalstyles>
+        <rowstyles/>
+        <fieldstyles/>
+      </conditionalstyles>
+      <editform tolerant="1"/>
+      <editforminit/>
+      <editforminitcodesource>0</editforminitcodesource>
+      <editforminitfilepath/>
+      <editforminitcode># -*- coding: utf-8 -*-
+"""
+Les formulaires QGIS peuvent avoir une fonction Python qui sera appelÃ©e Ã  l'ouverture du formulaire.
+
+Utilisez cette fonction pour ajouter plus de fonctionnalitÃ©s Ã  vos formulaires.
+
+Entrez le nom de la fonction dans le champ "Fonction d'initialisation Python".
+Voici un exemple Ã  suivre:
+"""
+from qgis.PyQt.QtWidgets import QWidget
+
+def my_form_open(dialog, layer, feature):
+    geom = feature.geometry()
+    control = dialog.findChild(QWidget, "MyLineEdit")
+
+</editforminitcode>
+      <featformsuppress>0</featformsuppress>
+      <editorlayout>generatedlayout</editorlayout>
+      <editable><field name="NAME" editable="1"/><field name="OBJNUMMER" editable="1"/><field name="STATUS_TXT" editable="1"/><field name="KATEGORI_T" editable="1"/><field name="RECHTSGR_T" editable="1"/><field name="TEILOBJNUM" editable="1"/><field name="ZONE_TXT" editable="1"/><field name="KATEGORI_C" editable="1"/><field name="STATUS_COD" editable="1"/><field name="RECHTSGR_C" editable="1"/><field name="INKRAFTSET" editable="1"/><field name="MUTATIONSD" editable="1"/><field name="MUTATIONSG" editable="1"/><field name="ZONE_CODE" editable="1"/><field name="SHAPE.AREA" editable="1"/><field name="SHAPE.LEN" editable="1"/></editable>
+      <labelOnTop><field name="NAME" labelOnTop="0"/><field name="OBJNUMMER" labelOnTop="0"/><field name="STATUS_TXT" labelOnTop="0"/><field name="KATEGORI_T" labelOnTop="0"/><field name="RECHTSGR_T" labelOnTop="0"/><field name="TEILOBJNUM" labelOnTop="0"/><field name="ZONE_TXT" labelOnTop="0"/><field name="KATEGORI_C" labelOnTop="0"/><field name="STATUS_COD" labelOnTop="0"/><field name="RECHTSGR_C" labelOnTop="0"/><field name="INKRAFTSET" labelOnTop="0"/><field name="MUTATIONSD" labelOnTop="0"/><field name="MUTATIONSG" labelOnTop="0"/><field name="ZONE_CODE" labelOnTop="0"/><field name="SHAPE.AREA" labelOnTop="0"/><field name="SHAPE.LEN" labelOnTop="0"/></labelOnTop>
+      <widgets/>
+      <previewExpression>GLOBALID_T</previewExpression>
+      <mapTip/>
+    </maplayer>
+  </maplayers>
+</qlr>

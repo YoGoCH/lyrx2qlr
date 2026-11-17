@@ -1,0 +1,1659 @@
+﻿{
+	"type" : "CIMLayerDocument",
+	"version" : "2.7.0",
+	"build" : 26828,
+	"layers" : [ "CIMPATH=carte/cadastre_des_zones_approvisionn_es_en_gaz.xml" ],
+	"layerDefinitions" : [
+		{
+			"type" : "CIMFeatureLayer",
+			"name" : "DGE_DGE_TPR_ZONE_APPRO_GAZ",
+			"uRI" : "CIMPATH=carte/cadastre_des_zones_approvisionn_es_en_gaz.xml",
+			"sourceModifiedTime" : {
+				"type" : "TimeInstant"
+			},
+			"metadataURI" : "CIMPATH=Metadata/61b34fc3cb42eb187f81c29d1d9544f2.xml",
+			"useSourceMetadata" : true,
+			"description" : "DGE_DGE_TPR_ZONE_APPRO_GAZ",
+			"layerElevation" : {
+				"type" : "CIMLayerElevationSurface",
+				"mapElevationID" : "{55FA0C9B-AEC5-4E54-AEF5-F9BE57D7F2DC}"
+			},
+			"expanded" : true,
+			"layerType" : "Operational",
+			"showLegends" : true,
+			"visibility" : false,
+			"displayCacheType" : "Permanent",
+			"maxDisplayCacheAge" : 5,
+			"showPopups" : true,
+			"serviceLayerID" : -1,
+			"refreshRate" : -1,
+			"refreshRateUnit" : "esriTimeUnitsSeconds",
+			"blendingMode" : "Alpha",
+			"autoGenerateFeatureTemplates" : true,
+			"featureElevationExpression" : "0",
+			"featureTable" : {
+				"type" : "CIMFeatureTable",
+				"displayField" : "EXP_TECH_T",
+				"editable" : true,
+				"fieldDescriptions" : [
+					{
+						"type" : "CIMFieldDescription",
+						"alias" : "OBJECTID",
+						"fieldName" : "OBJECTID",
+						"numberFormat" : {
+							"type" : "CIMNumericFormat",
+							"alignmentOption" : "esriAlignRight",
+							"alignmentWidth" : 12,
+							"roundingOption" : "esriRoundNumberOfDecimals",
+							"roundingValue" : 0
+						},
+						"readOnly" : true,
+						"visible" : false,
+						"searchMode" : "Exact"
+					},
+					{
+						"type" : "CIMFieldDescription",
+						"alias" : "SHAPE",
+						"fieldName" : "SHAPE",
+						"visible" : false,
+						"searchMode" : "Exact"
+					},
+					{
+						"type" : "CIMFieldDescription",
+						"alias" : "N° OFS",
+						"fieldName" : "NOOFS",
+						"numberFormat" : {
+							"type" : "CIMNumericFormat",
+							"alignmentOption" : "esriAlignRight",
+							"alignmentWidth" : 12,
+							"roundingOption" : "esriRoundNumberOfDecimals",
+							"roundingValue" : 0
+						},
+						"visible" : true,
+						"searchMode" : "Exact"
+					},
+					{
+						"type" : "CIMFieldDescription",
+						"alias" : "EXPLOITANTTECHNIQUE_CODE",
+						"fieldName" : "EXP_TECH_C",
+						"numberFormat" : {
+							"type" : "CIMNumericFormat",
+							"alignmentOption" : "esriAlignRight",
+							"alignmentWidth" : 12,
+							"roundingOption" : "esriRoundNumberOfDecimals",
+							"roundingValue" : 0
+						},
+						"visible" : false,
+						"searchMode" : "Exact"
+					},
+					{
+						"type" : "CIMFieldDescription",
+						"alias" : "Exploitant technique",
+						"fieldName" : "EXP_TECH_T",
+						"visible" : true,
+						"searchMode" : "Exact"
+					},
+					{
+						"type" : "CIMFieldDescription",
+						"alias" : "TYPEGAZ_CODE",
+						"fieldName" : "TYPEGAZ_CO",
+						"numberFormat" : {
+							"type" : "CIMNumericFormat",
+							"alignmentOption" : "esriAlignRight",
+							"alignmentWidth" : 12,
+							"roundingOption" : "esriRoundNumberOfDecimals",
+							"roundingValue" : 0
+						},
+						"visible" : false,
+						"searchMode" : "Exact"
+					},
+					{
+						"type" : "CIMFieldDescription",
+						"alias" : "Type de gaz",
+						"fieldName" : "TYPEGAZ_TX",
+						"visible" : true,
+						"searchMode" : "Exact"
+					},
+					{
+						"type" : "CIMFieldDescription",
+						"alias" : "SHAPE.AREA",
+						"fieldName" : "SHAPE.AREA",
+						"numberFormat" : {
+							"type" : "CIMNumericFormat",
+							"alignmentOption" : "esriAlignRight",
+							"alignmentWidth" : 12,
+							"roundingOption" : "esriRoundNumberOfDecimals",
+							"roundingValue" : 6
+						},
+						"readOnly" : true,
+						"visible" : true,
+						"searchMode" : "Exact"
+					},
+					{
+						"type" : "CIMFieldDescription",
+						"alias" : "SHAPE.LEN",
+						"fieldName" : "SHAPE.LEN",
+						"numberFormat" : {
+							"type" : "CIMNumericFormat",
+							"alignmentOption" : "esriAlignRight",
+							"alignmentWidth" : 12,
+							"roundingOption" : "esriRoundNumberOfDecimals",
+							"roundingValue" : 6
+						},
+						"readOnly" : true,
+						"visible" : true,
+						"searchMode" : "Exact"
+					}
+				],
+				"timeFields" : {
+					"type" : "CIMTimeTableDefinition"
+				},
+				"timeDefinition" : {
+					"type" : "CIMTimeDataDefinition",
+					"hasLiveData" : true
+				},
+				"timeDisplayDefinition" : {
+					"type" : "CIMTimeDisplayDefinition",
+					"timeInterval" : 0,
+					"timeIntervalUnits" : "esriTimeUnitsHours",
+					"timeOffsetUnits" : "esriTimeUnitsYears"
+				},
+				"dataConnection" : {
+					"type" : "CIMStandardDataConnection",
+					"workspaceConnectionString" : "DATABASE=.\\",
+					"workspaceFactory" : "Shapefile",
+					"dataset" : "DGE_DGE_TPR_ZONE_APPRO_GAZ.shp",
+					"datasetType" : "esriDTFeatureClass"
+				},
+				"studyAreaSpatialRel" : "esriSpatialRelUndefined",
+				"searchOrder" : "esriSearchOrderSpatial"
+			},
+			"htmlPopupEnabled" : true,
+			"htmlPopupFormat" : {
+				"type" : "CIMHtmlPopupFormat",
+				"htmlUseCodedDomainValues" : true,
+				"htmlPresentationStyle" : "TwoColumnTable"
+			},
+			"isFlattened" : true,
+			"selectable" : true,
+			"selectionSymbol" : {
+				"type" : "CIMSymbolReference",
+				"symbol" : {
+					"type" : "CIMPolygonSymbol",
+					"symbolLayers" : [
+						{
+							"type" : "CIMSolidStroke",
+							"enable" : true,
+							"capStyle" : "Round",
+							"joinStyle" : "Round",
+							"lineStyle3D" : "Strip",
+							"miterLimit" : 10,
+							"width" : 2,
+							"color" : {
+								"type" : "CIMRGBColor",
+								"values" : [ 0, 255, 255, 100 ]
+							}
+						}
+					]
+				}
+			},
+			"featureCacheType" : "None",
+			"displayFiltersType" : "ByScale",
+			"featureBlendingMode" : "Alpha",
+			"labelClasses" : [
+				{
+					"type" : "CIMLabelClass",
+					"expression" : "[EXPLOITANTTECHNIQUE_TXT]",
+					"expressionEngine" : "VBScript",
+					"featuresToLabel" : "AllVisibleFeatures",
+					"maplexLabelPlacementProperties" : {
+						"type" : "CIMMaplexLabelPlacementProperties",
+						"featureType" : "Polygon",
+						"avoidPolygonHoles" : true,
+						"canOverrunFeature" : true,
+						"canPlaceLabelOutsidePolygon" : false,
+						"canRemoveOverlappingLabel" : true,
+						"canStackLabel" : true,
+						"connectionType" : "Unambiguous",
+						"constrainOffset" : "NoConstraint",
+						"contourAlignmentType" : "Page",
+						"contourLadderType" : "Straight",
+						"contourMaximumAngle" : 90,
+						"enableConnection" : true,
+						"featureWeight" : 0,
+						"fontHeightReductionLimit" : 4,
+						"fontHeightReductionStep" : 0.5,
+						"fontWidthReductionLimit" : 90,
+						"fontWidthReductionStep" : 5,
+						"graticuleAlignmentType" : "Straight",
+						"keyNumberGroupName" : "Par défaut",
+						"labelBuffer" : 15,
+						"labelLargestPolygon" : false,
+						"labelPriority" : -1,
+						"labelStackingProperties" : {
+							"type" : "CIMMaplexLabelStackingProperties",
+							"stackAlignment" : "ChooseBest",
+							"maximumNumberOfLines" : 3,
+							"minimumNumberOfCharsPerLine" : 3,
+							"maximumNumberOfCharsPerLine" : 24,
+							"separators" : [
+								{
+									"type" : "CIMMaplexStackingSeparator",
+									"separator" : " ",
+									"splitAfter" : true
+								},
+								{
+									"type" : "CIMMaplexStackingSeparator",
+									"separator" : ",",
+									"visible" : true,
+									"splitAfter" : true
+								}
+							]
+						},
+						"lineFeatureType" : "General",
+						"linePlacementMethod" : "OffsetCurvedFromLine",
+						"maximumLabelOverrun" : 100,
+						"maximumLabelOverrunUnit" : "Point",
+						"minimumFeatureSizeUnit" : "Map",
+						"multiPartOption" : "OneLabelPerPart",
+						"offsetAlongLineProperties" : {
+							"type" : "CIMMaplexOffsetAlongLineProperties",
+							"placementMethod" : "BestPositionAlongLine",
+							"labelAnchorPoint" : "CenterOfLabel",
+							"distanceUnit" : "Percentage",
+							"useLineDirection" : true
+						},
+						"pointExternalZonePriorities" : {
+							"type" : "CIMMaplexExternalZonePriorities",
+							"aboveLeft" : 4,
+							"aboveCenter" : 2,
+							"aboveRight" : 1,
+							"centerRight" : 3,
+							"belowRight" : 5,
+							"belowCenter" : 7,
+							"belowLeft" : 8,
+							"centerLeft" : 6
+						},
+						"pointPlacementMethod" : "AroundPoint",
+						"polygonAnchorPointType" : "GeometricCenter",
+						"polygonBoundaryWeight" : 0,
+						"polygonExternalZones" : {
+							"type" : "CIMMaplexExternalZonePriorities",
+							"aboveLeft" : 4,
+							"aboveCenter" : 2,
+							"aboveRight" : 1,
+							"centerRight" : 3,
+							"belowRight" : 5,
+							"belowCenter" : 7,
+							"belowLeft" : 8,
+							"centerLeft" : 6
+						},
+						"polygonFeatureType" : "General",
+						"polygonInternalZones" : {
+							"type" : "CIMMaplexInternalZonePriorities",
+							"center" : 1
+						},
+						"polygonPlacementMethod" : "HorizontalInPolygon",
+						"primaryOffset" : 1,
+						"primaryOffsetUnit" : "Point",
+						"removeExtraWhiteSpace" : true,
+						"repetitionIntervalUnit" : "Map",
+						"rotationProperties" : {
+							"type" : "CIMMaplexRotationProperties",
+							"rotationType" : "Arithmetic",
+							"alignmentType" : "Straight"
+						},
+						"secondaryOffset" : 100,
+						"strategyPriorities" : {
+							"type" : "CIMMaplexStrategyPriorities",
+							"stacking" : 1,
+							"overrun" : 2,
+							"fontCompression" : 3,
+							"fontReduction" : 4,
+							"abbreviation" : 5
+						},
+						"thinningDistanceUnit" : "Point",
+						"truncationMarkerCharacter" : ".",
+						"truncationMinimumLength" : 1,
+						"truncationPreferredCharacters" : "aeiou",
+						"polygonAnchorPointPerimeterInsetUnit" : "Point"
+					},
+					"name" : "Par défaut",
+					"priority" : 1,
+					"standardLabelPlacementProperties" : {
+						"type" : "CIMStandardLabelPlacementProperties",
+						"featureType" : "Line",
+						"featureWeight" : "None",
+						"labelWeight" : "High",
+						"numLabelsOption" : "OneLabelPerName",
+						"lineLabelPosition" : {
+							"type" : "CIMStandardLineLabelPosition",
+							"above" : true,
+							"inLine" : true,
+							"parallel" : true
+						},
+						"lineLabelPriorities" : {
+							"type" : "CIMStandardLineLabelPriorities",
+							"aboveStart" : 3,
+							"aboveAlong" : 3,
+							"aboveEnd" : 3,
+							"centerStart" : 3,
+							"centerAlong" : 3,
+							"centerEnd" : 3,
+							"belowStart" : 3,
+							"belowAlong" : 3,
+							"belowEnd" : 3
+						},
+						"pointPlacementMethod" : "AroundPoint",
+						"pointPlacementPriorities" : {
+							"type" : "CIMStandardPointPlacementPriorities",
+							"aboveLeft" : 2,
+							"aboveCenter" : 2,
+							"aboveRight" : 1,
+							"centerLeft" : 3,
+							"centerRight" : 2,
+							"belowLeft" : 3,
+							"belowCenter" : 3,
+							"belowRight" : 2
+						},
+						"rotationType" : "Arithmetic",
+						"polygonPlacementMethod" : "AlwaysHorizontal"
+					},
+					"textSymbol" : {
+						"type" : "CIMSymbolReference",
+						"symbol" : {
+							"type" : "CIMTextSymbol",
+							"blockProgression" : "TTB",
+							"compatibilityMode" : true,
+							"depth3D" : 1,
+							"drawSoftHyphen" : true,
+							"extrapolateBaselines" : true,
+							"flipAngle" : 90,
+							"fontEffects" : "Normal",
+							"fontEncoding" : "Unicode",
+							"fontFamilyName" : "Arial",
+							"fontStyleName" : "Regular",
+							"fontType" : "Unspecified",
+							"haloSize" : 1,
+							"height" : 8,
+							"hinting" : "Default",
+							"horizontalAlignment" : "Center",
+							"kerning" : true,
+							"letterWidth" : 100,
+							"ligatures" : true,
+							"lineGapType" : "ExtraLeading",
+							"shadowColor" : {
+								"type" : "CIMRGBColor",
+								"values" : [ 0, 0, 0, 100 ]
+							},
+							"symbol" : {
+								"type" : "CIMPolygonSymbol",
+								"symbolLayers" : [
+									{
+										"type" : "CIMSolidFill",
+										"enable" : true,
+										"color" : {
+											"type" : "CIMRGBColor",
+											"values" : [ 0, 0, 0, 100 ]
+										}
+									}
+								]
+							},
+							"textCase" : "Normal",
+							"textDirection" : "LTR",
+							"verticalAlignment" : "Bottom",
+							"verticalGlyphOrientation" : "Right",
+							"wordSpacing" : 100,
+							"billboardMode3D" : "FaceNearPlane"
+						}
+					},
+					"useCodedValue" : true,
+					"visibility" : true,
+					"iD" : -1
+				}
+			],
+			"renderer" : {
+				"type" : "CIMUniqueValueRenderer",
+				"colorRamp" : {
+					"type" : "CIMRandomHSVColorRamp",
+					"colorSpace" : {
+						"type" : "CIMICCColorSpace",
+						"url" : "Default RGB"
+					},
+					"maxH" : 360,
+					"minS" : 15,
+					"maxS" : 30,
+					"minV" : 99,
+					"maxV" : 100,
+					"minAlpha" : 100,
+					"maxAlpha" : 100
+				},
+				"defaultLabel" : "Inconnu",
+				"defaultSymbol" : {
+					"type" : "CIMSymbolReference",
+					"symbol" : {
+						"type" : "CIMPolygonSymbol",
+						"symbolLayers" : [
+							{
+								"type" : "CIMSolidStroke",
+								"enable" : true,
+								"capStyle" : "Round",
+								"joinStyle" : "Round",
+								"lineStyle3D" : "Strip",
+								"miterLimit" : 10,
+								"width" : 0.4,
+								"color" : {
+									"type" : "CIMRGBColor",
+									"values" : [ 0, 0, 0, 100 ]
+								}
+							},
+							{
+								"type" : "CIMSolidFill",
+								"enable" : true,
+								"color" : {
+									"type" : "CIMRGBColor",
+									"values" : [ 255, 255, 255, 100 ]
+								}
+							}
+						]
+					}
+				},
+				"defaultSymbolPatch" : "Default",
+				"fields" : [ "EXP_TECH_T" ],
+				"groups" : [
+					{
+						"type" : "CIMUniqueValueGroup",
+						"classes" : [
+							{
+								"type" : "CIMUniqueValueClass",
+								"label" : "Sans gaz",
+								"patch" : "Default",
+								"symbol" : {
+									"type" : "CIMSymbolReference",
+									"symbol" : {
+										"type" : "CIMPolygonSymbol",
+										"symbolLayers" : [
+											{
+												"type" : "CIMSolidStroke",
+												"enable" : true,
+												"capStyle" : "Round",
+												"joinStyle" : "Round",
+												"lineStyle3D" : "Strip",
+												"miterLimit" : 10,
+												"width" : 0.4,
+												"color" : {
+													"type" : "CIMRGBColor",
+													"values" : [ 110, 110, 110, 100 ]
+												}
+											},
+											{
+												"type" : "CIMSolidFill",
+												"enable" : true,
+												"color" : {
+													"type" : "CIMRGBColor",
+													"values" : [ 255, 255, 255, 100 ]
+												}
+											}
+										]
+									}
+								},
+								"values" : [
+									{
+										"type" : "CIMUniqueValue",
+										"fieldValues" : [ "Sans gaz" ]
+									}
+								],
+								"visible" : true
+							},
+							{
+								"type" : "CIMUniqueValueClass",
+								"label" : "Inconnu",
+								"patch" : "Default",
+								"symbol" : {
+									"type" : "CIMSymbolReference",
+									"symbol" : {
+										"type" : "CIMPolygonSymbol",
+										"symbolLayers" : [
+											{
+												"type" : "CIMSolidStroke",
+												"enable" : true,
+												"capStyle" : "Round",
+												"joinStyle" : "Round",
+												"lineStyle3D" : "Strip",
+												"miterLimit" : 10,
+												"width" : 1,
+												"color" : {
+													"type" : "CIMRGBColor",
+													"values" : [ 110, 110, 110, 100 ]
+												}
+											},
+											{
+												"type" : "CIMHatchFill",
+												"enable" : true,
+												"lineSymbol" : {
+													"type" : "CIMLineSymbol",
+													"symbolLayers" : [
+														{
+															"type" : "CIMSolidStroke",
+															"enable" : true,
+															"capStyle" : "Round",
+															"joinStyle" : "Round",
+															"lineStyle3D" : "Strip",
+															"miterLimit" : 10,
+															"width" : 1,
+															"color" : {
+																"type" : "CIMRGBColor",
+																"values" : [ 110, 110, 110, 100 ]
+															}
+														}
+													]
+												},
+												"rotation" : 45,
+												"separation" : 5
+											}
+										]
+									}
+								},
+								"values" : [
+									{
+										"type" : "CIMUniqueValue",
+										"fieldValues" : [ "Inconnu" ]
+									}
+								],
+								"visible" : true
+							},
+							{
+								"type" : "CIMUniqueValueClass",
+								"label" : "Berolle",
+								"patch" : "Default",
+								"symbol" : {
+									"type" : "CIMSymbolReference",
+									"symbol" : {
+										"type" : "CIMPolygonSymbol",
+										"symbolLayers" : [
+											{
+												"type" : "CIMSolidStroke",
+												"enable" : true,
+												"capStyle" : "Round",
+												"joinStyle" : "Round",
+												"lineStyle3D" : "Strip",
+												"miterLimit" : 10,
+												"width" : 0.4,
+												"color" : {
+													"type" : "CIMRGBColor",
+													"values" : [ 110, 110, 110, 100 ]
+												}
+											},
+											{
+												"type" : "CIMSolidFill",
+												"enable" : true,
+												"color" : {
+													"type" : "CIMHSVColor",
+													"values" : [ 108, 16, 99, 100 ]
+												}
+											}
+										]
+									}
+								},
+								"values" : [
+									{
+										"type" : "CIMUniqueValue",
+										"fieldValues" : [ "Berolle" ]
+									}
+								],
+								"visible" : true
+							},
+							{
+								"type" : "CIMUniqueValueClass",
+								"label" : "Berolle - Cosvegaz",
+								"patch" : "Default",
+								"symbol" : {
+									"type" : "CIMSymbolReference",
+									"symbol" : {
+										"type" : "CIMPolygonSymbol",
+										"symbolLayers" : [
+											{
+												"type" : "CIMSolidStroke",
+												"enable" : true,
+												"capStyle" : "Round",
+												"joinStyle" : "Round",
+												"lineStyle3D" : "Strip",
+												"miterLimit" : 10,
+												"width" : 0.4,
+												"color" : {
+													"type" : "CIMRGBColor",
+													"values" : [ 110, 110, 110, 100 ]
+												}
+											},
+											{
+												"type" : "CIMSolidFill",
+												"enable" : true,
+												"color" : {
+													"type" : "CIMRGBColor",
+													"values" : [ 56, 168, 0, 100 ]
+												}
+											}
+										]
+									}
+								},
+								"values" : [
+									{
+										"type" : "CIMUniqueValue",
+										"fieldValues" : [ "Berolle - Cosvegaz" ]
+									}
+								],
+								"visible" : true
+							},
+							{
+								"type" : "CIMUniqueValueClass",
+								"label" : "SIL - CICG - Holdigaz",
+								"patch" : "Default",
+								"symbol" : {
+									"type" : "CIMSymbolReference",
+									"symbol" : {
+										"type" : "CIMPolygonSymbol",
+										"symbolLayers" : [
+											{
+												"type" : "CIMSolidStroke",
+												"enable" : true,
+												"capStyle" : "Round",
+												"joinStyle" : "Round",
+												"lineStyle3D" : "Strip",
+												"miterLimit" : 10,
+												"width" : 0.4,
+												"color" : {
+													"type" : "CIMRGBColor",
+													"values" : [ 110, 110, 110, 100 ]
+												}
+											},
+											{
+												"type" : "CIMSolidFill",
+												"enable" : true,
+												"color" : {
+													"type" : "CIMRGBColor",
+													"values" : [ 179, 210, 252, 100 ]
+												}
+											}
+										]
+									}
+								},
+								"values" : [
+									{
+										"type" : "CIMUniqueValue",
+										"fieldValues" : [ "SIL - CICG - Holdigaz" ]
+									}
+								],
+								"visible" : true
+							},
+							{
+								"type" : "CIMUniqueValueClass",
+								"label" : "CICG - Holdigaz",
+								"patch" : "Default",
+								"symbol" : {
+									"type" : "CIMSymbolReference",
+									"symbol" : {
+										"type" : "CIMPolygonSymbol",
+										"symbolLayers" : [
+											{
+												"type" : "CIMSolidStroke",
+												"enable" : true,
+												"capStyle" : "Round",
+												"joinStyle" : "Round",
+												"lineStyle3D" : "Strip",
+												"miterLimit" : 10,
+												"width" : 0.4,
+												"color" : {
+													"type" : "CIMRGBColor",
+													"values" : [ 110, 110, 110, 100 ]
+												}
+											},
+											{
+												"type" : "CIMSolidFill",
+												"enable" : true,
+												"color" : {
+													"type" : "CIMRGBColor",
+													"values" : [ 0, 112, 255, 100 ]
+												}
+											}
+										]
+									}
+								},
+								"values" : [
+									{
+										"type" : "CIMUniqueValue",
+										"fieldValues" : [ "CICG - Holdigaz" ]
+									}
+								],
+								"visible" : true
+							},
+							{
+								"type" : "CIMUniqueValueClass",
+								"label" : "SGPR SA - Holdigaz",
+								"patch" : "Default",
+								"symbol" : {
+									"type" : "CIMSymbolReference",
+									"symbol" : {
+										"type" : "CIMPolygonSymbol",
+										"symbolLayers" : [
+											{
+												"type" : "CIMSolidStroke",
+												"enable" : true,
+												"capStyle" : "Round",
+												"joinStyle" : "Round",
+												"lineStyle3D" : "Strip",
+												"miterLimit" : 10,
+												"width" : 0.4,
+												"color" : {
+													"type" : "CIMRGBColor",
+													"values" : [ 110, 110, 110, 100 ]
+												}
+											},
+											{
+												"type" : "CIMSolidFill",
+												"enable" : true,
+												"color" : {
+													"type" : "CIMRGBColor",
+													"values" : [ 0, 163, 230, 100 ]
+												}
+											}
+										]
+									}
+								},
+								"values" : [
+									{
+										"type" : "CIMUniqueValue",
+										"fieldValues" : [ "SGPR SA - Holdigaz" ]
+									}
+								],
+								"visible" : true
+							},
+							{
+								"type" : "CIMUniqueValueClass",
+								"label" : "Cosvegaz - Holdigaz",
+								"patch" : "Default",
+								"symbol" : {
+									"type" : "CIMSymbolReference",
+									"symbol" : {
+										"type" : "CIMPolygonSymbol",
+										"symbolLayers" : [
+											{
+												"type" : "CIMSolidStroke",
+												"enable" : true,
+												"capStyle" : "Round",
+												"joinStyle" : "Round",
+												"lineStyle3D" : "Strip",
+												"miterLimit" : 10,
+												"width" : 0.4,
+												"color" : {
+													"type" : "CIMRGBColor",
+													"values" : [ 110, 110, 110, 100 ]
+												}
+											},
+											{
+												"type" : "CIMSolidFill",
+												"enable" : true,
+												"color" : {
+													"type" : "CIMRGBColor",
+													"values" : [ 0, 38, 115, 100 ]
+												}
+											}
+										]
+									}
+								},
+								"values" : [
+									{
+										"type" : "CIMUniqueValue",
+										"fieldValues" : [ "Cosvegaz - Holdigaz" ]
+									}
+								],
+								"visible" : true
+							},
+							{
+								"type" : "CIMUniqueValueClass",
+								"label" : "Celsius",
+								"patch" : "Default",
+								"symbol" : {
+									"type" : "CIMSymbolReference",
+									"symbol" : {
+										"type" : "CIMPolygonSymbol",
+										"symbolLayers" : [
+											{
+												"type" : "CIMSolidStroke",
+												"enable" : true,
+												"capStyle" : "Round",
+												"joinStyle" : "Round",
+												"lineStyle3D" : "Strip",
+												"miterLimit" : 10,
+												"width" : 0.4,
+												"color" : {
+													"type" : "CIMRGBColor",
+													"values" : [ 110, 110, 110, 100 ]
+												}
+											},
+											{
+												"type" : "CIMSolidFill",
+												"enable" : true,
+												"color" : {
+													"type" : "CIMRGBColor",
+													"values" : [ 223, 115, 255, 100 ]
+												}
+											}
+										]
+									}
+								},
+								"values" : [
+									{
+										"type" : "CIMUniqueValue",
+										"fieldValues" : [ "Celsius" ]
+									}
+								],
+								"visible" : true
+							},
+							{
+								"type" : "CIMUniqueValueClass",
+								"label" : "Commune de Sainte-Croix",
+								"patch" : "Default",
+								"symbol" : {
+									"type" : "CIMSymbolReference",
+									"symbol" : {
+										"type" : "CIMPolygonSymbol",
+										"symbolLayers" : [
+											{
+												"type" : "CIMSolidStroke",
+												"enable" : true,
+												"capStyle" : "Round",
+												"joinStyle" : "Round",
+												"lineStyle3D" : "Strip",
+												"miterLimit" : 10,
+												"width" : 0.4,
+												"color" : {
+													"type" : "CIMRGBColor",
+													"values" : [ 110, 110, 110, 100 ]
+												}
+											},
+											{
+												"type" : "CIMSolidFill",
+												"enable" : true,
+												"color" : {
+													"type" : "CIMRGBColor",
+													"values" : [ 191, 114, 22, 100 ]
+												}
+											}
+										]
+									}
+								},
+								"values" : [
+									{
+										"type" : "CIMUniqueValue",
+										"fieldValues" : [ "Commune de Sainte-Croix" ]
+									}
+								],
+								"visible" : true
+							},
+							{
+								"type" : "CIMUniqueValueClass",
+								"label" : "Cosvegaz",
+								"patch" : "Default",
+								"symbol" : {
+									"type" : "CIMSymbolReference",
+									"symbol" : {
+										"type" : "CIMPolygonSymbol",
+										"symbolLayers" : [
+											{
+												"type" : "CIMSolidStroke",
+												"enable" : true,
+												"capStyle" : "Round",
+												"joinStyle" : "Round",
+												"lineStyle3D" : "Strip",
+												"miterLimit" : 10,
+												"width" : 0.4,
+												"color" : {
+													"type" : "CIMRGBColor",
+													"values" : [ 110, 110, 110, 100 ]
+												}
+											},
+											{
+												"type" : "CIMSolidFill",
+												"enable" : true,
+												"color" : {
+													"type" : "CIMHSVColor",
+													"values" : [ 197, 21, 99, 100 ]
+												}
+											}
+										]
+									}
+								},
+								"values" : [
+									{
+										"type" : "CIMUniqueValue",
+										"fieldValues" : [ "Cosvegaz" ]
+									}
+								],
+								"visible" : true
+							},
+							{
+								"type" : "CIMUniqueValueClass",
+								"label" : "Cosvegaz - SEFA - SIL",
+								"patch" : "Default",
+								"symbol" : {
+									"type" : "CIMSymbolReference",
+									"symbol" : {
+										"type" : "CIMPolygonSymbol",
+										"symbolLayers" : [
+											{
+												"type" : "CIMSolidStroke",
+												"enable" : true,
+												"capStyle" : "Round",
+												"joinStyle" : "Round",
+												"lineStyle3D" : "Strip",
+												"miterLimit" : 10,
+												"width" : 0.4,
+												"color" : {
+													"type" : "CIMRGBColor",
+													"values" : [ 110, 110, 110, 100 ]
+												}
+											},
+											{
+												"type" : "CIMSolidFill",
+												"enable" : true,
+												"color" : {
+													"type" : "CIMHSVColor",
+													"values" : [ 8, 21, 99, 100 ]
+												}
+											}
+										]
+									}
+								},
+								"values" : [
+									{
+										"type" : "CIMUniqueValue",
+										"fieldValues" : [ "Cosvegaz - SEFA - SIL" ]
+									}
+								],
+								"visible" : true
+							},
+							{
+								"type" : "CIMUniqueValueClass",
+								"label" : "Gaznat",
+								"patch" : "Default",
+								"symbol" : {
+									"type" : "CIMSymbolReference",
+									"symbol" : {
+										"type" : "CIMPolygonSymbol",
+										"symbolLayers" : [
+											{
+												"type" : "CIMSolidStroke",
+												"enable" : true,
+												"capStyle" : "Round",
+												"joinStyle" : "Round",
+												"lineStyle3D" : "Strip",
+												"miterLimit" : 10,
+												"width" : 0.4,
+												"color" : {
+													"type" : "CIMRGBColor",
+													"values" : [ 112, 112, 112, 100 ]
+												}
+											},
+											{
+												"type" : "CIMSolidFill",
+												"enable" : true,
+												"color" : {
+													"type" : "CIMHSVColor",
+													"values" : [ 232, 23, 99, 100 ]
+												}
+											}
+										]
+									}
+								},
+								"values" : [
+									{
+										"type" : "CIMUniqueValue",
+										"fieldValues" : [ "Gaznat" ]
+									}
+								],
+								"visible" : true
+							},
+							{
+								"type" : "CIMUniqueValueClass",
+								"label" : "Gimel",
+								"patch" : "Default",
+								"symbol" : {
+									"type" : "CIMSymbolReference",
+									"symbol" : {
+										"type" : "CIMPolygonSymbol",
+										"symbolLayers" : [
+											{
+												"type" : "CIMSolidStroke",
+												"enable" : true,
+												"capStyle" : "Round",
+												"joinStyle" : "Round",
+												"lineStyle3D" : "Strip",
+												"miterLimit" : 10,
+												"width" : 0.4,
+												"color" : {
+													"type" : "CIMRGBColor",
+													"values" : [ 110, 110, 110, 100 ]
+												}
+											},
+											{
+												"type" : "CIMSolidFill",
+												"enable" : true,
+												"color" : {
+													"type" : "CIMHSVColor",
+													"values" : [ 353, 24, 99, 100 ]
+												}
+											}
+										]
+									}
+								},
+								"values" : [
+									{
+										"type" : "CIMUniqueValue",
+										"fieldValues" : [ "Gimel" ]
+									}
+								],
+								"visible" : true
+							},
+							{
+								"type" : "CIMUniqueValueClass",
+								"label" : "Gimel - Cosvegaz",
+								"patch" : "Default",
+								"symbol" : {
+									"type" : "CIMSymbolReference",
+									"symbol" : {
+										"type" : "CIMPolygonSymbol",
+										"symbolLayers" : [
+											{
+												"type" : "CIMSolidStroke",
+												"enable" : true,
+												"capStyle" : "Round",
+												"joinStyle" : "Round",
+												"lineStyle3D" : "Strip",
+												"miterLimit" : 10,
+												"width" : 0.4,
+												"color" : {
+													"type" : "CIMRGBColor",
+													"values" : [ 110, 110, 110, 100 ]
+												}
+											},
+											{
+												"type" : "CIMSolidFill",
+												"enable" : true,
+												"color" : {
+													"type" : "CIMRGBColor",
+													"values" : [ 255, 127, 127, 100 ]
+												}
+											}
+										]
+									}
+								},
+								"values" : [
+									{
+										"type" : "CIMUniqueValue",
+										"fieldValues" : [ "Gimel - Cosvegaz" ]
+									}
+								],
+								"visible" : true
+							},
+							{
+								"type" : "CIMUniqueValueClass",
+								"label" : "Mollens",
+								"patch" : "Default",
+								"symbol" : {
+									"type" : "CIMSymbolReference",
+									"symbol" : {
+										"type" : "CIMPolygonSymbol",
+										"symbolLayers" : [
+											{
+												"type" : "CIMSolidStroke",
+												"enable" : true,
+												"capStyle" : "Round",
+												"joinStyle" : "Round",
+												"lineStyle3D" : "Strip",
+												"miterLimit" : 10,
+												"width" : 0.4,
+												"color" : {
+													"type" : "CIMRGBColor",
+													"values" : [ 110, 110, 110, 100 ]
+												}
+											},
+											{
+												"type" : "CIMSolidFill",
+												"enable" : true,
+												"color" : {
+													"type" : "CIMRGBColor",
+													"values" : [ 233, 255, 190, 100 ]
+												}
+											}
+										]
+									}
+								},
+								"values" : [
+									{
+										"type" : "CIMUniqueValue",
+										"fieldValues" : [ "Mollens" ]
+									}
+								],
+								"visible" : true
+							},
+							{
+								"type" : "CIMUniqueValueClass",
+								"label" : "SEFA",
+								"patch" : "Default",
+								"symbol" : {
+									"type" : "CIMSymbolReference",
+									"symbol" : {
+										"type" : "CIMPolygonSymbol",
+										"symbolLayers" : [
+											{
+												"type" : "CIMSolidStroke",
+												"enable" : true,
+												"capStyle" : "Round",
+												"joinStyle" : "Round",
+												"lineStyle3D" : "Strip",
+												"miterLimit" : 10,
+												"width" : 0.4,
+												"color" : {
+													"type" : "CIMRGBColor",
+													"values" : [ 110, 110, 110, 100 ]
+												}
+											},
+											{
+												"type" : "CIMSolidFill",
+												"enable" : true,
+												"color" : {
+													"type" : "CIMHSVColor",
+													"values" : [ 59, 22, 99, 100 ]
+												}
+											}
+										]
+									}
+								},
+								"values" : [
+									{
+										"type" : "CIMUniqueValue",
+										"fieldValues" : [ "SEFA" ]
+									}
+								],
+								"visible" : true
+							},
+							{
+								"type" : "CIMUniqueValueClass",
+								"label" : "SI Morges",
+								"patch" : "Default",
+								"symbol" : {
+									"type" : "CIMSymbolReference",
+									"symbol" : {
+										"type" : "CIMPolygonSymbol",
+										"symbolLayers" : [
+											{
+												"type" : "CIMSolidStroke",
+												"enable" : true,
+												"capStyle" : "Round",
+												"joinStyle" : "Round",
+												"lineStyle3D" : "Strip",
+												"miterLimit" : 10,
+												"width" : 0.4,
+												"color" : {
+													"type" : "CIMRGBColor",
+													"values" : [ 110, 110, 110, 100 ]
+												}
+											},
+											{
+												"type" : "CIMSolidFill",
+												"enable" : true,
+												"color" : {
+													"type" : "CIMRGBColor",
+													"values" : [ 255, 85, 0, 100 ]
+												}
+											}
+										]
+									}
+								},
+								"values" : [
+									{
+										"type" : "CIMUniqueValue",
+										"fieldValues" : [ "SI Morges" ]
+									}
+								],
+								"visible" : true
+							},
+							{
+								"type" : "CIMUniqueValueClass",
+								"label" : "SI Nyon",
+								"patch" : "Default",
+								"symbol" : {
+									"type" : "CIMSymbolReference",
+									"symbol" : {
+										"type" : "CIMPolygonSymbol",
+										"symbolLayers" : [
+											{
+												"type" : "CIMSolidStroke",
+												"enable" : true,
+												"capStyle" : "Round",
+												"joinStyle" : "Round",
+												"lineStyle3D" : "Strip",
+												"miterLimit" : 10,
+												"width" : 0.4,
+												"color" : {
+													"type" : "CIMRGBColor",
+													"values" : [ 110, 110, 110, 100 ]
+												}
+											},
+											{
+												"type" : "CIMSolidFill",
+												"enable" : true,
+												"color" : {
+													"type" : "CIMRGBColor",
+													"values" : [ 115, 76, 0, 100 ]
+												}
+											}
+										]
+									}
+								},
+								"values" : [
+									{
+										"type" : "CIMUniqueValue",
+										"fieldValues" : [ "SI Nyon" ]
+									}
+								],
+								"visible" : true
+							},
+							{
+								"type" : "CIMUniqueValueClass",
+								"label" : "SI Nyon - SIL",
+								"patch" : "Default",
+								"symbol" : {
+									"type" : "CIMSymbolReference",
+									"symbol" : {
+										"type" : "CIMPolygonSymbol",
+										"symbolLayers" : [
+											{
+												"type" : "CIMSolidStroke",
+												"enable" : true,
+												"capStyle" : "Round",
+												"joinStyle" : "Round",
+												"lineStyle3D" : "Strip",
+												"miterLimit" : 10,
+												"width" : 0.4,
+												"color" : {
+													"type" : "CIMRGBColor",
+													"values" : [ 110, 110, 110, 100 ]
+												}
+											},
+											{
+												"type" : "CIMSolidFill",
+												"enable" : true,
+												"color" : {
+													"type" : "CIMRGBColor",
+													"values" : [ 115, 255, 223, 100 ]
+												}
+											}
+										]
+									}
+								},
+								"values" : [
+									{
+										"type" : "CIMUniqueValue",
+										"fieldValues" : [ "SI Nyon - SIL" ]
+									}
+								],
+								"visible" : true
+							},
+							{
+								"type" : "CIMUniqueValueClass",
+								"label" : "SI Rolle",
+								"patch" : "Default",
+								"symbol" : {
+									"type" : "CIMSymbolReference",
+									"symbol" : {
+										"type" : "CIMPolygonSymbol",
+										"symbolLayers" : [
+											{
+												"type" : "CIMSolidStroke",
+												"enable" : true,
+												"capStyle" : "Round",
+												"joinStyle" : "Round",
+												"lineStyle3D" : "Strip",
+												"miterLimit" : 10,
+												"width" : 0.4,
+												"color" : {
+													"type" : "CIMRGBColor",
+													"values" : [ 110, 110, 110, 100 ]
+												}
+											},
+											{
+												"type" : "CIMSolidFill",
+												"enable" : true,
+												"color" : {
+													"type" : "CIMRGBColor",
+													"values" : [ 199, 215, 198, 100 ]
+												}
+											}
+										]
+									}
+								},
+								"values" : [
+									{
+										"type" : "CIMUniqueValue",
+										"fieldValues" : [ "SI Rolle" ]
+									}
+								],
+								"visible" : true
+							},
+							{
+								"type" : "CIMUniqueValueClass",
+								"label" : "SI Rolle - SIL",
+								"patch" : "Default",
+								"symbol" : {
+									"type" : "CIMSymbolReference",
+									"symbol" : {
+										"type" : "CIMPolygonSymbol",
+										"symbolLayers" : [
+											{
+												"type" : "CIMSolidStroke",
+												"enable" : true,
+												"capStyle" : "Round",
+												"joinStyle" : "Round",
+												"lineStyle3D" : "Strip",
+												"miterLimit" : 10,
+												"width" : 0.4,
+												"color" : {
+													"type" : "CIMRGBColor",
+													"values" : [ 110, 110, 110, 100 ]
+												}
+											},
+											{
+												"type" : "CIMSolidFill",
+												"enable" : true,
+												"color" : {
+													"type" : "CIMRGBColor",
+													"values" : [ 76, 115, 0, 100 ]
+												}
+											}
+										]
+									}
+								},
+								"values" : [
+									{
+										"type" : "CIMUniqueValue",
+										"fieldValues" : [ "SI Rolle - SIL" ]
+									}
+								],
+								"visible" : true
+							},
+							{
+								"type" : "CIMUniqueValueClass",
+								"label" : "SI Yverdon",
+								"patch" : "Default",
+								"symbol" : {
+									"type" : "CIMSymbolReference",
+									"symbol" : {
+										"type" : "CIMPolygonSymbol",
+										"symbolLayers" : [
+											{
+												"type" : "CIMSolidStroke",
+												"enable" : true,
+												"capStyle" : "Round",
+												"joinStyle" : "Round",
+												"lineStyle3D" : "Strip",
+												"miterLimit" : 10,
+												"width" : 0.4,
+												"color" : {
+													"type" : "CIMRGBColor",
+													"values" : [ 110, 110, 110, 100 ]
+												}
+											},
+											{
+												"type" : "CIMSolidFill",
+												"enable" : true,
+												"color" : {
+													"type" : "CIMRGBColor",
+													"values" : [ 205, 205, 102, 100 ]
+												}
+											}
+										]
+									}
+								},
+								"values" : [
+									{
+										"type" : "CIMUniqueValue",
+										"fieldValues" : [ "SI Yverdon" ]
+									}
+								],
+								"visible" : true
+							},
+							{
+								"type" : "CIMUniqueValueClass",
+								"label" : "SIL (SI Lausanne)",
+								"patch" : "Default",
+								"symbol" : {
+									"type" : "CIMSymbolReference",
+									"symbol" : {
+										"type" : "CIMPolygonSymbol",
+										"symbolLayers" : [
+											{
+												"type" : "CIMSolidStroke",
+												"enable" : true,
+												"capStyle" : "Round",
+												"joinStyle" : "Round",
+												"lineStyle3D" : "Strip",
+												"miterLimit" : 10,
+												"width" : 0.4,
+												"color" : {
+													"type" : "CIMRGBColor",
+													"values" : [ 110, 110, 110, 100 ]
+												}
+											},
+											{
+												"type" : "CIMSolidFill",
+												"enable" : true,
+												"color" : {
+													"type" : "CIMRGBColor",
+													"values" : [ 76, 230, 0, 100 ]
+												}
+											}
+										]
+									}
+								},
+								"values" : [
+									{
+										"type" : "CIMUniqueValue",
+										"fieldValues" : [ "SIL (SI Lausanne)" ]
+									}
+								],
+								"visible" : true
+							},
+							{
+								"type" : "CIMUniqueValueClass",
+								"label" : "SIL - Cosvegaz",
+								"patch" : "Default",
+								"symbol" : {
+									"type" : "CIMSymbolReference",
+									"symbol" : {
+										"type" : "CIMPolygonSymbol",
+										"symbolLayers" : [
+											{
+												"type" : "CIMSolidStroke",
+												"enable" : true,
+												"capStyle" : "Round",
+												"joinStyle" : "Round",
+												"lineStyle3D" : "Strip",
+												"miterLimit" : 10,
+												"width" : 0.4,
+												"color" : {
+													"type" : "CIMRGBColor",
+													"values" : [ 110, 110, 110, 100 ]
+												}
+											},
+											{
+												"type" : "CIMSolidFill",
+												"enable" : true,
+												"color" : {
+													"type" : "CIMRGBColor",
+													"values" : [ 211, 255, 190, 100 ]
+												}
+											}
+										]
+									}
+								},
+								"values" : [
+									{
+										"type" : "CIMUniqueValue",
+										"fieldValues" : [ "SIL - Cosvegaz" ]
+									}
+								],
+								"visible" : true
+							},
+							{
+								"type" : "CIMUniqueValueClass",
+								"label" : "Saubraz",
+								"patch" : "Default",
+								"symbol" : {
+									"type" : "CIMSymbolReference",
+									"symbol" : {
+										"type" : "CIMPolygonSymbol",
+										"symbolLayers" : [
+											{
+												"type" : "CIMSolidStroke",
+												"enable" : true,
+												"capStyle" : "Round",
+												"joinStyle" : "Round",
+												"lineStyle3D" : "Strip",
+												"miterLimit" : 10,
+												"width" : 0.4,
+												"color" : {
+													"type" : "CIMRGBColor",
+													"values" : [ 110, 110, 110, 100 ]
+												}
+											},
+											{
+												"type" : "CIMSolidFill",
+												"enable" : true,
+												"color" : {
+													"type" : "CIMRGBColor",
+													"values" : [ 255, 255, 190, 100 ]
+												}
+											}
+										]
+									}
+								},
+								"values" : [
+									{
+										"type" : "CIMUniqueValue",
+										"fieldValues" : [ "Saubraz" ]
+									}
+								],
+								"visible" : true
+							},
+							{
+								"type" : "CIMUniqueValueClass",
+								"label" : "Saubraz - Cosvegaz",
+								"patch" : "Default",
+								"symbol" : {
+									"type" : "CIMSymbolReference",
+									"symbol" : {
+										"type" : "CIMPolygonSymbol",
+										"symbolLayers" : [
+											{
+												"type" : "CIMSolidStroke",
+												"enable" : true,
+												"capStyle" : "Round",
+												"joinStyle" : "Round",
+												"lineStyle3D" : "Strip",
+												"miterLimit" : 10,
+												"width" : 0.4,
+												"color" : {
+													"type" : "CIMRGBColor",
+													"values" : [ 110, 110, 110, 100 ]
+												}
+											},
+											{
+												"type" : "CIMSolidFill",
+												"enable" : true,
+												"color" : {
+													"type" : "CIMRGBColor",
+													"values" : [ 255, 255, 115, 100 ]
+												}
+											}
+										]
+									}
+								},
+								"values" : [
+									{
+										"type" : "CIMUniqueValue",
+										"fieldValues" : [ "Saubraz - Cosvegaz" ]
+									}
+								],
+								"visible" : true
+							},
+							{
+								"type" : "CIMUniqueValueClass",
+								"label" : "Urbagaz (VO Energies)",
+								"patch" : "Default",
+								"symbol" : {
+									"type" : "CIMSymbolReference",
+									"symbol" : {
+										"type" : "CIMPolygonSymbol",
+										"symbolLayers" : [
+											{
+												"type" : "CIMSolidStroke",
+												"enable" : true,
+												"capStyle" : "Round",
+												"joinStyle" : "Round",
+												"lineStyle3D" : "Strip",
+												"miterLimit" : 10,
+												"width" : 0.4,
+												"color" : {
+													"type" : "CIMRGBColor",
+													"values" : [ 110, 110, 110, 100 ]
+												}
+											},
+											{
+												"type" : "CIMSolidFill",
+												"enable" : true,
+												"color" : {
+													"type" : "CIMRGBColor",
+													"values" : [ 255, 211, 127, 100 ]
+												}
+											}
+										]
+									}
+								},
+								"values" : [
+									{
+										"type" : "CIMUniqueValue",
+										"fieldValues" : [ "Urbagaz (VO Energies)" ]
+									}
+								],
+								"visible" : true
+							}
+						],
+						"heading" : "Exploitant"
+					}
+				],
+				"polygonSymbolColorTarget" : "Fill"
+			},
+			"scaleSymbols" : false,
+			"snappable" : true
+		}
+	],
+	"elevationSurfaces" : [
+		{
+			"type" : "CIMMapElevationSurface",
+			"elevationMode" : "BaseGlobeSurface",
+			"name" : "Sol",
+			"verticalExaggeration" : 1,
+			"mapElevationID" : "{55FA0C9B-AEC5-4E54-AEF5-F9BE57D7F2DC}",
+			"color" : {
+				"type" : "CIMRGBColor",
+				"values" : [ 255, 255, 255, 100 ]
+			},
+			"surfaceTINShadingMode" : "Smooth",
+			"visibility" : true,
+			"expanded" : true
+		}
+	],
+	"rGBColorProfile" : "sRGB IEC61966-2-1 noBPC",
+	"cMYKColorProfile" : "U.S. Web Coated (SWOP) v2"
+}

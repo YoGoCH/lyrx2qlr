@@ -1,0 +1,717 @@
+<qlr>
+  <layer-tree-group expanded="1" checked="Qt::Checked" name="">
+    <customproperties/>
+    <layer-tree-layer source="./DGE_DGE_TPR_CDN_INO" checked="Qt::Checked" expanded="1" name="Carte des dangers INO" id="DGE_DGE_TPR_CDN_INO" providerKey="ogr">
+      <customproperties/>
+    </layer-tree-layer>
+  </layer-tree-group>
+  <maplayers>
+    <maplayer simplifyLocal="1" labelsEnabled="0" type="vector" maxScale="" readOnly="0" minScale="50000" refreshOnNotifyEnabled="0" simplifyAlgorithm="0" simplifyDrawingTol="1" hasScaleBasedVisibilityFlag="1" simplifyDrawingHints="1" refreshOnNotifyMessage="" simplifyMaxScale="1" autoRefreshEnabled="0" styleCategories="AllStyleCategories" autoRefreshTime="0" geometry="Line">
+      <extent>
+        <xmin>2530370.59700000006705523</xmin>
+        <ymin>1153464.33100000000558794</ymin>
+        <xmax>2540291.325999999884516</xmax>
+        <ymax>1160834.15200000000186265</ymax>
+      </extent>
+      <id>DGE_DGE_TPR_CDN_INO</id>
+      <datasource>./DGE.MN95_DGE_TPR_CDN_INO.shp</datasource>
+      <keywordList>
+        <value/>
+      </keywordList>
+      <layername>Carte des dangers INO</layername>
+      <srs>
+        <spatialrefsys>
+          <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
+          <srsid>47</srsid>
+          <srid>2056</srid>
+          <authid>EPSG:2056</authid>
+          <description>CH1903+ / LV95</description>
+          <projectionacronym>somerc</projectionacronym>
+          <ellipsoidacronym>bessel</ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <resourceMetadata>
+        <identifier/>
+        <parentidentifier/>
+        <language/>
+        <type/>
+        <title/>
+        <abstract/>
+        <contact>
+          <name/>
+          <organization/>
+          <position/>
+          <voice/>
+          <fax/>
+          <email/>
+          <role/>
+        </contact>
+        <links/>
+        <fees/>
+        <encoding/>
+        <crs>
+          <spatialrefsys>
+            <proj4/>
+            <srsid>0</srsid>
+            <srid>0</srid>
+            <authid/>
+            <description/>
+            <projectionacronym/>
+            <ellipsoidacronym/>
+            <geographicflag>false</geographicflag>
+          </spatialrefsys>
+        </crs>
+        <extent>
+          <spatial miny="0" maxx="0" dimensions="2" minz="0" maxz="0" minx="0" maxy="0" crs=""/>
+          <temporal>
+            <period>
+              <start/>
+              <end/>
+            </period>
+          </temporal>
+        </extent>
+      </resourceMetadata>
+      <provider encoding="UTF-8">ogr</provider>
+      <vectorjoins/>
+      <layerDependencies/>
+      <dataDependencies/>
+      <legend type="default-vector"/>
+      <expressionfields/>
+      <map-layer-style-manager current="dÃ©faut">
+        <map-layer-style name="dÃ©faut"/>
+      </map-layer-style-manager>
+      <auxiliaryLayer/>
+      <flags>
+        <Identifiable>1</Identifiable>
+        <Removable>1</Removable>
+        <Searchable>1</Searchable>
+      </flags>
+      <renderer-v2 enableorderby="0" type="RuleRenderer" symbollevels="0" forceraster="0">
+        <rules key="{98296a3b-0142-48ae-89ef-6eca124d50ea}">
+<rule label="Danger élevé" symbol="0" filter="&quot;DEGRE_DN&quot; = 'R' OR &quot;DEGRE_DN&quot; = 'R' OR &quot;DEGRE_DN&quot; = 'R' OR &quot;DEGRE_DN&quot; = 'R' OR &quot;DEGRE_DN&quot; = 'R' OR &quot;DEGRE_DN&quot; = 'R' OR &quot;DEGRE_DN&quot; = 'R' OR &quot;DEGRE_DN&quot; = 'R' OR &quot;DEGRE_DN&quot; = 'R' OR &quot;DEGRE_DN&quot; = 'R' OR &quot;DEGRE_DN&quot; = 'R' OR &quot;DEGRE_DN&quot; = 'R' OR &quot;DEGRE_DN&quot; = 'R' OR &quot;DEGRE_DN&quot; = 'R' OR &quot;DEGRE_DN&quot; = 'R' OR &quot;DEGRE_DN&quot; = 'R' OR &quot;DEGRE_DN&quot; = 'R'" key="{3f3a25ca-db2b-4265-b12f-c46325ec0754}"/><rule label="Danger nul" symbol="5" filter="&quot;DEGRE_DN&quot; = 'W'" key="{6d93ffd0-49e8-4216-8824-8909178abcc2}"/><rule label="Danger imprévisible (résiduel)" symbol="4" filter="&quot;DEGRE_DN&quot; = 'H' OR &quot;DEGRE_DN&quot; = 'H' OR &quot;DEGRE_DN&quot; = 'H' OR &quot;DEGRE_DN&quot; = 'H' OR &quot;DEGRE_DN&quot; = 'H'" key="{efd85fc7-8624-49e3-9e75-80f169e25072}"/><rule label="Information manquante" symbol="7" filter="&quot;DEGRE_DN&quot; = 'X'" key="{5cc7366e-559f-423a-835f-67b9940fce73}"/><rule label="Danger moyen" symbol="1" filter="&quot;DEGRE_DN&quot; = 'B' OR &quot;DEGRE_DN&quot; = 'B' OR &quot;DEGRE_DN&quot; = 'B' OR &quot;DEGRE_DN&quot; = 'B' OR &quot;DEGRE_DN&quot; = 'B' OR &quot;DEGRE_DN&quot; = 'B' OR &quot;DEGRE_DN&quot; = 'B' OR &quot;DEGRE_DN&quot; = 'B' OR &quot;DEGRE_DN&quot; = 'B' OR &quot;DEGRE_DN&quot; = 'B' OR &quot;DEGRE_DN&quot; = 'B' OR &quot;DEGRE_DN&quot; = 'B' OR &quot;DEGRE_DN&quot; = 'B' OR &quot;DEGRE_DN&quot; = 'B' OR &quot;DEGRE_DN&quot; = 'B' OR &quot;DEGRE_DN&quot; = 'B'" key="{a959d55a-3261-4aa4-b178-3685298976c9}"/><rule label="Danger moyen de faible intensité" symbol="2" filter="&quot;DEGRE_DN&quot; = 'B' OR &quot;DEGRE_DN&quot; = 'B' OR &quot;DEGRE_DN&quot; = 'B'" key="{d6571f0b-6b62-43cd-b7c7-827b25f773f3}"/><rule label="Danger faible" symbol="3" filter="&quot;DEGRE_DN&quot; = 'J' OR &quot;DEGRE_DN&quot; = 'J' OR &quot;DEGRE_DN&quot; = 'J' OR &quot;DEGRE_DN&quot; = 'J' OR &quot;DEGRE_DN&quot; = 'J' OR &quot;DEGRE_DN&quot; = 'J' OR &quot;DEGRE_DN&quot; = 'J' OR &quot;DEGRE_DN&quot; = 'J' OR &quot;DEGRE_DN&quot; = 'J' OR &quot;DEGRE_DN&quot; = 'J' OR &quot;DEGRE_DN&quot; = 'J' OR &quot;DEGRE_DN&quot; = 'J' OR &quot;DEGRE_DN&quot; = 'J'" key="{f89688c3-d1c0-4613-bcc1-9fc95796f841}"/><rule label="En révision" symbol="6" filter="&quot;DEGRE_DN&quot; = 'Z'" key="{ac58b1df-8369-4ffa-b89d-a52cc2d479a9}"/></rules>
+        <symbols>
+        <symbol type="fill" clip_to_extent="1" force_rhr="0" name="4" alpha="1"><layer class="SimpleFill" pass="0" locked="0" enabled="1">
+              <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
+              <prop v="255,255,255,255" k="color"/>
+              <prop v="bevel" k="joinstyle"/>
+              <prop v="0,0" k="offset"/>
+              <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+              <prop v="Point" k="offset_unit"/>
+              <prop v="255,255,255,255" k="outline_color"/>
+              <prop v="solid" k="outline_style"/>
+              
+              <prop v="Point" k="outline_width_unit"/>
+              <prop v="solid" k="style"/>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option value="" type="QString" name="name"/>
+                  <Option name="properties"/>
+                  <Option value="collection" type="QString" name="type"/>
+                </Option>
+              </data_defined_properties>
+            </layer><layer class="SimpleLine" pass="0" locked="0" enabled="1">
+              <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
+              <prop v="110,110,110,255" k="color"/>
+              <prop v="bevel" k="joinstyle"/>
+              <prop v="0,0" k="offset"/>
+              <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+              <prop v="Point" k="offset_unit"/>
+              <prop v="110,110,110,255" k="outline_color"/>
+              <prop v="solid" k="outline_style"/>
+              <prop v="1" k="outline_width"/>
+              <prop v="Point" k="outline_width_unit"/>
+              <prop v="solid" k="style"/>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option value="" type="QString" name="name"/>
+                  <Option name="properties"/>
+                  <Option value="collection" type="QString" name="type"/>
+                </Option>
+              </data_defined_properties>
+            </layer><layer class="SimpleLine" pass="0" locked="0" enabled="1">
+              <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
+              <prop v="204,204,204,255" k="color"/>
+              <prop v="bevel" k="joinstyle"/>
+              <prop v="0,0" k="offset"/>
+              <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+              <prop v="Point" k="offset_unit"/>
+              <prop v="204,204,204,255" k="outline_color"/>
+              <prop v="solid" k="outline_style"/>
+              <prop v="0.5" k="outline_width"/>
+              <prop v="Point" k="outline_width_unit"/>
+              <prop v="solid" k="style"/>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option value="" type="QString" name="name"/>
+                  <Option name="properties"/>
+                  <Option value="collection" type="QString" name="type"/>
+                </Option>
+              </data_defined_properties>
+            </layer><layer class="LinePatternFill" pass="0" locked="0" enabled="1">
+	<prop v="45" k="angle"/>
+	<prop v="125,125,125,255" k="color"/>
+	<prop v="8" k="distance"/>
+	<prop v="3x:0,0,0,0,0,0" k="distance_map_unit_scale"/>
+	<prop v="Point" k="distance_unit"/>
+	<prop v="2" k="line_width"/>
+	<prop v="3x:0,0,0,0,0,0" k="line_width_map_unit_scale"/>
+	<prop v="Point" k="line_width_unit"/>
+	<prop v="viewport" k="coordinate_reference"/>
+	<prop v="0" k="offset"/>
+	<prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+	<prop v="Point" k="offset_unit"/>
+	<prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+	<prop v="Point" k="outline_width_unit"/>
+	<data_defined_properties>
+		<Option type="Map">
+			<Option value="" type="QString" name="name"/>
+			<Option name="properties"/>
+			<Option value="collection" type="QString" name="type"/>
+		</Option>
+	</data_defined_properties>
+	<symbol type="line" clip_to_extent="1" force_rhr="0" name="@4@1" alpha="1">
+		<layer class="SimpleLine" pass="0" locked="0" enabled="1">
+			<prop v="square" k="capstyle"/>
+			<prop v="5;2" k="customdash"/>
+			<prop v="3x:0,0,0,0,0,0" k="customdash_map_unit_scale"/>
+			<prop v="Point" k="customdash_unit"/>
+			<prop v="0" k="draw_inside_polygon"/>
+			<prop v="bevel" k="joinstyle"/>
+			<prop v="255,255,0,255" k="line_color"/>
+			<prop v="solid" k="line_style"/>
+			<prop v="2" k="line_width"/>
+			<prop v="Point" k="line_width_unit"/>
+			<prop v="0" k="offset"/>
+			<prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+			<prop v="Point" k="offset_unit"/>
+			<prop v="0" k="ring_filter"/>
+			<prop v="0" k="use_custom_dash"/>
+			<prop v="3x:0,0,0,0,0,0" k="width_map_unit_scale"/>
+			<data_defined_properties>
+				<Option type="Map">
+					<Option value="" type="QString" name="name"/>
+					<Option name="properties"/>
+					<Option value="collection" type="QString" name="type"/>
+				</Option>
+			</data_defined_properties>
+		</layer>
+	</symbol>
+</layer></symbol><symbol type="fill" clip_to_extent="1" force_rhr="0" name="5" alpha="1"><layer class="SimpleFill" pass="0" locked="0" enabled="1">
+              <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
+              <prop v="255,255,255,255" k="color"/>
+              <prop v="bevel" k="joinstyle"/>
+              <prop v="0,0" k="offset"/>
+              <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+              <prop v="Point" k="offset_unit"/>
+              <prop v="255,255,255,255" k="outline_color"/>
+              <prop v="solid" k="outline_style"/>
+              
+              <prop v="Point" k="outline_width_unit"/>
+              <prop v="solid" k="style"/>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option value="" type="QString" name="name"/>
+                  <Option name="properties"/>
+                  <Option value="collection" type="QString" name="type"/>
+                </Option>
+              </data_defined_properties>
+            </layer><layer class="SimpleLine" pass="0" locked="0" enabled="1">
+              <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
+              <prop v="204,204,204,255" k="color"/>
+              <prop v="bevel" k="joinstyle"/>
+              <prop v="0,0" k="offset"/>
+              <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+              <prop v="Point" k="offset_unit"/>
+              <prop v="204,204,204,255" k="outline_color"/>
+              <prop v="solid" k="outline_style"/>
+              <prop v="0.5" k="outline_width"/>
+              <prop v="Point" k="outline_width_unit"/>
+              <prop v="solid" k="style"/>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option value="" type="QString" name="name"/>
+                  <Option name="properties"/>
+                  <Option value="collection" type="QString" name="type"/>
+                </Option>
+              </data_defined_properties>
+            </layer></symbol><symbol type="fill" clip_to_extent="1" force_rhr="0" name="7" alpha="1"><layer class="SimpleFill" pass="0" locked="0" enabled="1">
+              <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
+              <prop v="156,156,156,255" k="color"/>
+              <prop v="bevel" k="joinstyle"/>
+              <prop v="0,0" k="offset"/>
+              <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+              <prop v="Point" k="offset_unit"/>
+              <prop v="156,156,156,255" k="outline_color"/>
+              <prop v="solid" k="outline_style"/>
+              
+              <prop v="Point" k="outline_width_unit"/>
+              <prop v="solid" k="style"/>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option value="" type="QString" name="name"/>
+                  <Option name="properties"/>
+                  <Option value="collection" type="QString" name="type"/>
+                </Option>
+              </data_defined_properties>
+            </layer><layer class="SimpleLine" pass="0" locked="0" enabled="1">
+              <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
+              <prop v="104,104,104,255" k="color"/>
+              <prop v="bevel" k="joinstyle"/>
+              <prop v="0,0" k="offset"/>
+              <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+              <prop v="Point" k="offset_unit"/>
+              <prop v="104,104,104,255" k="outline_color"/>
+              <prop v="solid" k="outline_style"/>
+              <prop v="0.5" k="outline_width"/>
+              <prop v="Point" k="outline_width_unit"/>
+              <prop v="solid" k="style"/>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option value="" type="QString" name="name"/>
+                  <Option name="properties"/>
+                  <Option value="collection" type="QString" name="type"/>
+                </Option>
+              </data_defined_properties>
+            </layer></symbol><symbol type="fill" clip_to_extent="1" force_rhr="0" name="1" alpha="1"><layer class="SimpleFill" pass="0" locked="0" enabled="1">
+              <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
+              <prop v="51,102,255,255" k="color"/>
+              <prop v="bevel" k="joinstyle"/>
+              <prop v="0,0" k="offset"/>
+              <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+              <prop v="Point" k="offset_unit"/>
+              <prop v="51,102,255,255" k="outline_color"/>
+              <prop v="solid" k="outline_style"/>
+              
+              <prop v="Point" k="outline_width_unit"/>
+              <prop v="solid" k="style"/>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option value="" type="QString" name="name"/>
+                  <Option name="properties"/>
+                  <Option value="collection" type="QString" name="type"/>
+                </Option>
+              </data_defined_properties>
+            </layer><layer class="SimpleLine" pass="0" locked="0" enabled="1">
+              <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
+              <prop v="0,38,115,255" k="color"/>
+              <prop v="bevel" k="joinstyle"/>
+              <prop v="0,0" k="offset"/>
+              <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+              <prop v="Point" k="offset_unit"/>
+              <prop v="0,38,115,255" k="outline_color"/>
+              <prop v="solid" k="outline_style"/>
+              <prop v="0.5" k="outline_width"/>
+              <prop v="Point" k="outline_width_unit"/>
+              <prop v="solid" k="style"/>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option value="" type="QString" name="name"/>
+                  <Option name="properties"/>
+                  <Option value="collection" type="QString" name="type"/>
+                </Option>
+              </data_defined_properties>
+            </layer></symbol><symbol type="fill" clip_to_extent="1" force_rhr="0" name="2" alpha="1"><layer class="SimpleFill" pass="0" locked="0" enabled="1">
+              <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
+              <prop v="66,181,255,255" k="color"/>
+              <prop v="bevel" k="joinstyle"/>
+              <prop v="0,0" k="offset"/>
+              <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+              <prop v="Point" k="offset_unit"/>
+              <prop v="66,181,255,255" k="outline_color"/>
+              <prop v="solid" k="outline_style"/>
+              
+              <prop v="Point" k="outline_width_unit"/>
+              <prop v="solid" k="style"/>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option value="" type="QString" name="name"/>
+                  <Option name="properties"/>
+                  <Option value="collection" type="QString" name="type"/>
+                </Option>
+              </data_defined_properties>
+            </layer><layer class="SimpleLine" pass="0" locked="0" enabled="1">
+              <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
+              <prop v="0,76,115,255" k="color"/>
+              <prop v="bevel" k="joinstyle"/>
+              <prop v="0,0" k="offset"/>
+              <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+              <prop v="Point" k="offset_unit"/>
+              <prop v="0,76,115,255" k="outline_color"/>
+              <prop v="solid" k="outline_style"/>
+              <prop v="0.5" k="outline_width"/>
+              <prop v="Point" k="outline_width_unit"/>
+              <prop v="solid" k="style"/>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option value="" type="QString" name="name"/>
+                  <Option name="properties"/>
+                  <Option value="collection" type="QString" name="type"/>
+                </Option>
+              </data_defined_properties>
+            </layer></symbol><symbol type="fill" clip_to_extent="1" force_rhr="0" name="3" alpha="1"><layer class="SimpleFill" pass="0" locked="0" enabled="1">
+              <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
+              <prop v="255,255,0,255" k="color"/>
+              <prop v="bevel" k="joinstyle"/>
+              <prop v="0,0" k="offset"/>
+              <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+              <prop v="Point" k="offset_unit"/>
+              <prop v="255,255,0,255" k="outline_color"/>
+              <prop v="solid" k="outline_style"/>
+              
+              <prop v="Point" k="outline_width_unit"/>
+              <prop v="solid" k="style"/>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option value="" type="QString" name="name"/>
+                  <Option name="properties"/>
+                  <Option value="collection" type="QString" name="type"/>
+                </Option>
+              </data_defined_properties>
+            </layer><layer class="SimpleLine" pass="0" locked="0" enabled="1">
+              <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
+              <prop v="204,204,204,255" k="color"/>
+              <prop v="bevel" k="joinstyle"/>
+              <prop v="0,0" k="offset"/>
+              <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+              <prop v="Point" k="offset_unit"/>
+              <prop v="204,204,204,255" k="outline_color"/>
+              <prop v="solid" k="outline_style"/>
+              <prop v="0.5" k="outline_width"/>
+              <prop v="Point" k="outline_width_unit"/>
+              <prop v="solid" k="style"/>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option value="" type="QString" name="name"/>
+                  <Option name="properties"/>
+                  <Option value="collection" type="QString" name="type"/>
+                </Option>
+              </data_defined_properties>
+            </layer></symbol><symbol type="fill" clip_to_extent="1" force_rhr="0" name="0" alpha="1"><layer class="SimpleFill" pass="0" locked="0" enabled="1">
+              <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
+              <prop v="255,0,0,255" k="color"/>
+              <prop v="bevel" k="joinstyle"/>
+              <prop v="0,0" k="offset"/>
+              <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+              <prop v="Point" k="offset_unit"/>
+              <prop v="255,0,0,255" k="outline_color"/>
+              <prop v="solid" k="outline_style"/>
+              
+              <prop v="Point" k="outline_width_unit"/>
+              <prop v="solid" k="style"/>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option value="" type="QString" name="name"/>
+                  <Option name="properties"/>
+                  <Option value="collection" type="QString" name="type"/>
+                </Option>
+              </data_defined_properties>
+            </layer><layer class="SimpleLine" pass="0" locked="0" enabled="1">
+              <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
+              <prop v="168,0,0,255" k="color"/>
+              <prop v="bevel" k="joinstyle"/>
+              <prop v="0,0" k="offset"/>
+              <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+              <prop v="Point" k="offset_unit"/>
+              <prop v="168,0,0,255" k="outline_color"/>
+              <prop v="solid" k="outline_style"/>
+              <prop v="0.5" k="outline_width"/>
+              <prop v="Point" k="outline_width_unit"/>
+              <prop v="solid" k="style"/>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option value="" type="QString" name="name"/>
+                  <Option name="properties"/>
+                  <Option value="collection" type="QString" name="type"/>
+                </Option>
+              </data_defined_properties>
+            </layer></symbol><symbol type="fill" clip_to_extent="1" force_rhr="0" name="6" alpha="1"><layer class="SimpleFill" pass="0" locked="0" enabled="1">
+              <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
+              <prop v="215,215,158,255" k="color"/>
+              <prop v="bevel" k="joinstyle"/>
+              <prop v="0,0" k="offset"/>
+              <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+              <prop v="Point" k="offset_unit"/>
+              <prop v="215,215,158,255" k="outline_color"/>
+              <prop v="solid" k="outline_style"/>
+              
+              <prop v="Point" k="outline_width_unit"/>
+              <prop v="solid" k="style"/>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option value="" type="QString" name="name"/>
+                  <Option name="properties"/>
+                  <Option value="collection" type="QString" name="type"/>
+                </Option>
+              </data_defined_properties>
+            </layer><layer class="SimpleLine" pass="0" locked="0" enabled="1">
+              <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
+              <prop v="178,178,178,255" k="color"/>
+              <prop v="bevel" k="joinstyle"/>
+              <prop v="0,0" k="offset"/>
+              <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+              <prop v="Point" k="offset_unit"/>
+              <prop v="178,178,178,255" k="outline_color"/>
+              <prop v="solid" k="outline_style"/>
+              <prop v="0.5" k="outline_width"/>
+              <prop v="Point" k="outline_width_unit"/>
+              <prop v="solid" k="style"/>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option value="" type="QString" name="name"/>
+                  <Option name="properties"/>
+                  <Option value="collection" type="QString" name="type"/>
+                </Option>
+              </data_defined_properties>
+            </layer></symbol></symbols>
+        <rotation/>
+        <sizescale/>
+      </renderer-v2>
+      <customproperties>
+        <property value="0" key="embeddedWidgets/count"/>
+        <property key="variableNames"/>
+        <property key="variableValues"/>
+      </customproperties>
+      <blendMode>0</blendMode>
+      <featureBlendMode>0</featureBlendMode>
+      <layerOpacity>0.9</layerOpacity>
+      <SingleCategoryDiagramRenderer attributeLegend="1" diagramType="Histogram">
+        <DiagramCategory enabled="0" sizeType="MM" width="15" maxScaleDenominator="1e+08" lineSizeScale="3x:0,0,0,0,0,0" diagramOrientation="Up" backgroundColor="#ffffff" sizeScale="3x:0,0,0,0,0,0" scaleDependency="Area" barWidth="5" scaleBasedVisibility="0" labelPlacementMethod="XHeight" opacity="1" penWidth="0" backgroundAlpha="255" lineSizeType="MM" minimumSize="0" rotationOffset="270" height="15" minScaleDenominator="0" penAlpha="255" penColor="#000000">
+          <fontProperties description="MS Shell Dlg 2,7.8,-1,5,50,0,0,0,0,0" style=""/>
+        </DiagramCategory>
+      </SingleCategoryDiagramRenderer>
+      <DiagramLayerSettings showAll="1" zIndex="0" obstacle="0" placement="1" dist="0" priority="0" linePlacementFlags="18">
+        <properties>
+          <Option type="Map">
+            <Option value="" type="QString" name="name"/>
+            <Option name="properties"/>
+            <Option value="collection" type="QString" name="type"/>
+          </Option>
+        </properties>
+      </DiagramLayerSettings>
+      <geometryOptions removeDuplicateNodes="0" geometryPrecision="0">
+        <activeChecks/>
+        <checkConfiguration/>
+      </geometryOptions>
+      <fieldConfiguration><field name="FK_PSE">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="SCE_CODE">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="PERIM_DN">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="NO_COM_FED">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="LOT">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="ALEA">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="ALEA_TXT">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="ALEA_DET">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="ALEA_OFEV">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="ETAT">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="PROBAB">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="DEGRE_DN">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="DEG_DN_TXT">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="CLASSE_DN">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="NOM_LOCAL">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="CRITERE">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="METHODE">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="MODELE">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="DESCRIPT">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="PROJET">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="BUREAU">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="DATE_CREA">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="DATE_MODIF">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="REM_DN">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="REM_SCE">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="GLOBALID">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="PARAMETRE">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="SHAPE.AREA">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field><field name="SHAPE.LEN">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field></fieldConfiguration>
+      <aliases><alias name="PSE Code" field="FK_PSE" index="2"/><alias name="Scénario code" field="SCE_CODE" index="3"/><alias name="Périmètre DN" field="PERIM_DN" index="4"/><alias name="No OFS" field="NO_COM_FED" index="5"/><alias name="Lot" field="LOT" index="6"/><alias name="Aléa" field="ALEA" index="7"/><alias name="Aléa nom" field="ALEA_TXT" index="8"/><alias name="Aléa détail" field="ALEA_DET" index="9"/><alias name="Aléa OFEV" field="ALEA_OFEV" index="10"/><alias name="Etat" field="ETAT" index="11"/><alias name="Probabilité" field="PROBAB" index="12"/><alias name="Degré de danger" field="DEGRE_DN" index="13"/><alias name="Degré de danger détail" field="DEG_DN_TXT" index="14"/><alias name="Classe de danger" field="CLASSE_DN" index="15"/><alias name="Lieu-dit/cours d'eau" field="NOM_LOCAL" index="16"/><alias name="Critère" field="CRITERE" index="17"/><alias name="Méthode" field="METHODE" index="18"/><alias name="Modèle" field="MODELE" index="19"/><alias name="Description du scénario" field="DESCRIPT" index="20"/><alias name="Projet" field="PROJET" index="21"/><alias name="Bureau" field="BUREAU" index="22"/><alias name="Date de création" field="DATE_CREA" index="23"/><alias name="Date de modification" field="DATE_MODIF" index="24"/><alias name="Remarques des CDN" field="REM_DN" index="25"/><alias name="Remarques du scénario" field="REM_SCE" index="26"/><alias name="GLOBALID" field="GLOBALID" index="27"/><alias name="PARAMETRE" field="PARAMETRE" index="28"/><alias name="SHAPE.AREA" field="SHAPE.AREA" index="29"/><alias name="SHAPE.LEN" field="SHAPE.LEN" index="30"/></aliases>
+      <excludeAttributesWMS/>
+      <excludeAttributesWFS/>
+      <defaults><default field="FK_PSE" expression="" applyOnUpdate="0"/><default field="SCE_CODE" expression="" applyOnUpdate="0"/><default field="PERIM_DN" expression="" applyOnUpdate="0"/><default field="NO_COM_FED" expression="" applyOnUpdate="0"/><default field="LOT" expression="" applyOnUpdate="0"/><default field="ALEA" expression="" applyOnUpdate="0"/><default field="ALEA_TXT" expression="" applyOnUpdate="0"/><default field="ALEA_DET" expression="" applyOnUpdate="0"/><default field="ALEA_OFEV" expression="" applyOnUpdate="0"/><default field="ETAT" expression="" applyOnUpdate="0"/><default field="PROBAB" expression="" applyOnUpdate="0"/><default field="DEGRE_DN" expression="" applyOnUpdate="0"/><default field="DEG_DN_TXT" expression="" applyOnUpdate="0"/><default field="CLASSE_DN" expression="" applyOnUpdate="0"/><default field="NOM_LOCAL" expression="" applyOnUpdate="0"/><default field="CRITERE" expression="" applyOnUpdate="0"/><default field="METHODE" expression="" applyOnUpdate="0"/><default field="MODELE" expression="" applyOnUpdate="0"/><default field="DESCRIPT" expression="" applyOnUpdate="0"/><default field="PROJET" expression="" applyOnUpdate="0"/><default field="BUREAU" expression="" applyOnUpdate="0"/><default field="DATE_CREA" expression="" applyOnUpdate="0"/><default field="DATE_MODIF" expression="" applyOnUpdate="0"/><default field="REM_DN" expression="" applyOnUpdate="0"/><default field="REM_SCE" expression="" applyOnUpdate="0"/><default field="GLOBALID" expression="" applyOnUpdate="0"/><default field="PARAMETRE" expression="" applyOnUpdate="0"/><default field="SHAPE.AREA" expression="" applyOnUpdate="0"/><default field="SHAPE.LEN" expression="" applyOnUpdate="0"/></defaults>
+      <constraints><constraint field="FK_PSE" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="SCE_CODE" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="PERIM_DN" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="NO_COM_FED" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="LOT" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="ALEA" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="ALEA_TXT" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="ALEA_DET" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="ALEA_OFEV" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="ETAT" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="PROBAB" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="DEGRE_DN" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="DEG_DN_TXT" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="CLASSE_DN" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="NOM_LOCAL" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="CRITERE" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="METHODE" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="MODELE" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="DESCRIPT" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="PROJET" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="BUREAU" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="DATE_CREA" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="DATE_MODIF" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="REM_DN" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="REM_SCE" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="GLOBALID" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="PARAMETRE" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="SHAPE.AREA" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/><constraint field="SHAPE.LEN" unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0"/></constraints>
+      <constraintExpressions><constraint field="FK_PSE" desc="" exp=""/><constraint field="SCE_CODE" desc="" exp=""/><constraint field="PERIM_DN" desc="" exp=""/><constraint field="NO_COM_FED" desc="" exp=""/><constraint field="LOT" desc="" exp=""/><constraint field="ALEA" desc="" exp=""/><constraint field="ALEA_TXT" desc="" exp=""/><constraint field="ALEA_DET" desc="" exp=""/><constraint field="ALEA_OFEV" desc="" exp=""/><constraint field="ETAT" desc="" exp=""/><constraint field="PROBAB" desc="" exp=""/><constraint field="DEGRE_DN" desc="" exp=""/><constraint field="DEG_DN_TXT" desc="" exp=""/><constraint field="CLASSE_DN" desc="" exp=""/><constraint field="NOM_LOCAL" desc="" exp=""/><constraint field="CRITERE" desc="" exp=""/><constraint field="METHODE" desc="" exp=""/><constraint field="MODELE" desc="" exp=""/><constraint field="DESCRIPT" desc="" exp=""/><constraint field="PROJET" desc="" exp=""/><constraint field="BUREAU" desc="" exp=""/><constraint field="DATE_CREA" desc="" exp=""/><constraint field="DATE_MODIF" desc="" exp=""/><constraint field="REM_DN" desc="" exp=""/><constraint field="REM_SCE" desc="" exp=""/><constraint field="GLOBALID" desc="" exp=""/><constraint field="PARAMETRE" desc="" exp=""/><constraint field="SHAPE.AREA" desc="" exp=""/><constraint field="SHAPE.LEN" desc="" exp=""/></constraintExpressions>
+      <expressionfields/>
+      <attributeactions>
+        <defaultAction value="{00000000-0000-0000-0000-000000000000}" key="Canvas"/>
+      </attributeactions>
+      <attributetableconfig actionWidgetStyle="dropDown" sortOrder="0" sortExpression="">
+        <columns><column type="field" width="-1" hidden="0" name="FK_PSE"/><column type="field" width="-1" hidden="0" name="SCE_CODE"/><column type="field" width="-1" hidden="0" name="PERIM_DN"/><column type="field" width="-1" hidden="0" name="NO_COM_FED"/><column type="field" width="-1" hidden="0" name="LOT"/><column type="field" width="-1" hidden="0" name="ALEA"/><column type="field" width="-1" hidden="0" name="ALEA_TXT"/><column type="field" width="-1" hidden="0" name="ALEA_DET"/><column type="field" width="-1" hidden="0" name="ALEA_OFEV"/><column type="field" width="-1" hidden="0" name="ETAT"/><column type="field" width="-1" hidden="0" name="PROBAB"/><column type="field" width="-1" hidden="0" name="DEGRE_DN"/><column type="field" width="-1" hidden="0" name="DEG_DN_TXT"/><column type="field" width="-1" hidden="0" name="CLASSE_DN"/><column type="field" width="-1" hidden="0" name="NOM_LOCAL"/><column type="field" width="-1" hidden="0" name="CRITERE"/><column type="field" width="-1" hidden="0" name="METHODE"/><column type="field" width="-1" hidden="0" name="MODELE"/><column type="field" width="-1" hidden="0" name="DESCRIPT"/><column type="field" width="-1" hidden="0" name="PROJET"/><column type="field" width="-1" hidden="0" name="BUREAU"/><column type="field" width="-1" hidden="0" name="DATE_CREA"/><column type="field" width="-1" hidden="0" name="DATE_MODIF"/><column type="field" width="-1" hidden="0" name="REM_DN"/><column type="field" width="-1" hidden="0" name="REM_SCE"/><column type="field" width="-1" hidden="0" name="GLOBALID"/><column type="field" width="-1" hidden="0" name="PARAMETRE"/><column type="field" width="-1" hidden="0" name="SHAPE.AREA"/><column type="field" width="-1" hidden="0" name="SHAPE.LEN"/></columns>
+      </attributetableconfig>
+      <conditionalstyles>
+        <rowstyles/>
+        <fieldstyles/>
+      </conditionalstyles>
+      <editform tolerant="1"/>
+      <editforminit/>
+      <editforminitcodesource>0</editforminitcodesource>
+      <editforminitfilepath/>
+      <editforminitcode># -*- coding: utf-8 -*-
+"""
+Les formulaires QGIS peuvent avoir une fonction Python qui sera appelÃ©e Ã  l'ouverture du formulaire.
+
+Utilisez cette fonction pour ajouter plus de fonctionnalitÃ©s Ã  vos formulaires.
+
+Entrez le nom de la fonction dans le champ "Fonction d'initialisation Python".
+Voici un exemple Ã  suivre:
+"""
+from qgis.PyQt.QtWidgets import QWidget
+
+def my_form_open(dialog, layer, feature):
+    geom = feature.geometry()
+    control = dialog.findChild(QWidget, "MyLineEdit")
+
+</editforminitcode>
+      <featformsuppress>0</featformsuppress>
+      <editorlayout>generatedlayout</editorlayout>
+      <editable><field name="FK_PSE" editable="1"/><field name="SCE_CODE" editable="1"/><field name="PERIM_DN" editable="1"/><field name="NO_COM_FED" editable="1"/><field name="LOT" editable="1"/><field name="ALEA" editable="1"/><field name="ALEA_TXT" editable="1"/><field name="ALEA_DET" editable="1"/><field name="ALEA_OFEV" editable="1"/><field name="ETAT" editable="1"/><field name="PROBAB" editable="1"/><field name="DEGRE_DN" editable="1"/><field name="DEG_DN_TXT" editable="1"/><field name="CLASSE_DN" editable="1"/><field name="NOM_LOCAL" editable="1"/><field name="CRITERE" editable="1"/><field name="METHODE" editable="1"/><field name="MODELE" editable="1"/><field name="DESCRIPT" editable="1"/><field name="PROJET" editable="1"/><field name="BUREAU" editable="1"/><field name="DATE_CREA" editable="1"/><field name="DATE_MODIF" editable="1"/><field name="REM_DN" editable="1"/><field name="REM_SCE" editable="1"/><field name="GLOBALID" editable="1"/><field name="PARAMETRE" editable="1"/><field name="SHAPE.AREA" editable="1"/><field name="SHAPE.LEN" editable="1"/></editable>
+      <labelOnTop><field name="FK_PSE" labelOnTop="0"/><field name="SCE_CODE" labelOnTop="0"/><field name="PERIM_DN" labelOnTop="0"/><field name="NO_COM_FED" labelOnTop="0"/><field name="LOT" labelOnTop="0"/><field name="ALEA" labelOnTop="0"/><field name="ALEA_TXT" labelOnTop="0"/><field name="ALEA_DET" labelOnTop="0"/><field name="ALEA_OFEV" labelOnTop="0"/><field name="ETAT" labelOnTop="0"/><field name="PROBAB" labelOnTop="0"/><field name="DEGRE_DN" labelOnTop="0"/><field name="DEG_DN_TXT" labelOnTop="0"/><field name="CLASSE_DN" labelOnTop="0"/><field name="NOM_LOCAL" labelOnTop="0"/><field name="CRITERE" labelOnTop="0"/><field name="METHODE" labelOnTop="0"/><field name="MODELE" labelOnTop="0"/><field name="DESCRIPT" labelOnTop="0"/><field name="PROJET" labelOnTop="0"/><field name="BUREAU" labelOnTop="0"/><field name="DATE_CREA" labelOnTop="0"/><field name="DATE_MODIF" labelOnTop="0"/><field name="REM_DN" labelOnTop="0"/><field name="REM_SCE" labelOnTop="0"/><field name="GLOBALID" labelOnTop="0"/><field name="PARAMETRE" labelOnTop="0"/><field name="SHAPE.AREA" labelOnTop="0"/><field name="SHAPE.LEN" labelOnTop="0"/></labelOnTop>
+      <widgets/>
+      <previewExpression>GLOBALID_T</previewExpression>
+      <mapTip/>
+    </maplayer>
+  </maplayers>
+</qlr>

@@ -23,9 +23,9 @@ code. Une nouvelle correspondance, c'est en général **une ligne** de catalogue
 est dans [docs/catalogues.md](docs/catalogues.md).
 
 - Joindre un **fichier d'essai** qui montre le cas, nettoyé (onglet « Contribuer » de la page, ou
-  `python outils/preparer_exemples.py`, qui refuse les fichiers sensibles). Les symbologies réelles
-  de test ne sont pas dans ce dépôt public : les tests qui en ont besoin sont sautés ici et
-  tournent sur le poste du mainteneur.
+  `python outils/preparer_exemples.py`, qui refuse les fichiers sensibles). Les nouveaux
+  exemples vont dans `exemples/lyrx` ou `exemples/qlr` ; le corpus de fichiers téléchargés reste
+  sur le poste du mainteneur.
 - Lancer les tests : `pytest` (et `lyrx2qlr --verifier-catalogues`). Ils doivent passer.
 - Ne pas modifier `expressions.json` (expressions régulières) sans explication détaillée :
   ces règles sont relues avec un soin particulier.

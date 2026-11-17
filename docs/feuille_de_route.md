@@ -114,10 +114,10 @@ Terminé quand : un visiteur anglophone peut convertir un fichier et comprendre 
 Le même jour, une copie publique à part avait d'abord été essayée ; Yoann a préféré travailler
 directement en public, par transparence. L'historique public commence à la v1.7.0 : l'ancien
 historique (qui contenait le corpus) reste dans l'ancien dépôt privé `YoGoCH/lyrx_2_qlr`, gardé comme
-archive. Restent sur le poste, ignorés par git : les symbologies réelles (`exemples/lyrx`,
-`exemples/qlr`), le corpus (`corpus/`), les notes pour Claude (`CLAUDE.md`, `.claude/`).
-`outils/verifier_depot.py` le contrôle avant chaque `git push` (crochet) et dans les tests. Les
-tests qui demandent les symbologies réelles sont sautés sur GitHub et tournent sur le poste.
+archive. Restent sur le poste, ignorés par git : le corpus (`corpus/`) et les notes pour Claude (`CLAUDE.md`,
+`.claude/`). Les 75 symbologies réelles anonymisées (`exemples/lyrx`, `exemples/qlr`) ont été
+publiées le même jour, après un dernier contrôle, avec l'accord de Yoann.
+`outils/verifier_depot.py` le contrôle avant chaque `git push` (crochet) et dans les tests.
 Le texte ci-dessous est l'étude d'avant cette décision.
 
 Décidé le 15 novembre 2026 :

@@ -118,9 +118,9 @@ src/lyrx2qlr/           le cœur (bibliothèque standard Python uniquement)
   modeles/              gabarits de départ (étiquettes QGIS, couche ArcGIS)
 web/                    application web (index.html, app.js, passerelle.py)
 qgis_plugin/            extension QGIS (le cœur y est copié par outils/construire.py)
-exemples/               cas inventés figés par la boucle d'entraînement (exemples/fabriques/) et fichiers
-                        abîmés (exemples/invalides/) ; les 75 symbologies réelles de test
-                        (exemples/lyrx, exemples/qlr) restent sur le poste du mainteneur
+exemples/               75 symbologies réelles anonymisées (exemples/lyrx, exemples/qlr : pas de
+                        connexion, pas de chemin réseau), cas inventés figés par la boucle
+                        d'entraînement (exemples/fabriques/) et fichiers abîmés (exemples/invalides/)
 tests/                  tests automatiques
 outils/                 construction, aperçus dans QGIS, préparation des exemples
   entrainement/         boucle d'entraînement (symbologies inventées) et corpus (symbologies réelles)

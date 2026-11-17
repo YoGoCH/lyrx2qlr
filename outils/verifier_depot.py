@@ -7,9 +7,10 @@ Le dépôt est public depuis le 17 novembre 2026. Ce script est lancé automatiq
 `git push` (crochet `.git/hooks/pre-push`, installé par `python outils/verifier_depot.py --installer`)
 et par les tests (tests/test_depot.py). Il refuse :
 
-- un fichier de symbologie, de données ou de connexion hors des dossiers d'exemples inventés
-  (`exemples/fabriques`, `exemples/invalides`) : les symbologies réelles (`exemples/lyrx`,
-  `exemples/qlr`) et le corpus (`corpus/`) restent sur le poste, ignorés par git ;
+- un fichier de symbologie, de données ou de connexion hors des dossiers d'exemples
+  (`exemples/lyrx`, `exemples/qlr` : symbologies réelles anonymisées, publiées depuis la v1.7.2 ;
+  `exemples/fabriques`, `exemples/invalides` : cas inventés) ; le corpus (`corpus/`) reste sur le
+  poste, ignoré par git ;
 - les fichiers de travail pour Claude (`CLAUDE.md`, `.claude/`) ;
 - une adresse e-mail hors des domaines d'exemple ;
 - un des mots de `donnees_locales/mots_interdits.txt` (un par ligne : vrais noms de bases, de
@@ -26,10 +27,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from nouveautes import GIT  # noqa: E402  (git trouvé même hors du PATH)
 
 RACINE = Path(__file__).resolve().parent.parent
-INTERDITS = ("exemples/lyrx/", "exemples/qlr/", "corpus/", "CLAUDE.md", ".claude/", "donnees_locales/",
+INTERDITS = ("corpus/", "CLAUDE.md", ".claude/", "donnees_locales/",
              "comparaisons_lot2/", "sorties/")
 SYMBOLOGIES = re.compile(r"\.(lyrx|lyr|qlr|qml|sde|odc|gdb|gpkg|mxd|aprx|mapx|shp|dbf|sqlite)$", re.I)
-SYMBOLOGIES_PERMISES = ("exemples/fabriques/", "exemples/invalides/")
+SYMBOLOGIES_PERMISES = ("exemples/lyrx/", "exemples/qlr/", "exemples/fabriques/", "exemples/invalides/")
 EMAIL = re.compile(r"[\w.+-]+@([A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,})")
 DOMAINES_PERMIS = {"example.invalid", "example.org", "example.com", "exemple.ch", "exemple.org",
                    "anthropic.com", "users.noreply.github.com"}
@@ -70,7 +71,7 @@ def controler(fichiers: dict[str, bytes]) -> list[str]:
         if chemin.startswith(INTERDITS):
             problemes.append(f"{chemin} : fichier qui doit rester sur le poste (voir .gitignore)")
         elif SYMBOLOGIES.search(chemin) and not chemin.startswith(SYMBOLOGIES_PERMISES):
-            problemes.append(f"{chemin} : fichier de symbologie ou de données hors des dossiers d'exemples inventés")
+            problemes.append(f"{chemin} : fichier de symbologie ou de données hors des dossiers d'exemples")
         texte = donnees.decode("utf-8", "replace")
         for m in EMAIL.finditer(texte):
             domaine = m.group(1).lower()
