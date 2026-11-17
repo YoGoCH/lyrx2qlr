@@ -25,16 +25,6 @@ from lyrx2qlr.rapport import Rapport  # noqa: E402
 _TYPES = {"point": "Point", "ligne": "LineString", "surface": "Polygon"}
 
 
-@pytest.fixture(scope="module")
-def qgis_app():
-    from qgis.core import QgsApplication
-    app = QgsApplication.instance()
-    if app is None:
-        app = QgsApplication([], False)
-        app.initQgis()
-    yield app
-
-
 def _nom_simple(n: str) -> bool:
     return n.replace("_", "").isalnum()
 

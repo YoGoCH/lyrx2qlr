@@ -19,11 +19,7 @@ RACINE = Path(__file__).resolve().parent.parent
 
 
 @pytest.fixture(scope="module")
-def extension():
-    from qgis.core import QgsApplication
-    if QgsApplication.instance() is None:
-        app = QgsApplication([], False)
-        app.initQgis()
+def extension(qgis_app):
     sys.path.insert(0, str(RACINE / "outils"))
     import construire
     construire.construire_extension()

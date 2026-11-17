@@ -17,8 +17,8 @@ EXEMPLES = RACINE / "exemples"
 EXEMPLES_LYRX = sorted((EXEMPLES / "lyrx").glob("*.lyrx")) + sorted((EXEMPLES / "fabriques").glob("*.lyrx"))
 EXEMPLES_QLR = sorted((EXEMPLES / "qlr").glob("*.qlr")) + sorted((EXEMPLES / "fabriques").glob("*.qlr"))
 
-# Le dépôt public n'a pas les symbologies réelles de exemples/lyrx et
-# exemples/qlr : les tests qui en ont besoin sont alors sautés.
+# Symbologies réelles de exemples/lyrx et exemples/qlr (publiques depuis la v1.7.2) : si elles
+# manquent (copie partielle du dépôt), les tests qui en ont besoin sont sautés.
 EXEMPLES_REELS = bool(sorted((EXEMPLES / "lyrx").glob("*.lyrx")))
 avec_exemples_reels = pytest.mark.skipif(not EXEMPLES_REELS, reason="symbologies réelles absentes (copie publique du code)")
 
@@ -35,6 +35,23 @@ def catalogue_sans_substitution() -> Catalogue:
     d = copy.deepcopy(cat.d)
     d["polices"]["substitutions"] = []
     return Catalogue(d)
+
+
+_QGIS = []  # garde l'application QGIS en vie jusqu'à la fin des tests
+
+
+@pytest.fixture(scope="session")
+def qgis_app():
+    """Une seule application QGIS pour tous les tests. Une fixture par fichier la lâchait à la fin de
+    son fichier : Python détruisait alors QGIS, et le fichier suivant plantait (erreur 139 sur GitHub)."""
+    from qgis.core import QgsApplication
+    if not _QGIS:
+        app = QgsApplication.instance()
+        if app is None:
+            app = QgsApplication([], True)  # avec interface : l'extension ouvre des fenêtres
+            app.initQgis()
+        _QGIS.append(app)
+    return _QGIS[0]
 
 
 def _normaliser(x, cle=None):
