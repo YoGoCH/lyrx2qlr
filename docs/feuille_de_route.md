@@ -10,7 +10,7 @@ dans [positionnement.md](positionnement.md). L'outil collaboratif
 | 1 | Valider les .lyrx dans ArcGIS Pro (lot 2) | **fait** (v1.3.0) : voir [lot2.md](lot2.md) | rien |
 | 2 | Publier l'extension sur plugins.qgis.org | ZIP prêt (v1.7.0 : anglais, icône, licence) ; reste l'envoi par Yoann (compte OSGeo, vraie adresse e-mail) | rien |
 | 3 | Proposer la page en anglais | **fait** (v1.2.2), sauf les messages du rapport | rien |
-| 4 | Rendre le code public | **fait** (17 novembre 2026) : dépôt de travail public, https://github.com/YoGoCH/lyrx2qlr_code_public | rien |
+| 4 | Rendre le code public | **fait** (17 novembre 2026) : dépôt de travail public, https://github.com/YoGoCH/lyrx2qlr | rien |
 
 Ordre conseillé : **3 et 4** tout de suite (aucune dépendance), **2** juste après, **1** en
 parallèle (ArcGIS Pro est installé depuis le 15 novembre 2026). On ne fait connaître l'outil **côté ArcGIS** qu'après l'étape 1.
@@ -110,7 +110,8 @@ Terminé quand : un visiteur anglophone peut convertir un fichier et comprendre 
 
 ## 4. Rendre le code public
 
-**Fait le 17 novembre 2026 : le dépôt de travail est public**, https://github.com/YoGoCH/lyrx2qlr_code_public.
+**Fait le 17 novembre 2026 : le dépôt de travail est public**, https://github.com/YoGoCH/lyrx2qlr
+(d'abord nommé `lyrx2qlr_code_public`, renommé le même jour ; GitHub redirige l'ancienne adresse).
 Le même jour, une copie publique à part avait d'abord été essayée ; Yoann a préféré travailler
 directement en public, par transparence. L'historique public commence à la v1.7.0 : l'ancien
 historique (qui contenait le corpus) reste dans l'ancien dépôt privé `YoGoCH/lyrx_2_qlr`, gardé comme

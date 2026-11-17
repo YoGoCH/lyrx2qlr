@@ -1,8 +1,19 @@
 # Journal des versions
 
+## v1.7.2 — 17 novembre 2026
+
+La conversion ne change pas.
+
+- Le dépôt s'appelle maintenant https://github.com/YoGoCH/lyrx2qlr (GitHub redirige l'ancienne
+  adresse). Liens mis à jour dans l'extension, la page et la documentation.
+- Les 75 symbologies réelles anonymisées de test (`exemples/lyrx`, `exemples/qlr`) sont publiques,
+  après un dernier contrôle : les tests d'aller-retour et de QGIS tournent aussi sur GitHub. Le
+  corpus de fichiers téléchargés reste sur le poste du mainteneur.
+- Tests GitHub : en cas d'échec dans QGIS, la fin du journal est publiée en annotations.
+
 ## v1.7.1 — 17 novembre 2026
 
-Le code est public : https://github.com/YoGoCH/lyrx2qlr_code_public (licence GPL-3.0). La
+Le code est public : https://github.com/YoGoCH/lyrx2qlr (licence GPL-3.0). La
 conversion ne change pas.
 
 - Le dépôt de travail est désormais public. Son historique commence à la v1.7.0 ; l'historique

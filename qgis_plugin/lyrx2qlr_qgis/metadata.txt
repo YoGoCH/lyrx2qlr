@@ -4,11 +4,11 @@ qgisMinimumVersion=3.40
 qgisMaximumVersion=3.99
 description=Converts ArcGIS Pro layer symbology (.lyrx) to QGIS layers, and QGIS layers back to .lyrx.
 about=Imports an ArcGIS Pro layer file (.lyrx) into the project with its symbology and labels, exports the active layer to .lyrx, or converts a whole folder in both directions. Every conversion comes with a report that says clearly what could not be converted. The mappings between ArcGIS and QGIS are written in readable JSON catalogues. No external dependency. The same conversion core runs in the browser at https://lyrx2qlr.papetche.ch (files stay on your computer). Menus are in French for now.
-version=1.7.1
+version=1.7.2
 author=Yoann (papetche.ch)
 email=contact@example.invalid
-tracker=https://github.com/YoGoCH/lyrx2qlr_code_public/issues
-repository=https://github.com/YoGoCH/lyrx2qlr_code_public
+tracker=https://github.com/YoGoCH/lyrx2qlr/issues
+repository=https://github.com/YoGoCH/lyrx2qlr
 homepage=https://lyrx2qlr.papetche.ch/?lang=en
 icon=icon.png
 category=Layers
@@ -24,4 +24,5 @@ changelog=1.0.0: first version (import .lyrx, export .lyrx, folder conversion, r
     1.5.1: old .lyrx files without DBCLIENT recognised (engine read from INSTANCE); on import, the report explains a missing Oracle provider ("Invalid data provider") or an invalid layer.
     1.6.0: on import, the ST_GEOMETRY option is no longer offered when the database provider is missing.
     1.7.0: the core can clean a file before it is shared (passwords, user names, servers, e-mail addresses, personal folders); plugin icon.
-    1.7.1: the source code is public on GitHub (YoGoCH/lyrx2qlr_code_public).
+    1.7.1: the source code is public on GitHub (YoGoCH/lyrx2qlr).
+    1.7.2: repository renamed YoGoCH/lyrx2qlr; the 75 anonymised real-world test symbologies are public.

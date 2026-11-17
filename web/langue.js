@@ -63,7 +63,7 @@
       "chiffres-texte": "Chaque fichier fait l'aller-retour (ArcGIS → QGIS → ArcGIS, et l'inverse) et doit revenir identique, sauf écart connu et annoncé. Fichiers venant d'Ordnance Survey, des portails de données ouvertes du Royaume-Uni et du Québec, de projets publics et de couches de travail, plus des centaines de symbologies inventées pour chercher les cas limites. Les .lyrx produits sont ouverts, réenregistrés et dessinés par ArcGIS Pro 3.7, à côté de l'original.",
       "chiffres-date": "Chiffres du {date}.",
       "pied-1": "Vos fichiers ne quittent pas votre ordinateur : la conversion se fait dans cet onglet. Seul le bouton « Envoyer » de l'outil « Contribuer » transmet des fichiers, nettoyés et après un aperçu. Les connexions aux bases de données d'entreprise ne sont jamais recopiées.",
-      "pied-auteur": "Yoann · géomaticien · <a href=\"https://papetche.ch/\">papetche.ch</a> · <a href=\"https://github.com/YoGoCH/lyrx2qlr_code_public\">code ouvert sur GitHub</a>, licence GPL-3.0",
+      "pied-auteur": "Yoann · géomaticien · <a href=\"https://papetche.ch/\">papetche.ch</a> · <a href=\"https://github.com/YoGoCH/lyrx2qlr\">code ouvert sur GitHub</a>, licence GPL-3.0",
       // messages de app.js
       "chargement": "Chargement de Python dans le navigateur…",
       "pret": "Prêt. Déposez un ou plusieurs fichiers.",
@@ -143,7 +143,7 @@
       "chiffres-texte": "Every file makes the round trip (ArcGIS → QGIS → ArcGIS, and back) and must come back identical, except for known, reported differences. Files from Ordnance Survey, the UK and Québec open data portals, public projects and working layers, plus hundreds of generated symbologies to hunt for edge cases. The .lyrx files produced are opened, re-saved and drawn by ArcGIS Pro 3.7, next to the original.",
       "chiffres-date": "Figures as of {date}.",
       "pied-1": "Your files never leave your computer: the conversion runs in this tab. Only the “Send” button of the “Contribute” panel transmits files, cleaned and after a preview. Enterprise database connections are never copied.",
-      "pied-auteur": "Yoann · GIS specialist · <a href=\"https://papetche.ch/\">papetche.ch</a> · <a href=\"https://github.com/YoGoCH/lyrx2qlr_code_public\">open source on GitHub</a>, GPL-3.0 licence",
+      "pied-auteur": "Yoann · GIS specialist · <a href=\"https://papetche.ch/\">papetche.ch</a> · <a href=\"https://github.com/YoGoCH/lyrx2qlr\">open source on GitHub</a>, GPL-3.0 licence",
       "chargement": "Loading Python in your browser…",
       "pret": "Ready. Drop one or more files.",
       "echec-chargement": "Could not load the converter: {erreur}",

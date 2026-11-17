@@ -2,6 +2,17 @@
   "_doc": "Nouveautés affichées sur la page. Textes écrits à la main (la plus récente en tête) ; « ajouts » est calculé par outils/nouveautes.py.",
   "versions": [
     {
+      "version": "1.7.2",
+      "date": "2026-11-17",
+      "fr": "Le dépôt s'appelle maintenant lyrx2qlr sur GitHub, et les 75 symbologies réelles (anonymisées) qui servent aux tests y sont publiées.",
+      "en": "The repository is now called lyrx2qlr on GitHub, and the 75 real-world (anonymised) symbologies used for testing are published there.",
+      "ajouts": {
+        "modele": 0,
+        "catalogues": 0,
+        "regles": 0
+      }
+    },
+    {
       "version": "1.7.1",
       "date": "2026-11-17",
       "fr": "Le code est public sur GitHub (licence GPL-3.0) : on peut le lire, signaler un fichier mal converti ou proposer une règle.",
