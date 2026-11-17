@@ -66,6 +66,7 @@ async function convertir(fichiers) {
   archive = zip;
   dernier = [JSON.parse(json), donnees];
   afficher(...dernier);
+  if (window.LYRX2QLR_COMPTER) window.LYRX2QLR_COMPTER(dernier[0].length, dernier[0].filter(r => r.reussi).length);
 }
 
 const NIVEAUX = ["perte", "avertissement", "info"];

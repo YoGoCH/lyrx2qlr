@@ -57,6 +57,10 @@ python -m http.server 8765 --directory web
 puis ouvrir http://localhost:8765, déposer un ou plusieurs fichiers, et cliquer sur
 « Télécharger » ou « Tout télécharger (.zip) ». Les fichiers ne quittent pas l'ordinateur.
 
+La version en ligne compte son usage, de façon anonyme (`web/compteur.js`) : une visite par
+onglet et le nombre de fichiers convertis, additionnés par jour sur le serveur, sans adresse IP
+ni cookie, effacés après 100 jours. Rien n'est envoyé depuis une copie locale.
+
 Elle est en ligne sur https://lyrx2qlr.papetche.ch. Pour la mettre ailleurs, il suffit de copier
 le contenu du dossier `web/` (après la commande de construction, sans `_essai/`) sur n'importe quel
 hébergement de pages statiques. L'image de partage `web/apercu.png` se refait avec

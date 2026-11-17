@@ -1,5 +1,14 @@
 # Journal des versions
 
+## v1.8.5 — 17 novembre 2026
+
+La conversion ne change pas.
+
+- Page web : comptage anonyme de l'usage (`web/compteur.js`). Une « visite » par onglet ouvert,
+  et pour chaque conversion le nombre de fichiers et de réussites, envoyés à `/api/compter` du même
+  serveur. Ni nom ni contenu de fichier, ni cookie, ni identifiant ; le serveur additionne par jour,
+  sans adresse IP, et efface après 100 jours. Rien n'est envoyé en local ni hors ligne.
+
 ## v1.8.4 — 17 novembre 2026
 
 La conversion ne change pas.
