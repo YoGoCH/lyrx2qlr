@@ -135,7 +135,13 @@ button:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--enc
 button:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--encre); }
 button:focus-visible { outline: 3px solid var(--rose); outline-offset: 2px; }
 button.secondaire { background: var(--carte); color: var(--encre); font-size: .88rem; padding: 3px 10px; }
-
+button.repo {
+  background: var(--carte); color: var(--encre); font-size: .88rem; padding: 3px 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+button.repo img { display: block; }
 /* --- résultats -------------------------------------------------------------------------------- */
 .barre { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin: 8px 0 12px; flex-wrap: wrap; }
 .liste { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
