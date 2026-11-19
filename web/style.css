@@ -36,6 +36,7 @@
     --ombre: 5px 5px 0 #000;
     --ombre-haute: 8px 8px 0 #000;
     color-scheme: dark;
+    button.repo img { filter: invert(1); }
   }
 }
 :root[data-theme="dark"] {
@@ -43,6 +44,7 @@
   --rose-clair: #3d1d34; --cyan-clair: #133540; --accent: #5fd6e6;
   --avert: #e8b65c; --avert-clair: #3a2c14; --perte: #ff8f80; --perte-clair: #3e1d22;
   --ombre: 5px 5px 0 #000; --ombre-haute: 8px 8px 0 #000; color-scheme: dark;
+  button.repo img { filter: invert(1); }
 }
 
 * { box-sizing: border-box; }
@@ -141,7 +143,7 @@ button.repo {
   align-items: center;
   gap: 6px;
 }
-button.repo img { display: block; }
+button.repo img { display: block;}
 /* --- résultats -------------------------------------------------------------------------------- */
 .barre { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin: 8px 0 12px; flex-wrap: wrap; }
 .liste { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
