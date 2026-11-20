@@ -17,14 +17,16 @@ def version() -> str:
     return __version__
 
 
-def convertir(fichiers, garder_source=True):
+def convertir(fichiers, garder_source=True, langue="fr"):
     """fichiers : liste de [nom, octets]. Renvoie (archive ZIP ou None, liste de résultats en JSON).
 
-    garder_source : coche « Garder la source de données » de la page (les fichiers ne quittent pas le navigateur)."""
+    garder_source : coche « Garder la source de données » de la page (les fichiers ne quittent pas le navigateur).
+    langue : langue de la page, pour les rapports de l'archive. Les entrées viennent dans les deux langues
+    (« entrees » en français, « entrees_en » en anglais) : la page change de langue sans reconvertir."""
     if hasattr(fichiers, "to_py"):  # tableau JavaScript → liste Python
         fichiers = fichiers.to_py()
     lot = [(str(nom), bytes(donnees)) for nom, donnees in fichiers]
-    archive, resultats = api.convertir_lot(lot, _CATALOGUE, bool(garder_source))
+    archive, resultats = api.convertir_lot(lot, _CATALOGUE, bool(garder_source), str(langue))
     sortie = []
     for r in resultats:
         sortie.append({
@@ -36,7 +38,8 @@ def convertir(fichiers, garder_source=True):
             "pertes": r.rapport.compter("perte"),
             "avertissements": r.rapport.compter("avertissement"),
             "texte": r.rapport.en_texte(),
-            "entrees": r.rapport.en_dict()["entrees"],
+            "entrees": r.rapport.entrees_en("fr"),
+            "entrees_en": r.rapport.entrees_en("en"),
         })
     return archive, json.dumps(sortie, ensure_ascii=False), [r.donnees for r in resultats]
 

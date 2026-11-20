@@ -9,7 +9,7 @@ dans [positionnement.md](positionnement.md). L'outil collaboratif
 |---|---|---|---|
 | 1 | Valider les .lyrx dans ArcGIS Pro (lot 2) | **fait** (v1.3.0) : voir [lot2.md](lot2.md) | rien |
 | 2 | Publier l'extension sur plugins.qgis.org | **envoyée** (17 novembre 2026, v1.8.1, https://plugins.qgis.org/plugins/lyrx2qlr_qgis/) : contrôles Bandit, detect-secrets, flake8 et Qt6 passés ; reste la validation par l'équipe QGIS, après confirmation de l'adresse e-mail | rien |
-| 3 | Proposer la page en anglais | **fait** (v1.2.2), sauf les messages du rapport | rien |
+| 3 | Proposer la page en anglais | **fait** (v1.2.2) ; rapport en anglais en v1.9.0 | rien |
 | 4 | Rendre le code public | **fait** (17 novembre 2026) : dépôt de travail public, https://github.com/YoGoCH/lyrx2qlr | rien |
 
 Ordre conseillé : **3 et 4** tout de suite (aucune dépendance), **2** juste après, **1** en

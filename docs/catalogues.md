@@ -42,6 +42,7 @@ Les unités neutres sont :
 | `formats.json` | Versions de fichiers lues et écrites |
 | `rendus.json` | Méthodes de rendu (symbole unique, catégories, classes) et celles non prises en charge |
 | `ignorer.json` | Propriétés qu'on sait ne pas convertir et qu'il est inutile de signaler |
+| `traduction_en.json` | Traduction anglaise des messages du rapport (tout nouveau message y ajoute sa ligne) |
 
 ## Exemples
 

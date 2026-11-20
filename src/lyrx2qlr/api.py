@@ -113,8 +113,10 @@ def lister_fichiers(entrees: Iterable[str | Path]) -> list[Path]:
 
 
 def convertir_lot(fichiers: Iterable[tuple[str, bytes]], catalogue: Optional[Catalogue] = None,
-                  garder_source: bool = True) -> tuple[bytes, list[Resultat]]:
-    """Convertit plusieurs fichiers (nom, contenu) ; renvoie une archive ZIP avec les résultats et les rapports."""
+                  garder_source: bool = True, langue: str = "fr") -> tuple[bytes, list[Resultat]]:
+    """Convertit plusieurs fichiers (nom, contenu) ; renvoie une archive ZIP avec les résultats et les rapports.
+
+    langue : langue des rapports de l'archive (« fr » ou « en »)."""
     resultats = [convertir(donnees, nom, catalogue, garder_source) for nom, donnees in fichiers]
     tampon = io.BytesIO()
     with zipfile.ZipFile(tampon, "w", zipfile.ZIP_DEFLATED) as z:
@@ -123,7 +125,8 @@ def convertir_lot(fichiers: Iterable[tuple[str, bytes]], catalogue: Optional[Cat
             if r.reussi:
                 z.writestr(r.nom_sortie, r.donnees)
             base = Path(r.nom_entree).stem
-            z.writestr(f"rapports/{base}.txt", r.rapport.en_texte())
-            resume.append(f"{r.nom_entree} → {r.nom_sortie or 'ÉCHEC'} : {r.rapport.resume}")
+            z.writestr(f"rapports/{base}.txt", r.rapport.en_texte(langue))
+            echec = "FAILED" if langue == "en" else "ÉCHEC"
+            resume.append(f"{r.nom_entree} → {r.nom_sortie or echec} : {r.rapport.resume_en(langue)}")
         z.writestr("rapports/_resume.txt", "\n".join(resume) + "\n")
     return tampon.getvalue(), resultats

@@ -173,7 +173,7 @@
       "perte": "NOT CONVERTED",
       "avertissement": "TO CHECK",
       "info": "NOTE",
-      "note-rapport": "The detailed messages are in French for now.",
+      "note-rapport": "",
     },
   };
 

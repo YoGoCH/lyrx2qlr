@@ -26,6 +26,7 @@ def principal(arguments: list[str] | None = None) -> int:
     p.add_argument("--sans-source", action="store_true",
                    help="ne garde pas la source de données (seul le nom du jeu reste, à reconnecter) ; "
                         "par défaut, le fichier produit pointe sur les mêmes données, sans mot de passe")
+    p.add_argument("-l", "--langue", choices=["fr", "en"], default="fr", help="langue du rapport (fr : français, en : anglais)")
     p.add_argument("--verifier-catalogues", action="store_true", help="vérifie les catalogues et s'arrête")
     p.add_argument("--version", action="version", version=f"lyrx2qlr {__version__}")
     p.add_argument("-h", "--aide", "--help", action="help", help="affiche cette aide")
@@ -53,10 +54,10 @@ def principal(arguments: list[str] | None = None) -> int:
         r = convertir_fichier(f, sortie, cat, garder_source=not a.sans_source)
         echecs += 0 if r.reussi else 1
         if a.rapport == "texte":
-            print(r.rapport.en_texte())
+            print(r.rapport.en_texte(a.langue))
             print()
         elif a.rapport == "json":
-            rapports.append(r.rapport.en_dict())
+            rapports.append(r.rapport.en_dict(a.langue))
     if a.rapport == "json":
         print(json.dumps(rapports, ensure_ascii=False, indent=2))
     print(f"{len(fichiers) - echecs} fichier(s) converti(s), {echecs} échec(s).", file=sys.stderr)

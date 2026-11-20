@@ -1,5 +1,21 @@
 # Journal des versions
 
+## v1.9.0 — 20 novembre 2026
+
+La conversion ne change pas ; son rapport existe maintenant en anglais.
+
+- Rapport de conversion en anglais : sur la page en anglais (« English »), le rapport détaillé, son
+  résumé et les rapports de l'archive ZIP sont en anglais. On peut changer de langue sans reconvertir
+  (les entrées arrivent dans les deux langues).
+- Ligne de commande : option `--langue en` (ou `-l en`), pour le texte comme pour le JSON.
+- Le cœur écrit toujours ses messages en français ; ils sont traduits à l'affichage par
+  `traduction.py` et la table `catalogues/traduction_en.json` (phrase française → phrase anglaise,
+  parties variables notées {0}, {1}…). Les noms donnés par l'utilisateur (couches, classes) ne sont
+  jamais traduits. Une phrase sans traduction reste en français.
+- Nouveau test `tests/test_traduction.py` : chaque message du code et des catalogues doit avoir sa
+  traduction, et les 75 exemples réels sont entièrement traduits.
+- L'extension QGIS garde ses rapports en français (son interface est en français).
+
 ## v1.8.5 — 17 novembre 2026
 
 La conversion ne change pas.

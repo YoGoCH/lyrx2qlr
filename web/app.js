@@ -60,7 +60,7 @@ async function convertir(fichiers) {
   derniersFichiers = fichiers;
   dire("conversion", { n: fichiers.length });
   const entrees = await Promise.all(fichiers.map(async f => [f.name, new Uint8Array(await f.arrayBuffer())]));
-  const reponse = passerelle.convertir(entrees, document.getElementById("garder-source").checked);
+  const reponse = passerelle.convertir(entrees, document.getElementById("garder-source").checked, I.langue);
   const [zip, json, donnees] = reponse.toJs();
   reponse.destroy();
   archive = zip;
@@ -71,9 +71,14 @@ async function convertir(fichiers) {
 
 const NIVEAUX = ["perte", "avertissement", "info"];
 
+// Entrées du rapport dans la langue de la page (le cœur les donne en français et en anglais)
+function entreesDe(r) {
+  return I.langue === "en" && r.entrees_en ? r.entrees_en : r.entrees;
+}
+
 function compter(r) {
   const n = Object.fromEntries(NIVEAUX.map(x => [x, 0]));
-  r.entrees.forEach(e => { if (e.niveau in n) n[e.niveau]++; });
+  entreesDe(r).forEach(e => { if (e.niveau in n) n[e.niveau]++; });
   return n;
 }
 
@@ -89,11 +94,11 @@ function texteRapport(r) {
   const note = I.t("note-rapport");
   if (note) lignes.push(note);
   NIVEAUX.forEach(niveau => {
-    const choisies = r.entrees.filter(e => e.niveau === niveau);
+    const choisies = entreesDe(r).filter(e => e.niveau === niveau);
     if (!choisies.length) return;
     lignes.push("", `${I.t(niveau)} (${choisies.length})`);
     choisies.forEach(e => {
-      lignes.push(`  - ${e.ou} : ${e.message}${e.nombre > 1 ? ` (×${e.nombre})` : ""}`);
+      lignes.push(`  - ${e.ou}${I.langue === "en" ? ": " : " : "}${e.message}${e.nombre > 1 ? ` (×${e.nombre})` : ""}`);
       if (e.conseil) lignes.push(`      → ${e.conseil}`);
     });
   });
