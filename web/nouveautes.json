@@ -2,13 +2,24 @@
   "_doc": "Nouveautés affichées sur la page. Textes écrits à la main (la plus récente en tête) ; « ajouts » est calculé par outils/nouveautes.py.",
   "versions": [
     {
+      "version": "1.9.1",
+      "date": "2026-11-21",
+      "fr": "Petite correction de traduction dans le schéma de la page anglaise.",
+      "en": "Small translation fix in the diagram of the English page.",
+      "ajouts": {
+        "modele": 0,
+        "catalogues": 0,
+        "regles": 0
+      }
+    },
+    {
       "version": "1.9.0",
       "date": "2026-11-20",
       "fr": "Le rapport de conversion existe en anglais : il suit la langue de la page.",
       "en": "The conversion report is now in English too: it follows the page language.",
       "ajouts": {
         "modele": 0,
-        "catalogues": 0,
+        "catalogues": 196,
         "regles": 0
       }
     },

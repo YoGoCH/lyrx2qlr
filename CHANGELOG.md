@@ -1,5 +1,12 @@
 # Journal des versions
 
+## v1.9.1 — 21 novembre 2026
+
+La conversion ne change pas.
+
+- Page web : dans le schéma « Comment ça marche », l'étape « Rapport » devient « Report » sur la page
+  en anglais (le mot n'était pas traduit).
+
 ## v1.9.0 — 20 novembre 2026
 
 La conversion ne change pas ; son rapport existe maintenant en anglais.
