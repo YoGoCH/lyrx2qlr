@@ -1,5 +1,14 @@
 # Journal des versions
 
+## v1.10.0 — 21 novembre 2026
+
+La conversion ne change pas.
+
+- Extension QGIS en anglais : si QGIS n'est pas en français, le menu, les fenêtres, les messages et le
+  rapport de conversion sont en anglais (le rapport d'un dossier s'appelle alors `lyrx2qlr_report.txt`).
+  QGIS en français garde tout en français. Les textes sont dans `qgis_plugin/lyrx2qlr_qgis/textes.py`.
+- Tests : l'extension est essayée dans les deux langues ; les deux listes de textes ont les mêmes clés.
+
 ## v1.9.1 — 21 novembre 2026
 
 La conversion ne change pas.
@@ -21,7 +30,7 @@ La conversion ne change pas ; son rapport existe maintenant en anglais.
   jamais traduits. Une phrase sans traduction reste en français.
 - Nouveau test `tests/test_traduction.py` : chaque message du code et des catalogues doit avoir sa
   traduction, et les 75 exemples réels sont entièrement traduits.
-- L'extension QGIS garde ses rapports en français (son interface est en français).
+- L'extension QGIS garde ses rapports en français (son interface est en français ; anglais en v1.10.0).
 
 ## v1.8.5 — 17 novembre 2026
 

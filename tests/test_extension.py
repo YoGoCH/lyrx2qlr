@@ -28,7 +28,9 @@ def extension(qgis_app):
     import lyrx2qlr_qgis.plugin as module
     from qgis.testing.mocked import get_iface
     iface = get_iface()
+    from lyrx2qlr_qgis.textes import Textes
     plug = lyrx2qlr_qgis.classFactory(iface)
+    plug.t, plug.langue = Textes("fr"), "fr"  # les tests ne dépendent pas de la langue du poste
     plug.initGui()
     fenetres = []
     module.FenetreRapport.exec = lambda self: fenetres.append(self.texte)
@@ -76,3 +78,30 @@ def test_convertir_dossier(extension, tmp_path, monkeypatch):
     produits = sorted(p.relative_to(sortie).as_posix() for p in sortie.rglob("*") if p.is_file())
     assert produits == ["a.qlr", "rapport_lyrx2qlr.txt", "sous/b.lyrx"]
     assert "a.lyrx" in fenetres[-1]
+
+
+def test_textes_complets():
+    from lyrx2qlr_qgis.textes import TEXTES
+    assert set(TEXTES["fr"]) == set(TEXTES["en"])
+
+
+@avec_exemples_reels
+def test_extension_en_anglais(extension, tmp_path, monkeypatch):
+    plug, module, iface, fenetres = extension
+    from lyrx2qlr_qgis.textes import Textes
+    anglais = type(plug)(iface)
+    anglais.t, anglais.langue = Textes("en"), "en"
+    anglais.initGui()
+    try:
+        assert anglais.actions[0].text() == "Import an ArcGIS Pro file (.lyrx)…"
+        entree, sortie = tmp_path / "entree", tmp_path / "sortie"
+        entree.mkdir()
+        sortie.mkdir()
+        shutil.copy(EXEMPLES_QLR[0], entree / "b.qlr")
+        reponses = iter([str(entree), str(sortie)])
+        monkeypatch.setattr(module.QFileDialog, "getExistingDirectory", staticmethod(lambda *a, **k: next(reponses)))
+        anglais.convertir_dossier()
+        texte = (sortie / "lyrx2qlr_report.txt").read_text(encoding="utf-8")
+        assert texte.startswith("Conversion report — b.qlr") and "Rapport" not in texte
+    finally:
+        anglais.unload()

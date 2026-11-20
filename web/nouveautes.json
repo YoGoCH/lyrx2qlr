@@ -2,6 +2,17 @@
   "_doc": "Nouveautés affichées sur la page. Textes écrits à la main (la plus récente en tête) ; « ajouts » est calculé par outils/nouveautes.py.",
   "versions": [
     {
+      "version": "1.10.0",
+      "date": "2026-11-21",
+      "fr": "L'extension QGIS parle anglais quand QGIS n'est pas en français : menu, fenêtres et rapport.",
+      "en": "The QGIS plugin speaks English when QGIS is not in French: menu, dialogs and report.",
+      "ajouts": {
+        "modele": 0,
+        "catalogues": 0,
+        "regles": 0
+      }
+    },
+    {
       "version": "1.9.1",
       "date": "2026-11-21",
       "fr": "Petite correction de traduction dans le schéma de la page anglaise.",
