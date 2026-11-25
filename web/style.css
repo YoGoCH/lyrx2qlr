@@ -238,6 +238,9 @@ pre { white-space: pre-wrap; overflow-wrap: anywhere; font-size: .82rem; backgro
   box-shadow: 5px 5px 0 var(--cyan);
 }
 .appel > div { flex: 1 1 320px; }
+.appel.extension { margin-top: 20px; border-left-color: var(--rose); box-shadow: 5px 5px 0 var(--rose); }
+.appel.extension .petit { margin-top: 8px; color: var(--doux); }
+.appel.extension a.bouton { background: var(--cyan); }
 .appel h2 { font-size: 1.1rem; }
 .appel p { margin: 4px 0 0; font-size: .94rem; }
 a.bouton {

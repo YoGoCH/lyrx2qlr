@@ -26,7 +26,7 @@
 <meta property="og:locale:alternate" content="en_GB">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#f3f4f6">
-<link rel="stylesheet" href="style.css?v=e58ded65">
+<link rel="stylesheet" href="style.css?v=52e6dcda">
 <!-- Style (papetche ou sobre) et mode (clair ou sombre) choisis la dernière fois, appliqués avant l'affichage pour éviter un clignotement -->
 <script>try { if (localStorage.getItem("lyrx2qlr-style") === "papetche") delete document.documentElement.dataset.style; var t = localStorage.getItem("lyrx2qlr-theme"); if (t === "dark" || t === "light") document.documentElement.dataset.theme = t; } catch (e) {}</script>
 </head>
@@ -82,8 +82,16 @@
 
   <div class="avis">
     <p data-i18n-html="avis-limite"><b>Pas toujours parfait.</b> Selon la complexité de la symbologie, le résultat peut demander une retouche. Le rapport dit ce qui n'a pas été converti, et l'outil s'améliore à chaque version (voir les <a href="#nouveautes">nouveautés</a>).</p>
-    <p data-i18n-html="avis-qgis"><b>Nouveau :</b> l'extension QGIS, pour convertir sans quitter QGIS, est publiée sur <a href="https://plugins.qgis.org/plugins/lyrx2qlr_qgis/">plugins.qgis.org</a> (extensions expérimentales, visible dès sa validation par l'équipe de QGIS).</p>
   </div>
+
+  <section class="appel extension" aria-labelledby="titre-extension">
+    <div>
+      <h2 id="titre-extension" data-i18n="extension-titre">Aussi dans QGIS : l'extension lyrx2qlr</h2>
+      <p data-i18n="extension-texte">Importez un .lyrx avec sa symbologie et ses étiquettes, exportez la couche active en .lyrx ou convertissez un dossier entier, sans quitter QGIS. Même cœur que cette page, en français ou en anglais selon votre QGIS.</p>
+      <p class="petit" data-i18n-html="extension-installer">Pour l'installer : dans QGIS, menu « Extensions », puis « Installer/Gérer les extensions… », onglet « Paramètres » : cochez « Afficher les extensions expérimentales » et cherchez <b>lyrx2qlr</b>.</p>
+    </div>
+    <a class="bouton" href="https://plugins.qgis.org/plugins/lyrx2qlr_qgis/" data-i18n="extension-bouton">Voir sur plugins.qgis.org</a>
+  </section>
 
   <p id="etat" class="etat" role="status">Chargement de Python dans le navigateur…</p>
 
@@ -177,7 +185,7 @@
     <ul class="versions">
       <li class="version a-venir">
         <div class="version-tete"><b data-i18n="a-venir">À venir</b></div>
-        <p data-i18n="a-venir-texte">L'extension QGIS publiée dans le gestionnaire d'extensions de QGIS, et de nouvelles correspondances à chaque version.</p>
+        <p data-i18n="a-venir-texte">Le passage de l'extension QGIS en version stable, et de nouvelles correspondances à chaque version.</p>
       </li>
     </ul>
     <ul id="versions" class="versions"></ul>
@@ -283,7 +291,7 @@
 </aside>
 
 <script src="https://cdn.jsdelivr.net/npm/pyodide@0.29.4/pyodide.js"></script>
-<script src="langue.js?v=d825287b"></script>
+<script src="langue.js?v=83d1248a"></script>
 <script src="apparence.js?v=cb74db19"></script>
 <script src="schema.js?v=ff42c8fd"></script>
 <script src="nouveautes.js?v=ded720ff"></script>

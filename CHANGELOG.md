@@ -1,5 +1,13 @@
 # Journal des versions
 
+## v1.10.1 — 25 novembre 2026
+
+La conversion ne change pas.
+
+- Page web : l'extension QGIS est acceptée sur plugins.qgis.org (extensions expérimentales). Un
+  encadré « Aussi dans QGIS » la présente sous la zone de dépôt, avec la marche à suivre pour
+  l'installer et un lien vers sa page. « À venir » annonce maintenant son passage en version stable.
+
 ## v1.10.0 — 21 novembre 2026
 
 La conversion ne change pas.
