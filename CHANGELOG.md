@@ -1,5 +1,12 @@
 # Journal des versions
 
+## v1.10.3 — 25 novembre 2026
+
+La conversion ne change pas.
+
+- Page web : le logo de QGIS (repris de l'installation de QGIS, dessiné en SVG dans la page) devant
+  le titre de l'encadré « Aussi dans QGIS », pour qu'on le remarque.
+
 ## v1.10.2 — 25 novembre 2026
 
 La conversion ne change pas.

@@ -239,6 +239,12 @@ pre { white-space: pre-wrap; overflow-wrap: anywhere; font-size: .82rem; backgro
 }
 .appel > div { flex: 1 1 320px; }
 .appel.extension { margin-top: 20px; border-left-color: var(--rose); box-shadow: 5px 5px 0 var(--rose); }
+.appel.extension h2 { display: flex; align-items: center; gap: 12px; }
+.logo-qgis { flex: 0 0 auto; width: 44px; height: 44px; fill: #589632; }
+@media (prefers-reduced-motion: no-preference) {
+  .appel.extension:hover .logo-qgis { transform: rotate(-8deg) scale(1.06); }
+  .logo-qgis { transition: transform .2s; }
+}
 .appel.extension .petit { margin-top: 8px; color: var(--doux); }
 .appel.extension a.bouton { background: var(--cyan); }
 .appel h2 { font-size: 1.1rem; }

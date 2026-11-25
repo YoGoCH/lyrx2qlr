@@ -6,7 +6,7 @@
 // VERSION est mise à jour par outils/construire.py ; changer de version efface les anciennes copies.
 "use strict";
 
-const VERSION = "1.10.2";
+const VERSION = "1.10.3";
 const CACHE = `lyrx2qlr-${VERSION}`;
 const PYODIDE = "https://cdn.jsdelivr.net/npm/pyodide@0.29.4/";
 const PAGE = [
