@@ -2,6 +2,17 @@
   "_doc": "Nouveautés affichées sur la page. Textes écrits à la main (la plus récente en tête) ; « ajouts » est calculé par outils/nouveautes.py.",
   "versions": [
     {
+      "version": "1.10.2",
+      "date": "2026-11-25",
+      "fr": "Description de l'extension QGIS mise à jour : elle est en anglais ou en français.",
+      "en": "QGIS plugin description updated: it is in English or French.",
+      "ajouts": {
+        "modele": 0,
+        "catalogues": 0,
+        "regles": 0
+      }
+    },
+    {
       "version": "1.10.1",
       "date": "2026-11-25",
       "fr": "L'extension QGIS est disponible dans le gestionnaire d'extensions de QGIS (extensions expérimentales).",

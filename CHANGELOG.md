@@ -1,5 +1,12 @@
 # Journal des versions
 
+## v1.10.2 — 25 novembre 2026
+
+La conversion ne change pas.
+
+- Extension QGIS : sa description sur plugins.qgis.org ne dit plus que les menus sont en français
+  seulement ; elle précise qu'ils sont en anglais, ou en français quand QGIS est en français.
+
 ## v1.10.1 — 25 novembre 2026
 
 La conversion ne change pas.
